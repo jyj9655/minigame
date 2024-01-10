@@ -90,5 +90,16 @@ def save_to_database(ip, nickname, time):
     db.commit()
     return {"message": "기록 저장 완료"}
 
+@app.route('/clean', methods=['GET'])
+def clear_records():
+    db = get_db()
+    cur = db.cursor()
+    
+    # game_records 테이블의 모든 데이터 삭제
+    cur.execute("DELETE FROM game_records")
+    db.commit()
+    
+    return jsonify({"message": "게임 기록이 모두 삭제되었습니다."})
+
 if __name__ == '__main__':
     app.run(debug=True)

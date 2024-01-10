@@ -46,22 +46,29 @@ function resetGame() {
   clearInterval(interval);
   document.getElementById('timer').textContent = '';
 
-  // 게임 리셋 시 기록 저장 버튼 다시 표시
   document.getElementById('save-record').style.display = 'block'; // 버튼 표시
+}
+
+
+function getRandomPastelColor() {
+  const hue = Math.floor(Math.random() * 360);
+  const saturation = 100; 
+  const lightness = 87.5; 
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 }
 
 function handleCellClick(cell) {
   if (parseInt(cell.textContent) === numberToFind) {
-    cell.style.backgroundColor = 'lightgreen';
+    cell.style.backgroundColor = getRandomPastelColor();
     numberToFind++;
     if (numberToFind > 9) {
       clearInterval(interval);
       const endTime = Date.now();
-      gameCompletedTime = (endTime - startTime) / 1000; // 밀리초를 초로 변환
+      gameCompletedTime = (endTime - startTime) / 1000;
       document.getElementById('timer').textContent = `${gameCompletedTime.toFixed(3)}초`;
 
       // 게임 완료 시 기록 저장 버튼 나타나기
-      document.getElementById('save-record').style.display = 'block'; // 버튼 표시
+      document.getElementById('save-record').style.display = 'block';
     }
   }
 }
