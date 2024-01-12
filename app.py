@@ -15,6 +15,7 @@ if not os.path.exists(DATABASE_FILE):
         CREATE TABLE game_records (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             ip TEXT NOT NULL,
+            gametype TEXT NOT NULL,
             nickname TEXT NOT NULL,
             time REAL NOT NULL,
             date TEXT NOT NULL
@@ -51,7 +52,7 @@ def init_db_command():
 def index():
     db = get_db()
     cur = db.cursor()
-    cur.execute("SELECT nickname, time, date FROM game_records ORDER BY time ASC")
+    cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype='3x3' ORDER BY time ASC")
     records = cur.fetchall()
 
     # Calculate ranks in Python code
@@ -65,19 +66,20 @@ def submit_record():
     user_ip = request.remote_addr  # 사용자 IP
     nickname = record['nickname']
     time = record['time']
+    gametype = record['gametype']
 
     # 데이터베이스에 기록 저장
-    response = save_to_database(user_ip, nickname, time)
+    response = save_to_database(user_ip, nickname, time, gametype)
 
     return jsonify(response)
 
-def save_to_database(ip, nickname, time):
+def save_to_database(ip, nickname, time, gametype):
     db = get_db()
     cur = db.cursor()
 
     # 오늘 해당 IP 주소에서 저장된 기록의 수 확인
     today = datetime.date.today().isoformat()
-    cur.execute("SELECT COUNT(*) FROM game_records WHERE ip = ? AND date = ?", (ip, today))
+    cur.execute("SELECT COUNT(*) FROM game_records WHERE ip = ? AND date = ? AND gametype = ?", (ip, today, gametype))
     count = cur.fetchone()[0]
 
     # 하루 최대 5번만 기록 저장 가능
@@ -85,8 +87,8 @@ def save_to_database(ip, nickname, time):
         return {"message": "오늘 횟수 초과입니다"}
 
     # 기록 저장
-    cur.execute("INSERT INTO game_records (ip, nickname, time, date) VALUES (?, ?, ?, ?)",
-                (ip, nickname, time, today))
+    cur.execute("INSERT INTO game_records (ip, nickname, time, date, gametype) VALUES (?, ?, ?, ?, ?)",
+                (ip, nickname, time, today, gametype))
     db.commit()
     return {"message": "기록 저장 완료"}
 
@@ -100,6 +102,21 @@ def clear_records():
     db.commit()
     
     return jsonify({"message": "게임 기록이 모두 삭제되었습니다."})
+
+####################################################################################################
+## TYPING GAME
+####################################################################################################
+@app.route('/typing')
+def typing():
+    db = get_db()
+    cur = db.cursor()
+    cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 'typing' ORDER BY time ASC")
+    records = cur.fetchall()
+
+    # Calculate ranks in Python code
+    ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
+
+    return render_template('typing.html', records=ranked_records)
 
 if __name__ == '__main__':
     app.run(debug=True)

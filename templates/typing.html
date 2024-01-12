@@ -1,25 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <title>3X3 숫자 게임</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-    
+    <title>랜덤 단어 타자 연습</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/typing.css') }}">
+
     <div id="header">
-        <h2>3X3 숫자 게임</h2>
-        <span>※ 하루에 5번만 기록이 가능합니다.</span>
+        <h2>랜덤 단어 타자 연습</h2>
+        <span>※ 하루에 5번만 기록이 가능하며 띄어쓰기 정확해야 완료됩니다.</span>
     </div>
-    <div id="game-board" class="game-board"></div>
+
+    <div id="typing-game">
+        <div id="sentence">여기에 랜덤 단어들이 표시됩니다.</div>
+        <input type="text" id="user-input" placeholder="여기에 입력하세요" />
+        <div id="result"></div>
+    </div>
+
     <button id="reset-button">리셋</button>
     <button id="start-button">시작</button>
-    <div id="timer">0</div>
+    <div id="timer" style="display: none;">0</div>
+    <div id="cpm" style="display: none;">0</div>
+    <div id="finish-message"></div> <!-- 종료 메시지를 표시할 곳 -->
 
     <div class="record">
         <input type="text" id="nickname" placeholder="닉네임">
         <button id="save-record" style="display: none;">기록 저장</button>
     </div>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
+    <script src="{{ url_for('static', filename='js/typing.js') }}"></script>
+    
     <div class="rank">
         <h2>순위표</h2>
         <table>
@@ -40,3 +48,5 @@
         </table>
     </div>
 {% endblock %}
+    
+
