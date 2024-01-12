@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <title>룰렛</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/roulette.css') }}">
+    <div id="header">
+        <h2>오늘 저녁 뭐 먹지?</h2>
+        <span>※ 아는 맛이 무섭다.</span>
+    </div>
+    <div class="roulette">
+        <canvas id="roulette-wheel" width="380" height='380'></canvas>
+        <button id="start-button" onclick="rotate()">START</button>
+    </div>
+    <script src="{{ url_for('static', filename='js/roulette.js') }}"></script>
+{% endblock %}

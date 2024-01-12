@@ -118,5 +118,19 @@ def typing():
 
     return render_template('typing.html', records=ranked_records)
 
+####################################################################################################
+## ROULETTE
+####################################################################################################
+@app.route('/roulette')
+def roulette():
+    db = get_db()
+    cur = db.cursor()
+    cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 'typing' ORDER BY time ASC")
+    records = cur.fetchall()
+
+    # Calculate ranks in Python code
+    ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
+
+    return render_template('roulette.html', records=ranked_records)
 if __name__ == '__main__':
     app.run(debug=True)

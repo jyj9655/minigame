@@ -8,8 +8,9 @@
 <body>
     <nav>
         <ul>
-            <li><a href="{{ url_for('index') }}">3x3 미니게임</a></li>
-            <li><a href="{{ url_for('typing') }}">타이핑 연습</a></li>
+            <li class="{% if request.path == url_for('roulette') %}active{% endif %}"><a href="{{ url_for('roulette') }}">행운의 룰렛</a></li>
+            <li class="{% if request.path == url_for('index') %}active{% endif %}"><a href="{{ url_for('index') }}">3x3 미니게임</a></li>
+            <li class="{% if request.path == url_for('typing') %}active{% endif %}"><a href="{{ url_for('typing') }}">타이핑 연습</a></li>
         </ul>
     </nav>
     {% block content %}{% endblock %}

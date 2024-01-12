@@ -1,0 +1,70 @@
+/* roulette.css */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+}
+
+#header {
+    background-color: #FFC107;
+    color: white;
+    padding: 20px;
+}
+
+.roulette {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* 모바일 화면에 맞게 원의 크기 조정 */
+.wheel {
+    position: relative;
+    width: 70vmin; /* 화면 크기의 70%로 설정 */
+    padding-bottom: 70vmin; /* 원 모양 유지를 위해 패딩으로 높이 조절 */
+    border: 10px solid #ad5656;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+#start-button {
+    background-color: #FFC107;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+#start-button:hover {
+    background-color: #866604;
+}
+
+.wheel-inner {
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient(white 0%, #f0f0f0 50%, white 100%);
+    animation: spin 5s linear infinite;
+    transform-origin: center center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
