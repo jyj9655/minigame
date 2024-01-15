@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <title>클릭 게임</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/click.css') }}">
+    
+    <div id="header">
+        <h2>클릭 게임</h2>
+        <span>※ 20회 클릭시 종료, 하루에 5번만 기록이 가능합니다.</span>
+    </div>
+    <div id="game-board" class="game-board"></div>
+    <button id="reset-button">리셋</button>
+    <button id="start-button">시작</button>
+    <div id="click-count">클릭 횟수: 0</div>
+    <div id="timer">0</div>
+    <div class="record">
+        <input type="text" id="nickname" placeholder="닉네임">
+        <button id="save-record" style="display: none;">기록 저장</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/click.js') }}"></script>
+
+    <div class="rank">
+        <h2>순위표</h2>
+        <table>
+            <tr>
+                <th>순위</th>
+                <th>닉네임</th>
+                <th>시간</th>
+                <th>날짜</th>
+            </tr>
+            {% for record in records %}
+            <tr>
+                <td>{{ record[0] }}</td>
+                <td>{{ record[1] }}</td>
+                <td>{{ record[2] }}</td>
+                <td>{{ record[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

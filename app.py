@@ -132,5 +132,20 @@ def roulette():
     ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
 
     return render_template('roulette.html', records=ranked_records)
+
+####################################################################################################
+## CLICK GAME
+####################################################################################################
+@app.route('/click')
+def click():
+    db = get_db()
+    cur = db.cursor()
+    cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 'click' ORDER BY time ASC")
+    records = cur.fetchall()
+
+    # Calculate ranks in Python code
+    ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
+
+    return render_template('click.html', records=ranked_records)
 if __name__ == '__main__':
     app.run(debug=True)

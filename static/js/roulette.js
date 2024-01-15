@@ -3,7 +3,7 @@ const ctx = $c.getContext(`2d`);
 
 
 const product = [
-  "떡볶이", "돈까스", "초밥", "피자", "냉면", "치킨", '족발', "피자", "삼겹살",
+  "떡볶이", "돈까스", "초밥", "피자", "냉면", "치킨", '짜장면', "샐러드", "삼겹살",
 ];
 
 const colors = ["#dc0936", "#e6471d", "#f7a416", "#efe61f ", "#60b236", "#209b6c", "#169ed8", "#3f297e", "#87207b", "#be107f", "#e7167b"];
@@ -47,7 +47,7 @@ const newMake = () => {
 
 const rotate = () => {
     const $button = document.querySelector("button");
-    $button.style.display = "none"; // 버튼 숨김
+    $button.style.display = "none";
     $c.style.transform = "initial";
     $c.style.transition = "initial";
 
@@ -62,7 +62,7 @@ const rotate = () => {
 
         setTimeout(() => {
             alert(`오늘의 저녁 메뉴는 ${product[ran]} 어떠신가요?`);
-            $button.style.display = "block"; // 알림 후 버튼 다시 표시
+            $button.style.display = "block";
         }, 2000);
     }, 1);
 };
