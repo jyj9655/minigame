@@ -1,0 +1,201 @@
+@keyframes shake {
+    0% {
+        transform: translateX(0px);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.shake {
+    animation: shake 0.5s;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    background-image: url('/static/images/memory_2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    transform: rotateY(180deg);
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    text-align: center;
+}
+
+#header {
+    background-color: #D2691E;
+    color: white;
+    padding: 20px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.game-board div {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow:
+        1px 1px 3px rgba(197, 197, 197, 0.6),
+        -1px -1px 3px rgba(197, 197, 197, 0.6),
+        1px -1px 3px rgba(197, 197, 197, 0.6),
+        -1px 1px 3px rgba(197, 197, 197, 0.6);
+}
+
+.game-board div:hover {
+    background-color: #e8e8e8;
+}
+
+button {
+    background-color: #D2691E;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+
+.record {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.record input[type="text"],
+.record button {
+    width: 200px;
+    margin: 10px 0;
+}
+
+#nickname {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+#save-record {
+    display: block;
+    padding: 10px 20px;
+}
+
+button:hover {
+    background-color: #8B4513;
+}
+
+#timer {
+    font-size: 32px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.record input[type="text"] {
+    padding: 10px;
+    margin-top: 20px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.rank {
+    margin-top: 40px;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #D2691E;
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .game-board {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        width: 100%;
+        max-width: 100vw;
+        height: auto;
+        gap: 5px;
+    }
+
+    .game-board div {
+        height: calc((100vw - 10px) / 3);
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    #timer {
+        font-size: 24px;
+    }
+}
