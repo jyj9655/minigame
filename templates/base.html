@@ -4,17 +4,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
+
 </head>
 <body>
     <nav>
-        <ul>
-            <li class="{% if request.path == url_for('roulette') %}active{% endif %}"><a href="{{ url_for('roulette') }}">행운의 룰렛</a></li>
-            <li class="{% if request.path == url_for('index') %}active{% endif %}"><a href="{{ url_for('index') }}">3x3 미니게임</a></li>
-            <li class="{% if request.path == url_for('typing') %}active{% endif %}"><a href="{{ url_for('typing') }}">타이핑 게임</a></li>
-            <li class="{% if request.path == url_for('click') %}active{% endif %}"><a href="{{ url_for('click') }}">클릭 게임</a></li>
-            <li class="{% if request.path == url_for('memory') %}active{% endif %}"><a href="{{ url_for('memory') }}">메모리 게임</a></li>
-        </ul>
+        <div id="menu-toggle" class="menu-toggle">≡</div>
+            <ul id="menu" class="hidden">
+                <li class="{% if request.path == url_for('roulette') %}active{% endif %}"><a href="{{ url_for('roulette') }}">행운의 룰렛</a></li>
+                <li class="{% if request.path == url_for('index') %}active{% endif %}"><a href="{{ url_for('index') }}">3x3 미니게임</a></li>
+                <li class="{% if request.path == url_for('typing') %}active{% endif %}"><a href="{{ url_for('typing') }}">타이핑 게임</a></li>
+                <li class="{% if request.path == url_for('click') %}active{% endif %}"><a href="{{ url_for('click') }}">클릭 게임</a></li>
+                <li class="{% if request.path == url_for('memory') %}active{% endif %}"><a href="{{ url_for('memory') }}">메모리 게임</a></li>
+            </ul>
     </nav>
     {% block content %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
 </body>
+
 </html>

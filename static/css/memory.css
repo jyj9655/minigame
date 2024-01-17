@@ -44,7 +44,7 @@
     background-image: url('/static/images/memory_2.png');
     background-size: cover;
     background-repeat: no-repeat;
-
+    background-position: center;
     transform: rotateY(180deg);
 }
 
@@ -197,5 +197,9 @@ th {
 
     #timer {
         font-size: 24px;
+    }
+
+    .card-back {
+        background-size: contain; /* 이미지가 카드 크기에 맞게 조정되도록 변경 */
     }
 }

@@ -26,3 +26,38 @@ nav ul li a:hover {
 nav ul li.active {
     background-color: #555;
 }
+
+.menu-toggle {
+    display: none; /* 기본적으로는 표시하지 않음 */
+    color: white;
+    cursor: pointer;
+    background-color: #333;
+}
+
+/* 화면이 작을 때만 햄버거 메뉴 버튼 표시 */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* 모바일에서만 버튼 표시 */
+        padding: 10px; /* 패딩 설정 */
+    }
+
+    nav ul {
+        display: none; /* 기본적으로 메뉴 숨기기 */
+        flex-direction: column; /* 아이템 세로 나열 */
+        width: 100%; /* 너비 100% */
+    }
+
+    nav ul li {
+        text-align: center; /* 텍스트 중앙 정렬 */
+    }
+
+    nav ul li a {
+        padding: 10px; /* 패딩 조정 */
+        border-bottom: 1px solid #555; /* 하단 경계선 추가 */
+    }
+
+    /* 'active' 클래스가 있을 때만 메뉴 표시 */
+    .active {
+        display: flex; /* 활성화 상태에서 메뉴 표시 */
+    }
+}
