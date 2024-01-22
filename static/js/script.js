@@ -41,12 +41,9 @@ function updateTimer() {
 
 function resetGame() {
   gameActive = false;
-  const board = document.getElementById('game-board');
-  board.innerHTML = '';
   clearInterval(interval);
-  document.getElementById('timer').textContent = '';
-
-  document.getElementById('save-record').style.display = 'block'; // 버튼 표시
+  document.getElementById('game-board').innerHTML = '';
+  document.getElementById('timer').textContent = '0';
 }
 
 

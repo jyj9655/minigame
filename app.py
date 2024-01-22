@@ -162,5 +162,20 @@ def memory():
     ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
 
     return render_template('memory.html', records=ranked_records)
+
+####################################################################################################
+## SUDOKU GAME
+####################################################################################################
+@app.route('/sudoku')
+def sudoku():
+    db = get_db()
+    cur = db.cursor()
+    cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 'sudoku' ORDER BY time ASC")
+    records = cur.fetchall()
+
+    # Calculate ranks in Python code
+    ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
+
+    return render_template('sudoku.html', records=ranked_records)
 if __name__ == '__main__':
     app.run(debug=True)

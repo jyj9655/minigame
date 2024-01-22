@@ -9,7 +9,8 @@ body {
     background-color: #007bff;
     color: white;
     padding: 20px;
-  }
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
 #typing-game {
     margin: 20px 0;
@@ -33,7 +34,8 @@ body {
     border-radius: 4px;
 }
 
-#reset-button, #start-button {
+#reset-button,
+#start-button {
     padding: 10px 20px;
     margin: 10px;
     font-size: 1em;
@@ -44,11 +46,13 @@ body {
     color: white;
 }
 
-#reset-button:hover, #start-button:hover {
+#reset-button:hover,
+#start-button:hover {
     background-color: #0056b3;
 }
 
-#timer, #cpm {
+#timer,
+#cpm {
     font-size: 1.5em;
     margin: 10px 0;
 }
@@ -59,7 +63,8 @@ body {
     color: green;
 }
 
-.record, .rank {
+.record,
+.rank {
     margin-top: 20px;
 }
 
@@ -92,21 +97,31 @@ body {
     background-color: #0056b3;
 }
 
-.rank table {
-    width: 100%;
-    border-collapse: collapse;
+.rank {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 800px;
+    margin: 40px auto;
 }
 
-.rank th, .rank td {
-    padding: 8px;
-    border: 1px solid #ddd;
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: separate;
+    border-spacing: 0 10px;
 }
 
-.rank th {
+th {
     background-color: #007bff;
     color: white;
 }
 
-.rank td {
-    background-color: #f8f9fa;
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
 }
