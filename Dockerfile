@@ -1,17 +1,15 @@
-# Use the official Python image as the base image
-FROM python:3.9
+# Python 이미지를 기반으로 합니다.
+FROM python:3.8-slim
 
-# Set the working directory in the container
+# 작업 디렉토리 설정
 WORKDIR /app
 
-# Copy the requirements.txt file into the container
-COPY requirements.txt .
+# 의존성 파일 복사 및 설치
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install the Python packages specified in requirements.txt
-RUN pip install -r requirements.txt
-
-# Copy the rest of the application code into the container
+# 애플리케이션 코드 복사
 COPY . .
 
-# Specify the command to run the Flask application using Gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:80", "app:app"]
+# 애플리케이션 실행
+CMD ["python", "./app.py"]
