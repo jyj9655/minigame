@@ -27,12 +27,6 @@ button:hover,
     transition: background-color 0.3s;
 }
 
-#timer {
-    font-size: 32px;
-    margin-top: 20px;
-    font-weight: bold;
-}
-
 .click-circle {
     width: 120px;
     height: 120px;

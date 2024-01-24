@@ -40,7 +40,7 @@
     pointer-events: none;
 }
 
-select, .record input[type="text"], #nickname, #save-record {
+select {
     border: 1px solid #ddd;
     padding: 10px 15px;
     border-radius: 4px;

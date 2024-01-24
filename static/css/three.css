@@ -32,12 +32,6 @@ button:hover {
   background-color: #e8e8e8;
 }
 
-#timer {
-  font-size: 32px;
-  margin-top: 20px;
-  font-weight: bold;
-}
-
 /* 반응형 웹 디자인 */
 @media screen and (max-width: 600px) {
   .game-board {

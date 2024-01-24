@@ -54,11 +54,11 @@ nav ul li.active {
     background-color: #555;
 }
 
-.menu-toggle {
-    display: none; /* 기본적으로는 표시하지 않음 */
-    color: white;
-    cursor: pointer;
-    background-color: #333;
+#timer {
+    display:none;
+    font-size: 32px;
+    margin-top: 20px;
+    font-weight: bold;
 }
 
 .record {
@@ -77,12 +77,12 @@ nav ul li.active {
 
 #nickname {
     text-align: center;
-    display: block;
+    display: none;
     margin: 0 auto;
 }
 
 #save-record {
-    display: block;
+    display: none;
     padding: 10px 20px;
 }
 
@@ -119,6 +119,13 @@ th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
+}
+
+.menu-toggle {
+    display: none; /* 기본적으로는 표시하지 않음 */
+    color: white;
+    cursor: pointer;
+    background-color: #333;
 }
 
 /* 화면이 작을 때만 햄버거 메뉴 버튼 표시 */

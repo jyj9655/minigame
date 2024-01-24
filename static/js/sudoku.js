@@ -51,6 +51,8 @@ function startGame() {
         interval = setInterval(updateTimer, 100);
 
         document.getElementById('save-record').style.display = 'none';
+        document.getElementById('nickname').style.display = 'none';
+        document.getElementById('timer').style.display = 'block';
     }
 }
 
@@ -65,6 +67,9 @@ function resetGame() {
     clearInterval(interval);
     document.getElementById('game-board').innerHTML = '';
     document.getElementById('timer').textContent = '0';
+    document.getElementById('timer').style.display = 'none';
+    document.getElementById('save-record').style.display = 'none';
+    document.getElementById('nickname').style.display = 'none';
 }
 
 function generateSudokuBoard(blanks) {
@@ -247,6 +252,7 @@ function handleInput() {
             alert('축하합니다! 스도쿠를 성공적으로 완료했습니다.');
             gameActive = false; // 게임 활성 상태 업데이트
             document.getElementById('save-record').style.display = 'block'; // 기록 저장 버튼 표시
+            document.getElementById('nickname').style.display = 'block';
         } else {
             alert('오류가 있습니다. 다시 확인해주세요.');
             // 여기서는 interval을 초기화하지 않으므로 타이머는 계속 진행됩니다.

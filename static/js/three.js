@@ -30,6 +30,9 @@ function startGame() {
 
     // 게임 시작 시 기록 저장 버튼 숨기기
     document.getElementById('save-record').style.display = 'none';
+    document.getElementById('nickname').style.display = 'none';
+    // 게임 시작 시 타이머 보이기
+    document.getElementById('timer').style.display = 'block';
   }
 }
 
@@ -44,8 +47,10 @@ function resetGame() {
   clearInterval(interval);
   document.getElementById('game-board').innerHTML = '';
   document.getElementById('timer').textContent = '0';
+  document.getElementById('timer').style.display = 'none';
+  document.getElementById('save-record').style.display = 'none';
+  document.getElementById('nickname').style.display = 'none';
 }
-
 
 function getRandomPastelColor() {
   const hue = Math.floor(Math.random() * 360);
@@ -65,6 +70,7 @@ function handleCellClick(cell) {
       document.getElementById('timer').textContent = `${gameCompletedTime.toFixed(3)}초`;
 
       // 게임 완료 시 기록 저장 버튼 나타나기
+      document.getElementById('nickname').style.display = 'block';
       document.getElementById('save-record').style.display = 'block';
     }
   }

@@ -29,6 +29,10 @@ function startGame() {
   
         // 게임 시작 시 기록 저장 버튼 숨기기
         document.getElementById('save-record').style.display = 'none';
+        // 게임 시작 시 닉네임 부분 숨기기
+        document.getElementById('nickname').style.display = 'none';
+        // 게임 시작 시 타이머 보이기
+        document.getElementById('timer').style.display = 'block';
     }
 }
 
@@ -46,6 +50,8 @@ function handleCircleClick() {
 
             // 게임 완료 시 기록 저장 버튼 나타나기
             document.getElementById('save-record').style.display = 'block';
+            // 게임 완료 시 닉네임 부분 나타나기
+            document.getElementById('nickname').style.display = 'block';
         }
     }
     
@@ -60,10 +66,12 @@ function handleCircleClick() {
 function resetGame() {
     gameActive = false;
     clearInterval(interval);
-    const board = document.getElementById('game-board');
-    board.innerHTML = ''; // 게임 보드 클리어
+    document.getElementById('game-board').innerHTML = '';
+    document.getElementById('click-count').textContent = '클릭 횟수: 0'; // 타이머 리셋
     document.getElementById('timer').textContent = '0'; // 타이머 리셋
+    document.getElementById('timer').style.display = 'none'; // 타이머 숨기기
     document.getElementById('save-record').style.display = 'none'; // 기록 저장 버튼 숨기기
+    document.getElementById('nickname').style.display = 'none'; // 닉네임 부분 숨기기
 }
 
 function updateTimer() {

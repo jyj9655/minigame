@@ -39,6 +39,10 @@ function startGame() {
         document.querySelectorAll('.card').forEach((card) => card.classList.add('flipped'));
         isGameStarted = false;
     }, 3000);
+
+    document.getElementById('save-record').style.display = 'none';
+    document.getElementById('nickname').style.display = 'none';
+    document.getElementById('timer').style.display = 'block';
 }
 
 function createCardElement(cardValue) {
@@ -83,6 +87,7 @@ function checkForMatch() {
             gameCompletedTime = (Date.now() - gameStartTime) / 1000;
             
             document.getElementById('save-record').style.display = 'block';
+            document.getElementById('nickname').style.display = 'block';
         }
         
         selectedCards = [];
@@ -119,4 +124,7 @@ function resetGame() {
     clearInterval(timerInterval);
     document.getElementById('game-board').innerHTML = '';
     document.getElementById('timer').textContent = '0';
+    document.getElementById('timer').style.display = 'none';
+    document.getElementById('save-record').style.display = 'none';
+    document.getElementById('nickname').style.display = 'none';
 }
