@@ -8,17 +8,10 @@
         <input type="text" id="user-input" placeholder="여기에 입력하세요" />
         <div id="result"></div>
     </div>
-
     <button id="reset-button">리셋</button>
     <button id="start-button">시작</button>
     <div id="timer" style="display: none;">0</div>
     <div id="cpm" style="display: none;">0</div>
     <div id="finish-message"></div>
-
-    <div class="record">
-        <input type="text" id="nickname" placeholder="닉네임">
-        <button id="save-record" style="display: none;">기록 저장</button>
-    </div>
-
     <script src="{{ url_for('static', filename='js/typing.js') }}"></script>
 {% endblock %}

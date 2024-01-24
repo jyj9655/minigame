@@ -49,21 +49,6 @@ select, .record input[type="text"], #nickname, #save-record {
     cursor: pointer;
 }
 
-button {
-    background-color: #50C4C8;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-  }
-  
 .number-selector {
     position: absolute;
     border: 2px solid #50C4C8;
@@ -102,30 +87,6 @@ button {
 .number-selector button:hover {
     background-color: #4CAFAF;
     transform: scale(1.1);
-}
-
-#nickname, #save-record {
-    width: 200px;
-    margin: 10px 0;
-    display: block;
-}
-
-#nickname {
-    margin: auto;
-}
-
-#timer {
-    font-size: 32px;
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-.record {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 20px;
 }
 
 @media screen and (max-width: 600px) {

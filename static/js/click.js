@@ -71,31 +71,3 @@ function updateTimer() {
     const timeElapsed = (currentTime - startTime) / 1000;
     document.getElementById('timer').textContent = `${timeElapsed.toFixed(3)}초`;
 }
-
-document.getElementById('save-record').addEventListener('click', function() {
-    const nickname = document.getElementById('nickname').value;
-    
-    // 서버로 데이터 전송
-    if (typeof gameCompletedTime === 'undefined') {
-      alert("게임을 먼저 완료해주세요.");
-      return;
-    }
-  
-    // 서버로 데이터 전송
-    fetch('/submit-record', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ nickname: nickname, time: gameCompletedTime, gametype: 4 }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        // alert 메시지 표시
-        alert(data.message);
-  
-        // 수동으로 페이지 새로고침
-        location.reload();
-    })
-    .catch(error => console.error('Error:', error));
-});

@@ -119,10 +119,10 @@ def roulette():
     db = get_db()
     cur = db.cursor()
 
-    cur.execute("SELECT name, description FROM game_info WHERE id = 1")
+    cur.execute("SELECT id, name, description FROM game_info WHERE id = 1")
     game_info = cur.fetchone()
     
-    return render_template('roulette.html', game_name=game_info['name'], game_description=game_info['description'])
+    return render_template('roulette.html', game_id=game_info['id'], game_name=game_info['name'], game_description=game_info['description'])
 
 ####################################################################################################
 ## 2. 3x3 GAME
@@ -133,7 +133,7 @@ def three():
     db = get_db()
     cur = db.cursor()
 
-    cur.execute("SELECT name, description FROM game_info WHERE id = 2")
+    cur.execute("SELECT id, name, description FROM game_info WHERE id = 2")
     game_info = cur.fetchone()
 
     cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 2 ORDER BY time ASC")
@@ -142,7 +142,7 @@ def three():
     # Calculate ranks in Python code
     ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
 
-    return render_template('three.html', records=ranked_records, game_name=game_info['name'], game_description=game_info['description'])
+    return render_template('three.html', records=ranked_records, game_id=game_info['id'], game_name=game_info['name'], game_description=game_info['description'])
 
 ####################################################################################################
 ## 3. TYPING GAME
@@ -152,7 +152,7 @@ def typing():
     db = get_db()
     cur = db.cursor()
     
-    cur.execute("SELECT name, description FROM game_info WHERE id = 3")
+    cur.execute("SELECT id, name, description FROM game_info WHERE id = 3")
     game_info = cur.fetchone()
 
     cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 3 ORDER BY time ASC")
@@ -161,7 +161,7 @@ def typing():
     # Calculate ranks in Python code
     ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
 
-    return render_template('typing.html', records=ranked_records, game_name=game_info['name'], game_description=game_info['description'])
+    return render_template('typing.html', records=ranked_records, game_id=game_info['id'], game_name=game_info['name'], game_description=game_info['description'])
 
 ####################################################################################################
 ## 4. CLICK GAME
@@ -171,7 +171,7 @@ def click():
     db = get_db()
     cur = db.cursor()
 
-    cur.execute("SELECT name, description FROM game_info WHERE id = 4")
+    cur.execute("SELECT id, name, description FROM game_info WHERE id = 4")
     game_info = cur.fetchone()
 
     cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 4 ORDER BY time ASC")
@@ -180,7 +180,7 @@ def click():
     # Calculate ranks in Python code
     ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
 
-    return render_template('click.html', records=ranked_records, game_name=game_info['name'], game_description=game_info['description'])
+    return render_template('click.html', records=ranked_records, game_id=game_info['id'], game_name=game_info['name'], game_description=game_info['description'])
 
 ####################################################################################################
 ## 5. MEMORY GAME
@@ -190,7 +190,7 @@ def memory():
     db = get_db()
     cur = db.cursor()
 
-    cur.execute("SELECT name, description FROM game_info WHERE id = 5")
+    cur.execute("SELECT id, name, description FROM game_info WHERE id = 5")
     game_info = cur.fetchone()
 
     cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 5 ORDER BY time ASC")
@@ -199,7 +199,7 @@ def memory():
     # Calculate ranks in Python code
     ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
 
-    return render_template('memory.html', records=ranked_records, game_name=game_info['name'], game_description=game_info['description'])
+    return render_template('memory.html', records=ranked_records, game_id=game_info['id'], game_name=game_info['name'], game_description=game_info['description'])
 
 ####################################################################################################
 ## 6. SUDOKU GAME
@@ -209,7 +209,7 @@ def sudoku():
     db = get_db()
     cur = db.cursor()
 
-    cur.execute("SELECT name, description FROM game_info WHERE id = 6")
+    cur.execute("SELECT id, name, description FROM game_info WHERE id = 6")
     game_info = cur.fetchone()
 
     cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 6 ORDER BY time ASC")
@@ -218,7 +218,7 @@ def sudoku():
     # Calculate ranks in Python code
     ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
 
-    return render_template('sudoku.html', records=ranked_records, game_name=game_info['name'], game_description=game_info['description'])
+    return render_template('sudoku.html', records=ranked_records, game_id=game_info['id'], game_name=game_info['name'], game_description=game_info['description'])
 
 if __name__ == '__main__':
     app.run(debug=True)
