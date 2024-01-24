@@ -1,16 +1,6 @@
 /* roulette.css */
-body {
-    font-family: 'Noto Sans KR', sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    text-align: center;
-}
-
 #header {
-    background-color: #FFC107;
-    color: white;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+    background-color: #FFD350;
 }
 
 .roulette {
@@ -33,7 +23,7 @@ body {
 }
 
 #start-button {
-    background-color: #FFC107;
+    background-color: #FFD350;
     border: none;
     color: white;
     padding: 15px 32px;

@@ -108,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('save-record').addEventListener('click', function() {
     const nickname = document.getElementById('nickname').value;
     
-    // 서버로 데이터 전송
     if (typeof gameCompletedTime === 'undefined') {
       alert("게임을 먼저 완료해주세요.");
       return;
@@ -120,7 +119,7 @@ document.getElementById('save-record').addEventListener('click', function() {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ nickname: nickname, time: gameCompletedTime, gametype: 'typing' }),
+        body: JSON.stringify({ nickname: nickname, time: gameCompletedTime, gametype: 3 }),
     })
     .then(response => response.json())
     .then(data => {

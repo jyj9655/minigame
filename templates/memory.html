@@ -3,11 +3,6 @@
 {% block content %}
     <title>메모리 게임</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/memory.css') }}">
-    
-    <div id="header">
-        <h2>메모리 게임</h2>
-        <span>※ 하루에 5번만 기록이 가능합니다.</span>
-    </div>
     <div id="game-board" class="game-board"></div>
     <button id="reset-button">리셋</button>
     <button id="start-button">시작</button>
@@ -19,24 +14,4 @@
     </div>
 
     <script src="{{ url_for('static', filename='js/memory.js') }}"></script>
-
-    <div class="rank">
-        <h2>순위표</h2>
-        <table>
-            <tr>
-                <th>순위</th>
-                <th>닉네임</th>
-                <th>시간</th>
-                <th>날짜</th>
-            </tr>
-            {% for record in records %}
-            <tr>
-                <td>{{ record[0] }}</td>
-                <td>{{ record[1] }}</td>
-                <td>{{ record[2] }}</td>
-                <td>{{ record[3] }}</td>
-            </tr>
-            {% endfor %}
-        </table>
-    </div>
 {% endblock %}

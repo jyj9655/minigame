@@ -3,6 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const menu = document.getElementById('menu');
 
     menuToggle.addEventListener('click', () => {
-        menu.classList.toggle('active'); // 메뉴의 'active' 클래스 토글
+        menu.classList.toggle('active');
     });
 });

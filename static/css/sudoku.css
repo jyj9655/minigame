@@ -1,18 +1,6 @@
-body {
-    font-family: 'Noto Sans KR', sans-serif;
-    background-color: #f7f7f7;
-    color: #333;
-    text-align: center;
-}
-
-#header, select, button {
+#header, th, select, button {
     background-color: #50C4C8;
     color: white;
-}
-
-#header {
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
 }
 
 .game-board {
@@ -138,34 +126,6 @@ button {
     align-items: center;
     flex-direction: column;
     margin-top: 20px;
-}
-
-.rank {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding: 20px;
-    margin-top: 20px;
-    max-width: 800px;
-    margin: 40px auto;
-}
-
-table {
-    width: 80%;
-    margin: auto;
-    border-collapse: separate;
-    border-spacing: 0 10px;
-}
-
-th {
-    background-color: #50C4C8;
-    color: white;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
 }
 
 @media screen and (max-width: 600px) {

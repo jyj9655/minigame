@@ -268,7 +268,7 @@ function saveRecord() {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ nickname: nickname, time: gameCompletedTime, gametype: 'sudoku' }),
+        body: JSON.stringify({ nickname: nickname, time: gameCompletedTime, gametype: 6 }),
     })
         .then(response => response.json())
         .then(data => {

@@ -136,7 +136,7 @@ document.getElementById('save-record').addEventListener('click', function() {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ nickname: nickname, time: gameCompletedTime, gametype: 'memory' }),
+        body: JSON.stringify({ nickname: nickname, time: gameCompletedTime, gametype: 5 }),
     })
     .then(response => response.json())
     .then(data => {
