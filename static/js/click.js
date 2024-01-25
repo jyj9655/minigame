@@ -12,27 +12,39 @@ document.addEventListener('DOMContentLoaded', function() {
 function startGame() {
     if (!gameActive) {
         gameActive = true;
-        clickCount = 0;
-        startTime = Date.now();
-        interval = setInterval(updateTimer, 100); // 타이머 시작
-  
-        // 원 생성 및 추가
-        const board = document.getElementById('game-board');
-        board.innerHTML = ''; // 기존 내용 클리어
-        const circle = document.createElement('div');
-        circle.id = 'click-circle';
-        circle.className = 'click-circle';
-        board.appendChild(circle);
-  
-        // 원 클릭 이벤트 추가
-        circle.addEventListener('click', handleCircleClick);
-  
-        // 게임 시작 시 기록 저장 버튼 숨기기
-        document.getElementById('save-record').style.display = 'none';
-        // 게임 시작 시 닉네임 부분 숨기기
-        document.getElementById('nickname').style.display = 'none';
-        // 게임 시작 시 타이머 보이기
-        document.getElementById('timer').style.display = 'block';
+        // 카운트다운을 위한 엘리먼트를 가져옴
+        const countdownElement = document.getElementById('countdown');
+        // 카운트다운 보이기
+        countdownElement.style.display = 'block';
+
+        // 카운트다운 시작
+        startCountdown(3, countdownElement, function() {
+            startTime = Date.now();
+            interval = setInterval(updateTimer, 100); // 타이머 시작
+
+            // 원 생성 및 추가
+            const board = document.getElementById('game-board');
+            board.innerHTML = ''; // 기존 내용 클리어
+            const circle = document.createElement('div');
+            circle.id = 'click-circle';
+            circle.className = 'click-circle';
+            board.appendChild(circle);
+    
+            // 원 클릭 이벤트 추가
+            circle.addEventListener('click', handleCircleClick);
+
+            // 게임 시작 시 기록 저장 버튼 숨기기
+            document.getElementById('save-record').style.display = 'none';
+            // 게임 시작 시 닉네임 부분 숨기기
+            document.getElementById('nickname').style.display = 'none';
+            // 게임 시작 시 타이머 보이기
+            document.getElementById('timer').style.display = 'block';
+            // 카운트다운을 숨김
+            countdownElement.style.display = 'none';
+            countdownElement.innerHTML = '';
+        });
+
+        
     }
 }
 

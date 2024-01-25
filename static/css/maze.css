@@ -9,26 +9,19 @@ button:hover, .game-board div:hover {
 }
 
 .game-board {
-    display: grid;
-    grid-template-columns: repeat(3, 50px);
-    /* 3x3 미로이므로 열 3개 */
-    grid-gap: 2px;
-    /* 셀 사이의 간격 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    padding: 10px;
+    margin: auto;
     margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 500px;
 }
-.maze {
-    border-collapse: collapse;
-}
-.maze td {
-    width: 20px;
-    height: 20px;
-}
-.wall {
-    background-color: black;
-}
-.path {
-    background-color: white;
-}
-.player {
-    background-color: red;
+
+.countdown {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff; /* 그림자 효과 */
 }
