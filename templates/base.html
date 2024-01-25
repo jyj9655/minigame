@@ -7,6 +7,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://exhilarate.kr">
+    <meta property="og:title" content="EXHILARATE: …의 기분을 들뜨게 하다, 유쾌하게 하다">
+    <meta property="og:description" content="다양한 미니게임을 한 곳에서 즐기세요!">
+    <meta property="og:image" content="{{ url_for('static', filename='images/game-collection-thumbnail.png') }}">
+    
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://exhilarate.kr">
+    <meta name="twitter:title" content="EXHILARATE: …의 기분을 들뜨게 하다, 유쾌하게 하다">
+    <meta name="twitter:description" content="다양한 미니게임을 한 곳에서 즐기세요!">
+    <meta name="twitter:image" content="{{ url_for('static', filename='images/game-collection-thumbnail.png') }}">
 </head>
 
 <body>
