@@ -57,3 +57,12 @@ VALUES (
     'sudoku',
     '1부터 9까지의 숫자를 겹치지 않게 채워 넣는 퍼즐 게임입니다.'
 );
+
+-- 미로 게임
+INSERT INTO game_info (id, name, url, description)
+VALUES (
+    '7',
+    '미로 게임',
+    'maze',
+    '최단 시간 안에 미로를 탈출하는 게임입니다.'
+);

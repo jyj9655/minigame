@@ -220,5 +220,24 @@ def sudoku():
 
     return render_template('sudoku.html', records=ranked_records, game_id=game_info['id'], game_name=game_info['name'], game_description=game_info['description'])
 
+####################################################################################################
+## 6. MAZE GAME
+####################################################################################################
+@app.route('/maze')
+def maze():
+    db = get_db()
+    cur = db.cursor()
+
+    cur.execute("SELECT id, name, description FROM game_info WHERE id = 7")
+    game_info = cur.fetchone()
+
+    cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 7 ORDER BY time ASC")
+    records = cur.fetchall()
+
+    # Calculate ranks in Python code
+    ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
+
+    return render_template('maze.html', records=ranked_records, game_id=game_info['id'], game_name=game_info['name'], game_description=game_info['description'])
+
 if __name__ == '__main__':
     app.run(debug=True)

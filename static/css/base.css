@@ -121,6 +121,12 @@ th, td {
     text-align: center;
 }
 
+#banner {
+    max-width: 680px; /* 최대 너비 설정 */
+    width: 100%; /* 부모 요소에 따라 너비 조정 */
+    margin: 0 auto; /* 중앙 정렬 */
+}
+
 .menu-toggle {
     display: none; /* 기본적으로는 표시하지 않음 */
     color: white;
