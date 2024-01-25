@@ -32,6 +32,16 @@ let selectedInput; // 현재 선택된 입력 필드를 저장하는 전역 변�
 function startGame() {
     if (!gameActive) {
         gameActive = true;
+
+        const board = document.getElementById('game-board');
+        board.innerHTML = '';
+
+        board.style.display = 'grid';
+        board.style.gridTemplateColumns = 'repeat(9, 50px)';
+        board.style.gridTemplateRows = 'repeat(9, 50px)';
+        board.style.height = '490px';
+        board.style.gap = '5px';
+
         const difficulty = document.getElementById('difficulty').value;
         let blanks;
         switch (difficulty) {
@@ -65,7 +75,9 @@ function updateTimer() {
 function resetGame() {
     gameActive = false;
     clearInterval(interval);
-    document.getElementById('game-board').innerHTML = '';
+    const board = document.getElementById('game-board');
+    board.innerHTML = '';
+    board.style.height = '200px';
     document.getElementById('timer').textContent = '0';
     document.getElementById('timer').style.display = 'none';
     document.getElementById('save-record').style.display = 'none';

@@ -78,7 +78,9 @@ function handleCircleClick() {
 function resetGame() {
     gameActive = false;
     clearInterval(interval);
-    document.getElementById('game-board').innerHTML = '';
+    const board = document.getElementById('game-board');
+    board.innerHTML = '';
+    board.style.height = '200px';
     document.getElementById('click-count').textContent = '클릭 횟수: 0'; // 타이머 리셋
     document.getElementById('timer').textContent = '0'; // 타이머 리셋
     document.getElementById('timer').style.display = 'none'; // 타이머 숨기기

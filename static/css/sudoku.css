@@ -3,13 +3,16 @@
     color: white;
 }
 
+.game-board input:hover, select:hover, button:hover {
+    background-color: #4CAFAF;
+}
+
 .game-board {
-    display: grid;
-    grid-template-columns: repeat(9, 50px);
-    grid-template-rows: repeat(9, 50px);
-    gap: 5px;
-    padding: 10px;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    height: 200px;
+    padding: 10px;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -19,6 +22,8 @@
 }
 
 .game-board input {
+    width: 50px;
+    height: 50px;
     border: none;
     background-color: #f0f0f0;
     font-size: 20px;
@@ -29,10 +34,6 @@
     cursor: pointer;
     transition: background-color 0.3s;
     border-radius: 5px;
-}
-
-.game-board input:hover, select:hover, button:hover {
-    background-color: #4CAFAF;
 }
 
 .game-board input.preset-cell {
@@ -97,12 +98,6 @@ select {
 
     .game-board input {
         font-size: 18px;
-    }
-
-    button, .record input[type="text"], .record button {
-        padding: 10px 20px;
-        font-size: 14px;
-        width: 90%;
     }
 
     #timer {

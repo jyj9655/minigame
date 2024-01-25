@@ -7,16 +7,23 @@ button:hover {
 }
 
 .game-board {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    gap: 10px;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    height: 200px;
+    padding: 10px;
     margin: auto;
     margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 500px;
 }
 
+
 .game-board div {
+    width: 100px;
+    height: 100px;
     background-color: #fff;
     display: flex;
     align-items: center;
