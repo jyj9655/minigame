@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const timerDisplay = document.getElementById('timer');
     const cpmDisplay = document.getElementById('cpm');
     let startTime, interval;
+    let gameActive = false;
 
     function generateRandomKoreanSentence() {
         const words = [
@@ -46,10 +47,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 게임 시작
     startButton.addEventListener('click', () => {
-        displayRandomSentence();
-        userInput.value = '';
-        userInput.focus();
-        startTimer();
+        if (!gameActive) {
+            gameActive = true;
+            const countdownElement = document.getElementById('countdown');
+            countdownElement.style.display = 'block';
+
+            startCountdown(3, countdownElement, function() {
+                displayRandomSentence();
+                userInput.value = '';
+                userInput.focus();
+                startTimer();
+                countdownElement.style.display = 'none';
+                countdownElement.innerHTML = '';
+            });
+        }
     });
 
     // 게임 리셋
@@ -57,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 게임 초기화
     function resetGame() {
+        gameActive = false;
         clearInterval(interval);
         userInput.value = '';
         sentenceDisplay.textContent = '여기에 랜덤 문장이 표시됩니다.';
@@ -96,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const finishMessage = document.getElementById('finish-message');
         const currentTime = new Date();
         const timeElapsed = (currentTime - startTime) / 1000;
-        finishMessage.innerHTML = `종료! 소요시간: ${timeElapsed.toFixed(1)}초, 타자 속도: ${cpmDisplay.textContent} CPM`;
+        finishMessage.innerHTML = `종료! 소요시간: ${timeElapsed.toFixed(3)}초, 타자 속도: ${cpmDisplay.textContent} CPM`;
     
         userInput.disabled = true;
     

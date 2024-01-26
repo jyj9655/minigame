@@ -1,56 +1,61 @@
+document.getElementById('start-button').addEventListener('click', startGame);
+document.getElementById('reset-button').addEventListener('click', resetGame);
+
 let cardDeck = [];
 let selectedCards = [];
 let pairsMatched = 0;
-let isGameStarted = false;
+let gameActive = false;
 let interval;
 let startTime;
 let gameCompletedTime;
 
-document.getElementById('start-button').addEventListener('click', startGame);
-document.getElementById('reset-button').addEventListener('click', resetGame);
-
 function startGame() {
-    if (isGameStarted) {
-        return; // 이미 게임이 시작된 경우, 추가 실행 방지
+    if (!gameActive) {
+        gameActive = true;
+        pairsMatched = 0;
+        selectedCards = [];
+        cardDeck = [];
+
+        const countdownElement = document.getElementById('countdown');
+        countdownElement.style.display = 'block';
+
+        startCountdown(3, countdownElement, function() {
+            const board = document.getElementById('game-board');
+            board.innerHTML = '';
+            board.style.display = 'grid';
+            board.style.gridTemplateColumns = 'repeat(3, 100px)';
+            board.style.gridTemplateRows = 'repeat(3, 100px)';
+            board.style.height = '430px';
+            board.style.gap = '10px';
+            board.style.justifyContent = 'center';
+            board.style.margin = '20px auto';
+
+            startTime = Date.now();
+            interval = setInterval(updateGameTimer, 100);
+
+            for (let i = 1; i <= 6; i++) {
+                cardDeck.push(i, i);
+            }
+
+            shuffleCards(cardDeck);
+
+            cardDeck.forEach((cardValue) => {
+                const card = createCardElement(cardValue);
+                board.appendChild(card);
+            });
+
+            setTimeout(() => {
+                document.querySelectorAll('.card').forEach((card) => card.classList.add('flipped'));
+                gameActive = false;
+            }, 3000);
+
+            document.getElementById('save-record').style.display = 'none';
+            document.getElementById('nickname').style.display = 'none';
+            document.getElementById('timer').style.display = 'block';
+            countdownElement.style.display = 'none';
+            countdownElement.innerHTML = '';
+        });
     }
-
-    isGameStarted = true;
-    pairsMatched = 0;
-    selectedCards = [];
-    cardDeck = [];
-
-    const board = document.getElementById('game-board');
-    board.innerHTML = '';
-    board.style.display = 'grid';
-    board.style.gridTemplateColumns = 'repeat(3, 100px)';
-    board.style.gridTemplateRows = 'repeat(3, 100px)';
-    board.style.height = '430px';
-    board.style.gap = '10px';
-    board.style.justifyContent = 'center';
-    board.style.margin = '20px auto';
-
-    startTime = Date.now();
-    interval = setInterval(updateGameTimer, 100);
-
-    for (let i = 1; i <= 6; i++) {
-        cardDeck.push(i, i);
-    }
-
-    shuffleCards(cardDeck);
-
-    cardDeck.forEach((cardValue) => {
-        const card = createCardElement(cardValue);
-        board.appendChild(card);
-    });
-
-    setTimeout(() => {
-        document.querySelectorAll('.card').forEach((card) => card.classList.add('flipped'));
-        isGameStarted = false;
-    }, 3000);
-
-    document.getElementById('save-record').style.display = 'none';
-    document.getElementById('nickname').style.display = 'none';
-    document.getElementById('timer').style.display = 'block';
 }
 
 function createCardElement(cardValue) {
@@ -73,7 +78,7 @@ function createCardElement(cardValue) {
 }
 
 function handleCardClick(card) {
-    if (isGameStarted || card.classList.contains('matched') || selectedCards.length === 2) {
+    if (gameActive || card.classList.contains('matched') || selectedCards.length === 2) {
         return;
     }
 
@@ -92,14 +97,14 @@ function checkForMatch() {
         if (pairsMatched === 6) {
             clearInterval(interval);
             alert("축하합니다! 모든 카드를 찾았습니다!");
-            gameCompletedTime = (Date.now() - startTime) / 1000;
-            
+            const endTime = Date.now();
+            gameCompletedTime = (endTime - startTime) / 1000;
             document.getElementById('save-record').style.display = 'block';
             document.getElementById('nickname').style.display = 'block';
         }
         
         selectedCards = [];
-        isGameStarted = false;
+        gameActive = false;
     } else {
         selectedCards.forEach(card => card.classList.add('shake'));
         setTimeout(() => {
@@ -109,7 +114,7 @@ function checkForMatch() {
             });
             
             selectedCards = [];
-            isGameStarted = false;
+            gameActive = false;
         }, 500);
     }
 }
@@ -128,7 +133,7 @@ function updateGameTimer() {
 }
 
 function resetGame() {
-    isGameStarted = false;
+    gameActive = false;
     clearInterval(interval);
     const board = document.getElementById('game-board');
     board.innerHTML = '';

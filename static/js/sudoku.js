@@ -32,37 +32,44 @@ let selectedInput; // 현재 선택된 입력 필드를 저장하는 전역 변�
 function startGame() {
     if (!gameActive) {
         gameActive = true;
+        
+        const countdownElement = document.getElementById('countdown');
+        countdownElement.style.display = 'block';
+        
+        startCountdown(3, countdownElement, function() {
+            const board = document.getElementById('game-board');
+            board.innerHTML = '';
 
-        const board = document.getElementById('game-board');
-        board.innerHTML = '';
+            board.style.display = 'grid';
+            board.style.gridTemplateColumns = 'repeat(9, 50px)';
+            board.style.gridTemplateRows = 'repeat(9, 50px)';
+            board.style.height = '490px';
+            board.style.gap = '5px';
 
-        board.style.display = 'grid';
-        board.style.gridTemplateColumns = 'repeat(9, 50px)';
-        board.style.gridTemplateRows = 'repeat(9, 50px)';
-        board.style.height = '490px';
-        board.style.gap = '5px';
+            const difficulty = document.getElementById('difficulty').value;
+            let blanks;
+            switch (difficulty) {
+                case 'easy':
+                    blanks = 10;
+                    break;
+                case 'medium':
+                    blanks = 20;
+                    break;
+                case 'hard':
+                    blanks = 30;
+                    break;
+            }
+            generateSudokuBoard(blanks);
 
-        const difficulty = document.getElementById('difficulty').value;
-        let blanks;
-        switch (difficulty) {
-            case 'easy':
-                blanks = 10;
-                break;
-            case 'medium':
-                blanks = 20;
-                break;
-            case 'hard':
-                blanks = 30;
-                break;
-        }
-        generateSudokuBoard(blanks);
+            startTime = Date.now();
+            interval = setInterval(updateTimer, 100);
 
-        startTime = Date.now();
-        interval = setInterval(updateTimer, 100);
-
-        document.getElementById('save-record').style.display = 'none';
-        document.getElementById('nickname').style.display = 'none';
-        document.getElementById('timer').style.display = 'block';
+            document.getElementById('save-record').style.display = 'none';
+            document.getElementById('nickname').style.display = 'none';
+            document.getElementById('timer').style.display = 'block';
+            countdownElement.style.display = 'none';
+            countdownElement.innerHTML = '';
+        });
     }
 }
 

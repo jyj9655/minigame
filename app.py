@@ -1,12 +1,19 @@
 from flask import Flask, request, jsonify, render_template, g
+import time
 import sqlite3
 import datetime
+import requests
 import os
+import feedparser
 
 app = Flask(__name__)
 
 DATABASE_FILE = 'minigame.db'
 
+# NAVER_CLIENT_ID = os.getenv('NAVER_CLIENT_ID')
+NAVER_CLIENT_ID = 'Ge8Ek1R6UqNoDZpInTjd'
+# NAVER_CLIENT_SECRET = os.getenv('NAVER_CLIENT_SECRET')
+NAVER_CLIENT_SECRET = 'lCWZATWk_N'
 # SQLite 데이터베이스 파일이 없는 경우 생성
 if not os.path.exists(DATABASE_FILE):
     conn = sqlite3.connect(DATABASE_FILE)
@@ -239,5 +246,52 @@ def maze():
 
     return render_template('maze.html', records=ranked_records, game_id=game_info['id'], game_name=game_info['name'], game_description=game_info['description'])
 
+####################################################################################################
+## 2-1. BLOG CHECK 
+####################################################################################################
+@app.route('/blog-check', methods=['GET', 'POST'])
+def blog_check():
+    blog_id = request.args.get('blogId', '')
+    page = request.args.get('page', 1, type=int)
+    posts_per_page = 20
+    start = (page - 1) * posts_per_page
+    end = start + posts_per_page
+
+    posts = []
+    total_posts = 0
+    total_pages = 0
+
+    if blog_id:
+        rss_url = f"https://blog.rss.naver.com/{blog_id}.xml"
+        feed = feedparser.parse(rss_url)
+        posts = feed.entries[start:end]
+        total_posts = len(feed.entries)
+        total_pages = (total_posts // posts_per_page) + (1 if total_posts % posts_per_page else 0)
+
+    return render_template('blog_check.html', posts=posts, blog_id=blog_id, current_page=page, total_pages=total_pages)
+
+@app.route('/check-visibility', methods=['POST'])
+def check_visibility():
+    title = request.form['title']
+    search_url = "https://openapi.naver.com/v1/search/blog"
+    headers = {
+        "X-Naver-Client-Id": NAVER_CLIENT_ID,
+        "X-Naver-Client-Secret": NAVER_CLIENT_SECRET
+    }
+    params = {"query": title}
+
+    time.sleep(1)  # 0.5초 지연
+
+    response = requests.get(search_url, headers=headers, params=params)
+
+    if response.status_code == 200:
+        search_results = response.json()
+        if search_results['total'] > 0:
+            return jsonify({'status': 'good'})
+        else:
+            return jsonify({'status': 'bad'})
+    else:
+        return jsonify({'status': 'error'})
+    
 if __name__ == '__main__':
     app.run(debug=True)

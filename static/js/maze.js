@@ -26,9 +26,9 @@ function startGame() {
 
         startCountdown(3, countdownElement, function() {
             initializeMaze();
-            document.getElementById('game-board').style.height = `${tc * gs}px`;
             startTime = Date.now();
             interval = setInterval(updateTimer, 100);
+            document.getElementById('game-board').style.height = `${tc * gs}px`;
             document.getElementById('timer').style.display = 'block';
             document.getElementById('save-record').style.display = 'none';
             document.getElementById('nickname').style.display = 'none';
