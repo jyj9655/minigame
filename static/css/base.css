@@ -4,14 +4,45 @@ body {
     background-color: #f0f0f0;
     color: #333;
     text-align: center;
+    margin-top: 60px;
 }
 
 #header {
     color: white;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    max-height: 35px;
+}
+
+@font-face {
+    font-family: 'DAEAM_LEE_TAE_JOON';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/DAEAM_LEE_TAE_JOON.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.logo span {
+    font-size: 24px; /* 텍스트의 폰트 크기 */
+    line-height: 35px;
+    color: white; /* 텍스트 색상 */
+    font-weight: bold; /* 폰트 굵기 */
+    font-family: 'DAEAM_LEE_TAE_JOON', sans-serif;
 }
 
 button {
@@ -28,12 +59,27 @@ button {
     transition: background-color 0.3s;
 }
 
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #333333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    height: 60px;
+    margin: 0 8px;
+}
+
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    background-color: #333;
     justify-content: center;
 }
 
@@ -42,22 +88,95 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
     text-decoration: none;
+    color: #FFFFFF;
     padding: 10px 15px;
-    display: block;
 }
 
 nav ul li a:hover {
-    background-color: #555;
+    color: #E63946;
+    font-weight: bold;
 }
 
-nav ul li.active {
-    background-color: #555;
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.auth-buttons a {
+    margin-left: 10px;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: transparent;
+    border: 2px solid #FFFFFF;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-width: 60px;
+}
+
+.auth-buttons a:hover {
+    color: #E63946;
+    background-color: #333333;
+    border-color: #E63946;
+    font-weight: bold;
+}
+
+.auth-buttons a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: #FFFFFF;
+    transition: all 0.5s ease;
+    display: block;
+    transform: translate(-50%, -50%) scale(0); /* 초기 상태에서는 보이지 않도록 설정 */
+    border-radius: 50%; /* 원형으로 만들기 */
+    opacity: 0.6; /* 약간의 투명도 설정 */
+    z-index: 0; /* 버튼 텍스트 아래에 위치하도록 z-index 설정 */
+}
+
+/* 버튼 위에 마우스를 올렸을 때 가상 요소가 확대되며 퍼짐 */
+.auth-buttons a:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* 확대되며 중앙에 위치하도록 설정 */
+    opacity: 0; /* 서서히 사라지도록 투명도를 0으로 설정 */
 }
 
 #timer {
-    display:none;
+    display: none;
     font-size: 32px;
     margin-top: 20px;
     font-weight: bold;
@@ -99,7 +218,7 @@ nav ul li.active {
 .rank {
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-top: 20px;
     max-width: 800px;
@@ -117,20 +236,25 @@ th {
     color: white;
 }
 
-th, td {
+th,
+td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;
 }
 
 #banner {
-    max-width: 680px; /* 최대 너비 설정 */
-    width: 100%; /* 부모 요소에 따라 너비 조정 */
-    margin: 0 auto; /* 중앙 정렬 */
+    max-width: 840px;
+    /* 최대 너비 설정 */
+    width: 100%;
+    /* 부모 요소에 따라 너비 조정 */
+    margin: 0 auto;
+    /* 중앙 정렬 */
 }
 
 .menu-toggle {
-    display: none; /* 기본적으로는 표시하지 않음 */
+    display: none;
+    /* 기본적으로는 표시하지 않음 */
     color: white;
     cursor: pointer;
     background-color: #333;
@@ -139,28 +263,34 @@ th, td {
 /* 화면이 작을 때만 햄버거 메뉴 버튼 표시 */
 @media screen and (max-width: 768px) {
     .menu-toggle {
-        display: block; /* 모바일에서만 버튼 표시 */
-        padding: 10px; /* 패딩 설정 */
+        display: block;
     }
 
     nav ul {
-        display: none; /* 기본적으로 메뉴 숨기기 */
-        flex-direction: column; /* 아이템 세로 나열 */
-        width: 100%; /* 너비 100% */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        background-color: #333;
+        /* 검은색 배경 */
+        width: 100%;
+        display: none;
     }
 
-    nav ul li {
-        text-align: center; /* 텍스트 중앙 정렬 */
+    .active {
+        display: flex;
     }
 
     nav ul li a {
-        padding: 10px; /* 패딩 조정 */
-        border-bottom: 1px solid #555; /* 하단 경계선 추가 */
+        padding: 10px;
+        text-align: center;
+        color: white;
+        /* 하얀색 글씨 */
     }
 
-    /* 'active' 클래스가 있을 때만 메뉴 표시 */
-    .active {
-        display: flex; /* 활성화 상태에서 메뉴 표시 */
+    .auth-buttons {
+        position: absolute;
+        right: 20px;
+        top: 10px;
     }
 }
 
@@ -169,7 +299,8 @@ th, td {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 8em; /* 글자 크기 */
+    font-size: 8em;
+    /* 글자 크기 */
     text-align: center;
     font-weight: bold;
     background: linear-gradient(45deg, #f9a8d4, #fbcfe8, #a7f3d0);
@@ -177,7 +308,8 @@ th, td {
     color: transparent;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: pop 1s ease-out forwards; /* 애니메이션 */
+    animation: pop 1s ease-out forwards;
+    /* 애니메이션 */
 }
 
 @keyframes pop {
@@ -185,10 +317,12 @@ th, td {
         transform: translate(-50%, -50%) scale(0);
         opacity: 0;
     }
+
     60% {
         transform: translate(-50%, -50%) scale(1.2);
         opacity: 1;
     }
+
     100% {
         transform: translate(-50%, -50%) scale(1);
     }

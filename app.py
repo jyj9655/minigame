@@ -15,11 +15,13 @@ NAVER_CLIENT_SECRET = 'lCWZATWk_N'
 if not os.path.exists(DATABASE_FILE):
     conn = sqlite3.connect(DATABASE_FILE)
     cursor = conn.cursor()
-    # game_info 테이블 생성
+    # menu_info 테이블 생성
     cursor.execute('''
-        CREATE TABLE game_info (
+        CREATE TABLE menu_info (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
+            menu TEXT NOT NULL,
             name TEXT NOT NULL,
+            url TEXT NOT NULL,
             description TEXT NOT NULL
         )
     ''')
@@ -32,7 +34,7 @@ if not os.path.exists(DATABASE_FILE):
             nickname TEXT NOT NULL,
             time REAL NOT NULL,
             date TEXT NOT NULL,
-            FOREIGN KEY (gametype) REFERENCES game_info(id)
+            FOREIGN KEY (gametype) REFERENCES menu_info(id)
         )
     ''')
     conn.commit()
@@ -106,30 +108,42 @@ def clear_records():
     return jsonify({"message": "게임 기록이 모두 삭제되었습니다."})
 
 ####################################################################################################
-## 0. Games
+## 0. MENU
 ####################################################################################################
 @app.context_processor
-def inject_games():
+def inject_menus():
     db = get_db()
-    games = db.execute('SELECT id, name, url FROM game_info ORDER BY id ASC').fetchall()
-    return {'games': games}
-
+    all_menus = db.execute("SELECT id, name, url, menu, description FROM menu_info ORDER BY id ASC").fetchall()
+    
+    games = [item for item in all_menus if item['menu'] == 'game']
+    communities = [item for item in all_menus if item['menu'] == 'community']
+    
+    return {'games': games, 'communities': communities}
 
 ####################################################################################################
-## 1. ROULETTE
+## 0. GAME-LIST
+####################################################################################################
+@app.route('/minigames')
+def minigames():
+    db = get_db()
+    games = db.execute("SELECT id, name, url, menu, description FROM menu_info WHERE menu = 'game' ORDER BY id ASC").fetchall()
+    return render_template('minigames.html', games=games)
+
+####################################################################################################
+## 1. [GAME] ROULETTE
 ####################################################################################################
 @app.route('/roulette')
 def roulette():
     db = get_db()
     cur = db.cursor()
 
-    cur.execute("SELECT id, name, description FROM game_info WHERE id = 1")
-    game_info = cur.fetchone()
+    cur.execute("SELECT id, name, description FROM menu_info WHERE id = 1")
+    menu_info = cur.fetchone()
     
-    return render_template('roulette.html', game_id=game_info['id'], game_name=game_info['name'], game_description=game_info['description'])
+    return render_template('roulette.html', game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
 
 ####################################################################################################
-## 2. 3x3 GAME
+## 2. [GAME] 3x3
 ####################################################################################################
 @app.route('/')
 @app.route('/three')
@@ -137,8 +151,8 @@ def three():
     db = get_db()
     cur = db.cursor()
 
-    cur.execute("SELECT id, name, description FROM game_info WHERE id = 2")
-    game_info = cur.fetchone()
+    cur.execute("SELECT id, name, description FROM menu_info WHERE id = 2")
+    menu_info = cur.fetchone()
 
     cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 2 ORDER BY time ASC")
     records = cur.fetchall()
@@ -146,18 +160,18 @@ def three():
     # Calculate ranks in Python code
     ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
 
-    return render_template('three.html', records=ranked_records, game_id=game_info['id'], game_name=game_info['name'], game_description=game_info['description'])
+    return render_template('three.html', records=ranked_records, game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
 
 ####################################################################################################
-## 3. TYPING GAME
+## 3. [GAME] TYPING
 ####################################################################################################
 @app.route('/typing')
 def typing():
     db = get_db()
     cur = db.cursor()
     
-    cur.execute("SELECT id, name, description FROM game_info WHERE id = 3")
-    game_info = cur.fetchone()
+    cur.execute("SELECT id, name, description FROM menu_info WHERE id = 3")
+    menu_info = cur.fetchone()
 
     cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 3 ORDER BY time ASC")
     records = cur.fetchall()
@@ -165,18 +179,18 @@ def typing():
     # Calculate ranks in Python code
     ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
 
-    return render_template('typing.html', records=ranked_records, game_id=game_info['id'], game_name=game_info['name'], game_description=game_info['description'])
+    return render_template('typing.html', records=ranked_records, game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
 
 ####################################################################################################
-## 4. CLICK GAME
+## 4. [GAME] CLICK
 ####################################################################################################
 @app.route('/click')
 def click():
     db = get_db()
     cur = db.cursor()
 
-    cur.execute("SELECT id, name, description FROM game_info WHERE id = 4")
-    game_info = cur.fetchone()
+    cur.execute("SELECT id, name, description FROM menu_info WHERE id = 4")
+    menu_info = cur.fetchone()
 
     cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 4 ORDER BY time ASC")
     records = cur.fetchall()
@@ -184,18 +198,18 @@ def click():
     # Calculate ranks in Python code
     ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
 
-    return render_template('click.html', records=ranked_records, game_id=game_info['id'], game_name=game_info['name'], game_description=game_info['description'])
+    return render_template('click.html', records=ranked_records, game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
 
 ####################################################################################################
-## 5. MEMORY GAME
+## 5. [GAME] MEMORY
 ####################################################################################################
 @app.route('/memory')
 def memory():
     db = get_db()
     cur = db.cursor()
 
-    cur.execute("SELECT id, name, description FROM game_info WHERE id = 5")
-    game_info = cur.fetchone()
+    cur.execute("SELECT id, name, description FROM menu_info WHERE id = 5")
+    menu_info = cur.fetchone()
 
     cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 5 ORDER BY time ASC")
     records = cur.fetchall()
@@ -203,18 +217,18 @@ def memory():
     # Calculate ranks in Python code
     ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
 
-    return render_template('memory.html', records=ranked_records, game_id=game_info['id'], game_name=game_info['name'], game_description=game_info['description'])
+    return render_template('memory.html', records=ranked_records, game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
 
 ####################################################################################################
-## 6. SUDOKU GAME
+## 6. [GAME] SUDOKU
 ####################################################################################################
 @app.route('/sudoku')
 def sudoku():
     db = get_db()
     cur = db.cursor()
 
-    cur.execute("SELECT id, name, description FROM game_info WHERE id = 6")
-    game_info = cur.fetchone()
+    cur.execute("SELECT id, name, description FROM menu_info WHERE id = 6")
+    menu_info = cur.fetchone()
 
     cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 6 ORDER BY time ASC")
     records = cur.fetchall()
@@ -222,18 +236,18 @@ def sudoku():
     # Calculate ranks in Python code
     ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
 
-    return render_template('sudoku.html', records=ranked_records, game_id=game_info['id'], game_name=game_info['name'], game_description=game_info['description'])
+    return render_template('sudoku.html', records=ranked_records, game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
 
 ####################################################################################################
-## 6. MAZE GAME
+## 6. [GAME] MAZE
 ####################################################################################################
 @app.route('/maze')
 def maze():
     db = get_db()
     cur = db.cursor()
 
-    cur.execute("SELECT id, name, description FROM game_info WHERE id = 7")
-    game_info = cur.fetchone()
+    cur.execute("SELECT id, name, description FROM menu_info WHERE id = 7")
+    menu_info = cur.fetchone()
 
     cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 7 ORDER BY time ASC")
     records = cur.fetchall()
@@ -241,7 +255,33 @@ def maze():
     # Calculate ranks in Python code
     ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
 
-    return render_template('maze.html', records=ranked_records, game_id=game_info['id'], game_name=game_info['name'], game_description=game_info['description'])
+    return render_template('maze.html', records=ranked_records, game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
+
+####################################################################################################
+## 7. [COMMUNITY] FREE
+####################################################################################################
+@app.route('/free')
+def free():
+    db = get_db()
+    cur = db.cursor()
+
+    cur.execute("SELECT id, name, description FROM menu_info WHERE id = 8")
+    menu_info = cur.fetchone()
+    
+    return render_template('free.html', game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
+
+####################################################################################################
+## 8. [COMMUNITY] NOTICE
+####################################################################################################
+@app.route('/notice')
+def notice():
+    db = get_db()
+    cur = db.cursor()
+
+    cur.execute("SELECT id, name, description FROM menu_info WHERE id = 9")
+    menu_info = cur.fetchone()
+    
+    return render_template('notice.html', game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
 
 if __name__ == '__main__':
     app.run(debug=True)
