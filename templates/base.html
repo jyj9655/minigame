@@ -23,7 +23,7 @@
     <meta name="twitter:image" content="https://exhilarate.kr/static/images/game-collection-thumbnail.png">
 </head>
 
-{% set excluded_paths = ['/roulette', '/minigames'] %}
+{% set excluded_paths = ['/roulette', '/games'] %}
 
 <body>
     <nav>
@@ -35,7 +35,7 @@
         </div>
         <ul class="main-menu">
             <li class="dropdown">
-                <a href="minigames">미니게임</a>
+                <a href="games">미니게임</a>
                 <div class="dropdown-content">
                     {% for game in games %}
                         <a href="{{ url_for(game.url) }}">{{ game.name }}</a>

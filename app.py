@@ -20,6 +20,7 @@ if not os.path.exists(DATABASE_FILE):
         CREATE TABLE menu_info (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             menu TEXT NOT NULL,
+            image TEXT NOT NULL,
             name TEXT NOT NULL,
             url TEXT NOT NULL,
             description TEXT NOT NULL
@@ -121,13 +122,13 @@ def inject_menus():
     return {'games': games, 'communities': communities}
 
 ####################################################################################################
-## 0. GAME-LIST
+## 0. [GAME] LIST
 ####################################################################################################
-@app.route('/minigames')
-def minigames():
+@app.route('/games')
+def games():
     db = get_db()
-    games = db.execute("SELECT id, name, url, menu, description FROM menu_info WHERE menu = 'game' ORDER BY id ASC").fetchall()
-    return render_template('minigames.html', games=games)
+    games = db.execute("SELECT id, name, image, url, menu, description FROM menu_info WHERE menu = 'game' ORDER BY id ASC").fetchall()
+    return render_template('games.html', games=games, game_name='미니 게임 목록', game_description='  ')
 
 ####################################################################################################
 ## 1. [GAME] ROULETTE

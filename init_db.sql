@@ -13,7 +13,7 @@ INSERT INTO menu_info (id, menu, image, name, url, description)
 VALUES (
     '1',
     'game',
-    'roulette.png',
+    '/images/games/roulette.png',
     '행운의 룰렛',
     'roulette',
     '오늘 저녁은 뭐 먹지?'

@@ -1,0 +1,135 @@
+#header {
+  color: black;
+}
+
+.minigames-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.game-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.game-buttons button {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.game-buttons button img {
+  width: 20px;
+  height: auto;
+  position: relative;
+}
+
+.game-buttons button:hover {
+  border: 1px solid #333;
+  background-color: #ffffff;
+  transform: scale(1.1);
+}
+
+.game-buttons button:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #333;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 10;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.2s ease;
+}
+
+.game-buttons button:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+.games {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.game {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.game a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.game:hover {
+  transform: translateY(-5px);
+}
+
+.game-image {
+  width: 100%;
+  height: 150px;
+  background-color: #f3f3f3;
+  background-size: cover;
+  background-position: center;
+}
+
+.game-name {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.game-description {
+  padding: 0 10px 10px;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+
+.games.list-view {
+  display: block;
+}
+
+.games.list-view .game {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.games.list-view .game-image {
+  width: 80px;
+  height: 80px;
+  float: left;
+  margin-right: 20px;
+}
+
+.games.list-view .game-name,
+.games.list-view .game-description {
+  text-align: left;
+}
