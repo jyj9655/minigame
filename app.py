@@ -122,16 +122,17 @@ def inject_menus():
     return {'games': games, 'communities': communities}
 
 ####################################################################################################
-## 0. [GAME] LIST
+## 1-0. [GAME] LIST
 ####################################################################################################
+@app.route('/')
 @app.route('/games')
 def games():
     db = get_db()
     games = db.execute("SELECT id, name, image, url, menu, description FROM menu_info WHERE menu = 'game' ORDER BY id ASC").fetchall()
-    return render_template('games.html', games=games, game_name='미니 게임 목록', game_description='  ')
-
+    Phrase = 'EXHILARATE:'
+    return render_template('games.html', games=games, game_name=Phrase, game_description=' …의 기분을 들뜨게 하다, 기분을 좋게 하다')
 ####################################################################################################
-## 1. [GAME] ROULETTE
+## 1-1. [GAME] ROULETTE
 ####################################################################################################
 @app.route('/roulette')
 def roulette():
@@ -144,9 +145,8 @@ def roulette():
     return render_template('roulette.html', game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
 
 ####################################################################################################
-## 2. [GAME] 3x3
+## 1-2. [GAME] 3x3
 ####################################################################################################
-@app.route('/')
 @app.route('/three')
 def three():
     db = get_db()
@@ -164,7 +164,7 @@ def three():
     return render_template('three.html', records=ranked_records, game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
 
 ####################################################################################################
-## 3. [GAME] TYPING
+## 1-3. [GAME] TYPING
 ####################################################################################################
 @app.route('/typing')
 def typing():
@@ -183,7 +183,7 @@ def typing():
     return render_template('typing.html', records=ranked_records, game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
 
 ####################################################################################################
-## 4. [GAME] CLICK
+## 1-4. [GAME] CLICK
 ####################################################################################################
 @app.route('/click')
 def click():
@@ -202,7 +202,7 @@ def click():
     return render_template('click.html', records=ranked_records, game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
 
 ####################################################################################################
-## 5. [GAME] MEMORY
+## 1-5. [GAME] MEMORY
 ####################################################################################################
 @app.route('/memory')
 def memory():
@@ -221,7 +221,7 @@ def memory():
     return render_template('memory.html', records=ranked_records, game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
 
 ####################################################################################################
-## 6. [GAME] SUDOKU
+## 1-6. [GAME] SUDOKU
 ####################################################################################################
 @app.route('/sudoku')
 def sudoku():
@@ -240,7 +240,7 @@ def sudoku():
     return render_template('sudoku.html', records=ranked_records, game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
 
 ####################################################################################################
-## 6. [GAME] MAZE
+## 1-7. [GAME] MAZE
 ####################################################################################################
 @app.route('/maze')
 def maze():
@@ -259,7 +259,27 @@ def maze():
     return render_template('maze.html', records=ranked_records, game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
 
 ####################################################################################################
-## 7. [COMMUNITY] FREE
+## 1-8. [GAME] FIND
+####################################################################################################
+@app.route('/find')
+def find():
+    db = get_db()
+    cur = db.cursor()
+
+    cur.execute("SELECT id, name, description FROM menu_info WHERE id = 8")
+    menu_info = cur.fetchone()
+
+    cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 8 ORDER BY time ASC")
+    records = cur.fetchall()
+
+    # Calculate ranks in Python code
+    ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
+
+    return render_template('find.html', records=ranked_records, game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
+
+
+####################################################################################################
+## 2-1. [COMMUNITY] FREE
 ####################################################################################################
 @app.route('/free')
 def free():
@@ -272,7 +292,7 @@ def free():
     return render_template('free.html', game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
 
 ####################################################################################################
-## 8. [COMMUNITY] NOTICE
+## 2-2. [COMMUNITY] NOTICE
 ####################################################################################################
 @app.route('/notice')
 def notice():

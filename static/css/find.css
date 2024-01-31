@@ -1,0 +1,26 @@
+#header, th, button {
+    background-color: #ff6b90;
+}
+
+button:hover {
+    background-color: #e73c78;
+}
+
+.game-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    padding: 10px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 500px;
+}
+
+.game-board div:hover {
+    transform : scale(1.1);
+    cursor : pointer;
+}
