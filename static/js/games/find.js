@@ -36,9 +36,14 @@ function createGameBoard(board) {
     const totalCells = 100;
     let correctCellIndex = Math.floor(Math.random() * totalCells);
 
+    const boardWidth = board.clientWidth;
+    const cellSize = Math.max(boardWidth / 10, 20);
+
     for (let i = 0; i < totalCells; i++) {
         const cell = document.createElement('div');
         cell.className = 'game-cell';
+        cell.style.width = `${cellSize}px`;
+
         if (i === correctCellIndex) {
             cell.textContent = '제육';
             cell.addEventListener('click', handleCorrectCellClick);
@@ -49,10 +54,10 @@ function createGameBoard(board) {
     }
    
     board.style.display = 'grid';
-    board.style.gridTemplateColumns = 'repeat(10, 40px)';
+    board.style.gridTemplateColumns = `repeat(10, ${cellSize}px)`;
     board.style.gridGap = '0px';
     board.style.gridAutoRows = '1fr';
-    board.style.height = '500px';
+    board.style.height = `${10 * cellSize}px`; 
 }
 
 function handleCorrectCellClick() {

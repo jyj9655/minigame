@@ -39,3 +39,12 @@ document.getElementById('save-record').addEventListener('click', () => {
     })
     .catch(error => console.error('Error:', error));
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainMenu = document.getElementById('main-menu');
+
+    menuToggle.addEventListener('click', () => {
+        mainMenu.classList.toggle('active');
+    });
+});

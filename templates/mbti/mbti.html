@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <title>{{mbti.name}} MBTI</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mbti/mbti.css') }}">
+    <div id="mbti-board" class="mbti-board"></div>
+    <button id="reset-button">리셋</button>
+    <button id="start-button">시작</button>
+    <script src="{{ url_for('static', filename='js/mbti/mbti.js') }}"></script>
+{% endblock %}
