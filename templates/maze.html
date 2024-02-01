@@ -2,12 +2,12 @@
 
 {% block content %}
     <title>미로 게임</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/maze.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/games/maze.css') }}">
     <div id="game-board" class="game-board">
         <canvas id="maze" class="maze"></canvas>
     </div>
     <button id="reset-button">리셋</button>
     <button id="start-button">시작</button>
     <div id="timer">0</div>
-    <script src="{{ url_for('static', filename='js/maze.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/games/maze.js') }}"></script>
 {% endblock %}

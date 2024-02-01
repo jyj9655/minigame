@@ -2,10 +2,10 @@
 
 {% block content %}
     <title>룰렛</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/roulette.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/games/roulette.css') }}">
     <div class="roulette">
         <canvas id="roulette-wheel" width="380" height='380'></canvas>
         <button id="start-button" onclick="rotate()">START</button>
     </div>
-    <script src="{{ url_for('static', filename='js/roulette.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/games/roulette.js') }}"></script>
 {% endblock %}

@@ -2,10 +2,10 @@
 
 {% block content %}
     <title>메모리 게임</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/memory.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/games/memory.css') }}">
     <div id="game-board" class="game-board"></div>
     <button id="reset-button">리셋</button>
     <button id="start-button">시작</button>
     <div id="timer">0</div>
-    <script src="{{ url_for('static', filename='js/memory.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/games/memory.js') }}"></script>
 {% endblock %}

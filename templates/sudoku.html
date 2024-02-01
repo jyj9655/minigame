@@ -2,7 +2,7 @@
 
 {% block content %}
     <title>스도쿠 게임</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/sudoku.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/games/sudoku.css') }}">
     <div id="game-board" class="game-board"></div>
     <button id="reset-button">리셋</button>
     <button id="start-button">시작</button>
@@ -24,5 +24,5 @@
         <button class="number-button" data-number="8">8</button>
         <button class="number-button" data-number="9">9</button>
     </div>
-    <script src="{{ url_for('static', filename='js/sudoku.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/games/sudoku.js') }}"></script>
 {% endblock %}

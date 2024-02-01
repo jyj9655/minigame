@@ -2,7 +2,7 @@
 
 {% block content %}
     <title>타이핑 게임</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/typing.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/games/typing.css') }}">
     <div id="typing-game">
         <div id="sentence">여기에 랜덤 단어들이 표시됩니다.</div>
         <input type="text" id="user-input" placeholder="여기에 입력하세요" />
@@ -13,5 +13,5 @@
     <div id="timer" style="display: none;">0</div>
     <div id="cpm" style="display: none;">0</div>
     <div id="finish-message"></div>
-    <script src="{{ url_for('static', filename='js/typing.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/games/typing.js') }}"></script>
 {% endblock %}

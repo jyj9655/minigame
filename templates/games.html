@@ -3,7 +3,7 @@
 {% block content %}
 <title>미니 게임</title>
 <div class="minigames-container">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/games.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/games/games.css') }}">
     <div class="game-buttons">
         <button id="box-view" data-tooltip="박스">
             <img src="{{ url_for('static', filename='images/icons/grid.png') }}">
@@ -17,7 +17,7 @@
         <div class="game">
             <a href="{{ game.url }}">
                 <div class="game-image">
-                    <img src="{{ url_for('static', filename=game.image) }}">
+                    <img src="{{ url_for('static', filename=game.image) }}" alt="{{ game.name }} 사진">
                 </div>
                 <div class="game-name">{{ game.name }}</div>
                 <div class="game-description">{{ game.description }}</div>
@@ -26,5 +26,5 @@
         {% endfor %}
     </div>
 </div>
-<script src="{{ url_for('static', filename='js/games.js') }}"></script>
+<script src="{{ url_for('static', filename='js/games/games.js') }}"></script>
 {% endblock %}
