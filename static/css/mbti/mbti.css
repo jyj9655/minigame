@@ -1,0 +1,79 @@
+/* MBTI 섹션 스타일 */
+.mbti {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.mbti h2 {
+    font-size: 36px; /* 더 큰 사이즈 */
+    font-weight: bold; /* 굵은 글씨체 */
+    color: #2c3e50; /* 세련된 색상 */
+    background-color: #ecf0f1; /* 연한 배경 색상 */
+    padding: 20px; /* 여백 추가 */
+    border-radius: 4px; /* 모서리 둥글게 */
+    text-align: center; /* 중앙 정렬 */
+}
+
+.mbti img {
+    max-width: 80%; /* 이미지 크기 조정 */
+    margin: 0 auto; /* 중앙 정렬을 위한 마진 */
+    display: block; /* 블록 요소로 변경 */
+    border-radius: 4px; /* 모서리 둥글게 */
+}
+
+.mbti p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* 질문 보드 스타일링 */
+.mbti-board {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* 버튼 스타일 */
+button {
+    background-color: #3498db; /* 밝은 파란색 */
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px 0; /* 상하 마진 추가 */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px; /* 더 큰 글씨 */
+    transition: background-color 0.3s ease; /* 부드러운 색상 변경 효과 */
+}
+
+button:hover {
+    background-color: #2980b9; /* 호버 시 색상 변경 */
+}
+
+#reset-button {
+    background-color: #d9534f; /* 빨간색 톤 */
+}
+
+#reset-button:hover {
+    background-color: #c9302c; /* 버튼 호버 시 색상 */
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .mbti h2 {
+        font-size: 24px;
+        padding: 10px;
+    }
+    .mbti img {
+        max-width: 100%;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}

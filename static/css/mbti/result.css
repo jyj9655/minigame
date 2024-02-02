@@ -1,0 +1,52 @@
+.mbti-result {
+    max-width: 760px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mbti-result h1 {
+    text-align: center;
+    color: #333;
+}
+
+.mbti-result img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.mbti-result ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.mbti-result ul li {
+    background: #f7f7f7;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-left: 3px solid #3498db;
+}
+
+.mbti-result ul#compatibility-good-list li {
+    border-left-color: #2ecc71; /* 좋은 호환성에 대한 색상 */
+}
+
+.mbti-result ul#compatibility-bad-list li {
+    border-left-color: #e74c3c; /* 나쁜 호환성에 대한 색상 */
+}
+
+.mbti-result h2 {
+    margin-top: 30px;
+    color: #333;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .mbti-result {
+        width: 95%;
+        padding: 10px;
+    }
+}

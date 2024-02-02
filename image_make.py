@@ -2,10 +2,10 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 
 # 텍스트 설정
-text = "제육 게임"
+text = "사무용품 MBTI"
 
 # 저장 파일 명 설정
-output_filename = "find.png" 
+output_filename = "company.png" 
 
 # 외곽선, 그림자 색
 outline_color = shadow_color = "#ff6b90"

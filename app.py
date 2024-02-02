@@ -115,11 +115,11 @@ def clear_records():
 def inject_menus():
     db = get_db()
     all_menus = db.execute("SELECT id, name, url, menu, description FROM menu_info ORDER BY id ASC").fetchall()
-    
+    mbti_menus = db.execute("SELECT id, name, url, image, color, description FROM mbti_info ORDER BY id ASC").fetchall()
     games = [item for item in all_menus if item['menu'] == 'game']
     communities = [item for item in all_menus if item['menu'] == 'community']
-    
-    return {'games': games, 'communities': communities}
+    mbtis = mbti_menus
+    return {'games': games, 'communities': communities, 'mbtis': mbtis}
 
 ####################################################################################################
 ## 1-0. [GAME] LIST
@@ -304,5 +304,69 @@ def notice():
     
     return render_template('notice.html', game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
 
+####################################################################################################
+## 3-0. [MBTI] LIST
+####################################################################################################
+@app.route('/mbti')
+def mbti_list():
+    db = get_db()
+    mbtis = db.execute("SELECT id, name, image, url, color, description FROM mbti_info").fetchall()
+    Phrase = 'EXHILARATE:'
+    return render_template('mbti/list.html', mbtis=mbtis, game_name=Phrase, game_description=' …의 기분을 들뜨게 하다, 기분을 좋게 하다')
+
+####################################################################################################
+## 3-1. [MBTI]
+####################################################################################################
+@app.route('/mbti/<url>', methods=['GET'])
+def mbti_page(url):
+    db = get_db()
+    mbti_info = db.execute("SELECT * FROM mbti_info WHERE url = ?", (url,)).fetchone()
+
+    if mbti_info is None:
+        return "MBTI 페이지를 찾을 수 없습니다.", 404
+
+    questions_query = db.execute(
+        "SELECT * FROM mbti_questions WHERE mbti_info_id = ? ORDER BY question_no",
+        (mbti_info['id'],)
+    ).fetchall()
+
+    questions = [dict(question) for question in questions_query]
+
+    return render_template('mbti/mbti.html', mbti_info=mbti_info, questions=questions)
+    
+@app.route('/result', methods=['GET', 'POST'])
+def mbti_result():
+    if request.method == 'POST':
+        db = get_db()
+        data = request.get_json()
+        mbti_type = data['mbti']
+
+        product_info = db.execute(
+            "SELECT * FROM mbti_product WHERE mbti_type = ?",
+            (mbti_type,)
+        ).fetchone()
+
+        # JOIN을 사용하여 compatibility 정보와 관련된 product 정보를 가져옵니다.
+        compatibility_info = db.execute(
+            "SELECT mbti_compatibility.*, mbti_product.product, mbti_product.image "
+            "FROM mbti_compatibility "
+            "JOIN mbti_product ON mbti_compatibility.mbti_type = mbti_product.mbti_type "
+            "WHERE mbti_compatibility.mbti_type = ?",
+            (mbti_type,)
+        ).fetchall()
+
+        environment_info = db.execute(
+            "SELECT * FROM mbti_environment WHERE mbti_type = ?",
+            (mbti_type,)
+        ).fetchall()
+        
+        return jsonify({
+            "product_info": dict(product_info) if product_info else None,
+            "compatibility_info": [dict(info) for info in compatibility_info],
+            "environment_info": [dict(info) for info in environment_info]
+        })
+    else:
+        return render_template('result.html')
+    
 if __name__ == '__main__':
     app.run(debug=True)

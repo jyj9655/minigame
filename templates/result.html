@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mbti/result.css') }}">
+<div class="mbti-result">
+    <h1>MBTI 결과</h1>
+    <img>
+    <p><span id="product-name"></span></p>
+    <p><span id="product-description"></span></p>
+    
+    <h2>잘 맞는</h2>
+    <ul id="compatibility-good-list">
+    </ul>
+    
+    <h2>안 맞는</h2>
+    <ul id="compatibility-bad-list">
+    </ul>
+
+    <h2>특징</h2>
+    <ul id="environment-list">
+    </ul>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const resultData = localStorage.getItem('mbtiResult');
+        if (resultData) {
+            const data = JSON.parse(resultData);
+            document.getElementById('product-name').textContent = data.product_info.product;
+            document.getElementById('product-description').textContent = data.product_info.description;
+
+            const compatibilityGoodList = document.getElementById('compatibility-good-list');
+            const compatibilityBadList = document.getElementById('compatibility-bad-list');
+            compatibilityGoodList.innerHTML = '';
+            compatibilityBadList.innerHTML = '';
+
+            // 호환성 정보를 리스트에 추가합니다.
+            data.compatibility_info.forEach(info => {
+                const listItem = document.createElement('li');
+                listItem.textContent = info.product; // 제품 이름을 사용합니다.
+                if (info.compatibility === 'good') {
+                    compatibilityGoodList.appendChild(listItem);
+                } else if (info.compatibility === 'bad') {
+                    compatibilityBadList.appendChild(listItem);
+                }
+            });
+
+            // 좋은 호환성 목록이 비어 있으면 '없음' 메시지를 추가합니다.
+            if (compatibilityGoodList.children.length === 0) {
+                const emptyItem = document.createElement('li');
+                emptyItem.textContent = '없음';
+                compatibilityGoodList.appendChild(emptyItem);
+            }
+
+            // 나쁜 호환성 목록이 비어 있으면 '없음' 메시지를 추가합니다.
+            if (compatibilityBadList.children.length === 0) {
+                const emptyItem = document.createElement('li');
+                emptyItem.textContent = '없음';
+                compatibilityBadList.appendChild(emptyItem);
+            }
+
+            // 환경 정보 리스트를 채웁니다.
+            const environmentList = document.getElementById('environment-list');
+            environmentList.innerHTML = '';
+            data.environment_info.forEach(info => {
+                const listItem = document.createElement('li');
+                listItem.textContent = info.environment; // 환경 정보를 사용합니다.
+                environmentList.appendChild(listItem);
+            });
+        }
+    });
+</script>
+</body>
+{% endblock %}

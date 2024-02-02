@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<title>MBTI</title>
+<div class="minimbtis-container">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mbti/list.css') }}">
+    <div class="mbti-buttons">
+        <button id="box-view" data-tooltip="박스">
+            <img src="{{ url_for('static', filename='images/icons/grid.png') }}">
+        </button>
+        <button id="list-view" data-tooltip="리스트">
+            <img src="{{ url_for('static', filename='images/icons/list.png') }}">
+        </button>
+    </div>
+    <div class="mbtis">
+        {% for mbti in mbtis %}
+        <div class="mbti">
+            <a href="/mbti/{{ mbti.url }}">
+                <div class="mbti-image">
+                    <img src="{{ url_for('static', filename=mbti.image) }}" alt="{{ mbti.name }} 사진">
+                </div>
+                <div class="mbti-name">{{ mbti.name }}</div>
+                <div class="mbti-description">{{ mbti.description }}</div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/mbti/list.js') }}"></script>
+{% endblock %}
