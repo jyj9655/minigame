@@ -369,9 +369,12 @@ td {
 }
 
 #banner {
-    max-width: 840px;
+    position: fixed; /* 고정 위치 설정 */
+    bottom: 0; /* 화면 하단에 위치 */
     width: 100%;
     margin: 0 auto;
+    z-index: 10; /* 다른 요소들 위에 올라오도록 z-index 설정 */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* 상단에 그림자 효과를 줘서 더 돋보이게 함 */
 }
 
 .menu-toggle {
