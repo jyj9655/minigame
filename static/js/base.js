@@ -1,9 +1,16 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const sidebarMenu = document.getElementById('sidebar-menu');
+    const overlay = document.querySelector('.overlay');
 
-    menuToggle.addEventListener('click', () => {
-        menu.classList.toggle('active');
+    menuToggle.addEventListener('click', function() {
+        sidebarMenu.classList.toggle('active');
+        overlay.style.display = sidebarMenu.classList.contains('active') ? 'block' : 'none';
+    });
+
+    overlay.addEventListener('click', function() {
+        sidebarMenu.classList.remove('active');
+        overlay.style.display = 'none';
     });
 });
 

@@ -1,7 +1,13 @@
-/* base.css */
 @font-face {
     font-family: 'omyu_pretty';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DAEAM_LEE_TAE_JOON';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/DAEAM_LEE_TAE_JOON.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -38,18 +44,11 @@ body {
     max-height: 35px;
 }
 
-@font-face {
-    font-family: 'DAEAM_LEE_TAE_JOON';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/DAEAM_LEE_TAE_JOON.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
 .logo span {
-    font-size: 24px; /* 텍스트의 폰트 크기 */
+    font-size: 24px;
     line-height: 35px;
-    color: white; /* 텍스트 색상 */
-    font-weight: bold; /* 폰트 굵기 */
+    color: white;
+    font-weight: bold;
     font-family: 'DAEAM_LEE_TAE_JOON', sans-serif;
 }
 
@@ -65,6 +64,125 @@ button {
     cursor: pointer;
     border-radius: 4px;
     transition: background-color 0.3s;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.sidebar-active ~ .overlay {
+    display: block;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1500;
+    top: 0;
+    left: -250px; 
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    color: white;
+    padding-top: 20px;
+}
+
+.sidebar-logo {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.sidebar-logo a {
+    color: white;
+    font-weight: bold;
+    font-family: 'DAEAM_LEE_TAE_JOON', sans-serif;
+    align-items: center;
+    text-decoration: none;
+}
+
+.sidebar-logo img {
+    max-width: 100px;
+}
+
+.sidebar-logo span {
+    display: block;
+    font-size: 18px;
+}
+
+.sidebar-main-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.sidebar-main-menu li {
+    display: block;
+}
+
+.sidebar-main-menu .sidebar-dropdown > a {
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    color: white;
+    transition: background 0.3s;
+    border-bottom: 1px solid #474747;
+}
+
+.sidebar-main-menu .sidebar-dropdown > a:hover {
+    background-color: #575757;
+}
+
+.sidebar-dropdown-content {
+    display: none;
+    background-color: #4c4c4c;
+}
+
+.sidebar-dropdown-content a {
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    color: white;
+    transition: background 0.3s;
+}
+
+.sidebar-dropdown-content a:hover {
+    background-color: #636363;
+}
+
+.sidebar-auth-buttons a {
+    border: 1px solid #474747;
+    display: block;
+    margin: 10px;
+    text-align: center;
+    background: #1A1A1A;
+    color: #FFF;
+    padding: 10px 20px;
+    transition: background 0.3s ease;
+    text-decoration: none;
+}
+
+.sidebar-auth-buttons a:hover {
+    background-color: #e2e2e2;
+}
+
+.sidebar.active {
+    left: 0;
 }
 
 nav {
@@ -171,16 +289,15 @@ nav ul li a:hover {
     background-color: #FFFFFF;
     transition: all 0.5s ease;
     display: block;
-    transform: translate(-50%, -50%) scale(0); /* 초기 상태에서는 보이지 않도록 설정 */
-    border-radius: 50%; /* 원형으로 만들기 */
-    opacity: 0.6; /* 약간의 투명도 설정 */
-    z-index: 0; /* 버튼 텍스트 아래에 위치하도록 z-index 설정 */
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 30%;
+    opacity: 0.6;
+    z-index: 0;
 }
 
-/* 버튼 위에 마우스를 올렸을 때 가상 요소가 확대되며 퍼짐 */
 .auth-buttons a:hover::before {
-    transform: translate(-50%, -50%) scale(1); /* 확대되며 중앙에 위치하도록 설정 */
-    opacity: 0; /* 서서히 사라지도록 투명도를 0으로 설정 */
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
 }
 
 #timer {
@@ -253,52 +370,41 @@ td {
 
 #banner {
     max-width: 840px;
-    /* 최대 너비 설정 */
     width: 100%;
-    /* 부모 요소에 따라 너비 조정 */
     margin: 0 auto;
-    /* 중앙 정렬 */
 }
 
 .menu-toggle {
     display: none;
-    /* 기본적으로는 표시하지 않음 */
     color: white;
     cursor: pointer;
     background-color: #333;
 }
 
-/* 화면이 작을 때만 햄버거 메뉴 버튼 표시 */
 @media screen and (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    nav ul {
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        background-color: #333;
-        /* 검은색 배경 */
-        width: 100%;
+    .nav-content {
         display: none;
     }
-
-    .active {
-        display: flex;
-    }
-
-    nav ul li a {
-        padding: 10px;
-        text-align: center;
-        color: white;
-        /* 하얀색 글씨 */
-    }
-
-    .auth-buttons {
+    .nav-content.active {
+        display: block;
         position: absolute;
-        right: 20px;
-        top: 10px;
+        top: 60px;
+        right: 0;
+        left: 0;
+        background-color: #333;
+    }
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .menu-toggle {
+        display: none;
     }
 }
 
@@ -308,7 +414,6 @@ td {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 8em;
-    /* 글자 크기 */
     text-align: center;
     font-weight: bold;
     background: linear-gradient(45deg, #f9a8d4, #fbcfe8, #a7f3d0);
@@ -317,7 +422,6 @@ td {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: pop 1s ease-out forwards;
-    /* 애니메이션 */
 }
 
 @keyframes pop {

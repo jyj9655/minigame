@@ -24,6 +24,7 @@
 </head>
 {% set excluded_paths = ['/', '/games', '/roulette', '/communities', '/mbti', '/mbti/company', '/result' ] %}
 <body>
+    <div class="overlay"></div>
     <nav>
         <div class="logo">
             <a href="/">
@@ -31,35 +32,76 @@
                 <span>:Exhilarate</span>
             </a>
         </div>
-        <ul class="main-menu">
-            <li class="dropdown">
-                <a href="/games">미니게임</a>
-                <div class="dropdown-content">
-                    {% for game in games %}
-                        <a href="{{ url_for(game.url) }}">{{ game.name }}</a>
-                    {% endfor %}
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="/mbti">MBTI</a>
-                <div class="dropdown-content">
-                    {% for mbti in mbtis %}
-                        <a href="{{ url_for('mbti_page', url=mbti.url) }}">{{ mbti.name }}</a>
-                    {% endfor %}
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="/community">커뮤니티</a>
-                <div class="dropdown-content">
-                    {% for community in communities %}
-                        <a href="{{ url_for(community.url) }}">{{ community.name }}</a>
-                    {% endfor %}
-                </div>
-            </li>
-        </ul>
-        <div class="auth-buttons">
-            <a href="#" class="login-btn">로그인</a>
-            <a href="#" class="register-btn">회원가입</a>
+        <div class="menu-toggle">☰</div>
+        <div id="sidebar-menu" class="sidebar">
+            <div class="sidebar-logo">
+                <a href="/">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="로고">
+                    <span>:Exhilarate</span>
+                </a>
+            </div>
+            <div class="sidebar-auth-buttons">
+                <a href="#" class="login-btn">로그인</a>
+                <a href="#" class="register-btn">회원가입</a>
+            </div>
+            <ul class="sidebar-main-menu">
+                <li class="sidebar-dropdown">
+                    <a href="/games">미니게임</a>
+                    <div class="sidebar-dropdown-content">
+                        {% for game in games %}
+                            <a href="{{ url_for(game.url) }}">{{ game.name }}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+                <li class="sidebar-dropdown">
+                    <a href="/mbti">MBTI</a>
+                    <div class="sidebar-dropdown-content">
+                        {% for mbti in mbtis %}
+                            <a href="{{ url_for('mbti_page', url=mbti.url) }}">{{ mbti.name }}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+                <li class="sidebar-dropdown">
+                    <a href="/community">커뮤니티</a>
+                    <div class="sidebar-dropdown-content">
+                        {% for community in communities %}
+                            <a href="{{ url_for(community.url) }}">{{ community.name }}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-content">
+            <ul class="main-menu">
+                <li class="dropdown">
+                    <a href="/games">미니게임</a>
+                    <div class="dropdown-content">
+                        {% for game in games %}
+                            <a href="{{ url_for(game.url) }}">{{ game.name }}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/mbti">MBTI</a>
+                    <div class="dropdown-content">
+                        {% for mbti in mbtis %}
+                            <a href="{{ url_for('mbti_page', url=mbti.url) }}">{{ mbti.name }}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/community">커뮤니티</a>
+                    <div class="dropdown-content">
+                        {% for community in communities %}
+                            <a href="{{ url_for(community.url) }}">{{ community.name }}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="#" class="login-btn">로그인</a>
+                <a href="#" class="register-btn">회원가입</a>
+            </div>  
         </div>
     </nav>
     <div id="header">
