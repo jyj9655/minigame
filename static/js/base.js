@@ -3,14 +3,24 @@ document.addEventListener('DOMContentLoaded', function () {
     const sidebarMenu = document.getElementById('sidebar-menu');
     const overlay = document.querySelector('.overlay');
 
+    // 메뉴 토글 버튼 클릭 이벤트
     menuToggle.addEventListener('click', function() {
         sidebarMenu.classList.toggle('active');
         overlay.style.display = sidebarMenu.classList.contains('active') ? 'block' : 'none';
     });
 
+    // 오버레이 클릭 이벤트
     overlay.addEventListener('click', function() {
         sidebarMenu.classList.remove('active');
         overlay.style.display = 'none';
+    });
+
+    // 스크롤 이벤트
+    window.addEventListener('scroll', function() {
+        if (sidebarMenu.classList.contains('active')) {
+            sidebarMenu.classList.remove('active');
+            overlay.style.display = 'none';
+        }
     });
 });
 
