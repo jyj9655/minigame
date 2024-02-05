@@ -34,10 +34,10 @@
             compatibilityGoodList.innerHTML = '';
             compatibilityBadList.innerHTML = '';
 
-            // 호환성 정보를 리스트에 추가합니다.
+            // compatibility
             data.compatibility_info.forEach(info => {
                 const listItem = document.createElement('li');
-                listItem.textContent = info.product; // 제품 이름을 사용합니다.
+                listItem.textContent = info.product;
                 if (info.compatibility === 'good') {
                     compatibilityGoodList.appendChild(listItem);
                 } else if (info.compatibility === 'bad') {
@@ -45,26 +45,26 @@
                 }
             });
 
-            // 좋은 호환성 목록이 비어 있으면 '없음' 메시지를 추가합니다.
+            // Good
             if (compatibilityGoodList.children.length === 0) {
                 const emptyItem = document.createElement('li');
                 emptyItem.textContent = '없음';
                 compatibilityGoodList.appendChild(emptyItem);
             }
 
-            // 나쁜 호환성 목록이 비어 있으면 '없음' 메시지를 추가합니다.
+            // Bad
             if (compatibilityBadList.children.length === 0) {
                 const emptyItem = document.createElement('li');
                 emptyItem.textContent = '없음';
                 compatibilityBadList.appendChild(emptyItem);
             }
 
-            // 환경 정보 리스트를 채웁니다.
+            // environment
             const environmentList = document.getElementById('environment-list');
             environmentList.innerHTML = '';
             data.environment_info.forEach(info => {
                 const listItem = document.createElement('li');
-                listItem.textContent = info.environment; // 환경 정보를 사용합니다.
+                listItem.textContent = info.environment;
                 environmentList.appendChild(listItem);
             });
         }

@@ -348,10 +348,12 @@ def mbti_result():
 
         # JOIN을 사용하여 compatibility 정보와 관련된 product 정보를 가져옵니다.
         compatibility_info = db.execute(
-            "SELECT mbti_compatibility.*, mbti_product.product, mbti_product.image "
-            "FROM mbti_compatibility "
-            "JOIN mbti_product ON mbti_compatibility.mbti_type = mbti_product.mbti_type "
-            "WHERE mbti_compatibility.mbti_type = ?",
+            "SELECT mc.mbti_type, mc.compatible_type, mc.compatibility, mp.product, mp.image"
+            " FROM mbti_compatibility mc"
+            " JOIN mbti_product mp"
+            " ON mc.compatible_type = mp.mbti_type"
+            " WHERE mc.mbti_type = ?"
+            " AND mc.compatibility IN ('good', 'bad')",
             (mbti_type,)
         ).fetchall()
 
