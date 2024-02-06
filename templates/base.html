@@ -22,13 +22,13 @@
     <meta name="twitter:description" content="다양한 미니게임을 한 곳에서 즐기세요!">
     <meta name="twitter:image" content="https://exhilarate.kr/static/images/game-collection-thumbnail.png">
 </head>
-{% set excluded_paths = ['/', '/games', '/roulette', '/communities', '/mbti', '/mbti/company', '/result' ] %}
+{% set excluded_paths = ['/', '/games', '/roulette', '/communities', '/mbti', '/mbti/company', '/mbti/animal', '/result' ] %}
 <body>
     <div class="overlay"></div>
     <nav>
         <div class="logo">
             <a href="/">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="로고">
+                <img class="header-image" src="{{ url_for('static', filename='images/logo.png') }}" alt="로고">
                 <span>:Exhilarate</span>
             </a>
         </div>

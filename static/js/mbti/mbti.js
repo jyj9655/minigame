@@ -91,12 +91,12 @@ function submitAnswers() {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ mbti: mbti }),
+        body: JSON.stringify({ mbti: mbti, mbti_id: mbtiId }),
     })
     .then(response => response.json())
     .then(data => {
         localStorage.setItem('mbtiResult', JSON.stringify(data));
-        window.location.href = `/result`; // 서버로부터 받은 데이터를 기반으로 결과 페이지 URL 구성
+        window.location.href = `/result`;
     })
     .catch((error) => {
         console.error('Error:', error);

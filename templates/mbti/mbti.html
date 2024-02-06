@@ -13,6 +13,7 @@
 <button id="start-button">시작</button>
 <script type="text/javascript">
     var questions = {{ questions|tojson|safe }};
+    var mbtiId = "{{ mbti_info.id }}";
     var mbtiUrl = "{{ mbti_info.url }}";
 </script>
 <script src="{{ url_for('static', filename='js/mbti/mbti.js') }}"></script>

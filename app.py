@@ -340,10 +340,11 @@ def mbti_result():
         db = get_db()
         data = request.get_json()
         mbti_type = data['mbti']
+        mbti_info_id = data.get('mbti_id')
 
         product_info = db.execute(
-            "SELECT * FROM mbti_product WHERE mbti_type = ?",
-            (mbti_type,)
+            "SELECT * FROM mbti_product WHERE mbti_type = ? and mbti_info_id = ?",
+            (mbti_type, mbti_info_id)
         ).fetchone()
 
         # JOIN을 사용하여 compatibility 정보와 관련된 product 정보를 가져옵니다.
@@ -353,13 +354,14 @@ def mbti_result():
             " JOIN mbti_product mp"
             " ON mc.compatible_type = mp.mbti_type"
             " WHERE mc.mbti_type = ?"
+            " AND mp.mbti_info_id = ?"
             " AND mc.compatibility IN ('good', 'bad')",
-            (mbti_type,)
+            (mbti_type, mbti_info_id)
         ).fetchall()
 
         environment_info = db.execute(
-            "SELECT * FROM mbti_environment WHERE mbti_type = ?",
-            (mbti_type,)
+            "SELECT * FROM mbti_environment WHERE mbti_type = ? and mbti_info_id = ?",
+            (mbti_type, mbti_info_id)
         ).fetchall()
         
         return jsonify({
@@ -369,6 +371,25 @@ def mbti_result():
         })
     else:
         return render_template('result.html')
+    
+####################################################################################################
+## 4-1. [BLOG]
+####################################################################################################
+@app.route('/common/<url>', methods=['GET'])
+def common(url):
+    db = get_db()
+    template_path = f'common/{url}.html'  # 동적으로 파일 경로 생성
+
+    return render_template(template_path)
+
+@app.route('/blog/<url>', methods=['GET'])
+def blog(url):
+    db = get_db()
+
+    if url is None:
+        return "BLOG 페이지를 찾을 수 없습니다.", 404
+
+    return render_template('blog/blog.html')
     
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>블로그 포스팅 초안 제작</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/games/blog.css') }}">
+</head>
+<body>
+    <h1>위치 정보 입력</h1>
+    <!-- 사용자 입력 폼 -->
+    <form id="locationForm">
+        <input type="text" id="addressInput" placeholder="주소를 입력하세요">
+        <!-- "주소 검색" 버튼에 onclick 이벤트 핸들러 추가 -->
+        <button type="button" onclick="openSearchMap()">주소 검색</button>
+    </form>
+</body>
+<script>
+// 새 창으로 map.html을 연다
+function openSearchMap() {
+    var address = document.getElementById('addressInput').value;
+    window.open('/common/map?address=' + encodeURIComponent(address), 'searchWindow', 'width=600,height=400');
+}
+</script>
+</html>
+{% endblock %}
