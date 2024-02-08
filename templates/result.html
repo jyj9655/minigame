@@ -4,7 +4,6 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mbti/result.css') }}">
 <div class="mbti-result">
     <h1>MBTI 결과</h1>
-    <img>
     <p><span id="product-name"></span></p>
     <p><span id="product-description"></span></p>
     
@@ -67,6 +66,22 @@
                 listItem.textContent = info.environment;
                 environmentList.appendChild(listItem);
             });
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const resultData = localStorage.getItem('mbtiResult');
+        if (resultData) {
+            const data = JSON.parse(resultData);
+
+            const backgroundImageUrl = data.product_info.image; // 실제 경로는 데이터에 따라 다름
+            const imageUrl = `/static/${backgroundImageUrl}`;
+            // .mbti-result에 배경 이미지 동적으로 설정
+            const mbtiResultElement = document.querySelector('.mbti-result');
+            mbtiResultElement.style.backgroundImage = `url('${imageUrl}')`;
+            mbtiResultElement.style.backgroundSize = 'cover'; // 이미지가 div를 꽉 채우도록 설정
+            mbtiResultElement.style.position = 'relative'; // 가상 요소 포지셔닝을 위함
+            mbtiResultElement.style.overflow = 'hidden'; // 둥근 모서리 처리를 위함
         }
     });
 </script>

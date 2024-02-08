@@ -2,52 +2,64 @@
     max-width: 760px;
     margin: 20px auto;
     margin-bottom: 100px;
-    padding: 20px;
-    background: #fff;
+    padding: 40px; /* 패딩을 늘려 컨텐츠에 공간을 추가 */
+    background: rgba(255, 255, 255, 0.5); /* 투명도를 높여서 배경 이미지가 더 잘 보이도록 함 */
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자를 더 부드럽게 조정 */
+    position: relative;
+    overflow: hidden;
+    color: #555; /* 텍스트 색상을 어둡게 조정하여 대비를 높임 */
+    font-family: 'Open Sans', sans-serif; /* 웹 안전 폰트 사용 */
+}
+
+.mbti-result * {
+    box-sizing: border-box; /* 모든 요소의 박스 사이징 조정 */
 }
 
 .mbti-result h1 {
     text-align: center;
-    color: #333;
+    color: #555; /* 제목 색상 변경 */
+    margin-bottom: 20px; /* 제목 아래 여백 추가 */
+    font-size: 28px; /* 제목 폰트 크기 조정 */
+    background: rgba(255, 255, 255, 0.3); /* 제목 배경에 약간의 투명도 추가 */
+    display: inline-block; /* 배경을 텍스트에만 적용 */
+    padding: 5px 10px; /* 제목 내부 여백 추가 */
+    border-radius: 5px; /* 제목 배경의 모서리 둥글게 */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 텍스트 그림자 추가 */
 }
 
-.mbti-result img {
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
+.mbti-result h2 {
+    margin-top: 40px; /* 섹션 제목 위 여백 추가 */
+    margin-bottom: 10px; /* 섹션 제목 아래 여백 추가 */
+    color: #555; /* 섹션 제목 색상 변경 */
+    font-size: 22px; /* 섹션 제목 폰트 크기 조정 */
+    background: rgba(255, 255, 255, 0.3); /* 섹션 제목 배경에 약간의 투명도 추가 */
+    display: inline-block; /* 배경을 텍스트에만 적용 */
+    padding: 5px 10px; /* 섹션 제목 내부 여백 추가 */
+    border-radius: 5px; /* 섹션 제목 배경의 모서리 둥글게 */
 }
 
 .mbti-result ul {
     list-style-type: none;
     padding: 0;
+    margin-top: 20px; /* 목록 위 여백 추가 */
 }
 
 .mbti-result ul li {
     background: #f7f7f7;
-    margin-bottom: 5px;
-    padding: 10px;
-    border-left: 3px solid #3498db;
+    margin-bottom: 10px; /* 목록 항목 사이의 여백 추가 */
+    padding: 15px; /* 목록 항목 내부 패딩 추가 */
+    border-left: 5px solid #3498db; /* 좌측 테두리 두께 조정 */
+    background: rgba(255, 255, 255, 0.3); /* 섹션 제목 배경에 약간의 투명도 추가 */
+    font-size: 16px; /* 텍스트 크기 조정 */
+    color: #444; /* 목록 항목 텍스트 색상 조정 */
+    border-radius: 5px; /* 목록 항목 경계선 둥글게 */
 }
 
-.mbti-result ul#compatibility-good-list li {
-    border-left-color: #2ecc71; /* 좋은 호환성에 대한 색상 */
-}
-
-.mbti-result ul#compatibility-bad-list li {
-    border-left-color: #e74c3c; /* 나쁜 호환성에 대한 색상 */
-}
-
-.mbti-result h2 {
-    margin-top: 30px;
-    color: #333;
-}
-
-/* 반응형 디자인 */
+/* 반응형 디자인 조정 */
 @media (max-width: 768px) {
     .mbti-result {
         width: 95%;
-        padding: 10px;
+        padding: 20px; /* 모바일에서의 패딩 조정 */
     }
 }

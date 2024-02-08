@@ -40,6 +40,6 @@ INSERT INTO mbti_product (mbti_info_id, mbti_type, product, image) VALUES
 (2, 'ENFJ', '기린', '/images/mbti/animal/11.기린.png'),
 (2, 'ENTJ', '사자', '/images/mbti/animal/12.사자.png'),
 (2, 'ESTP', '치타', '/images/mbti/animal/13.치타.png'),
-(2, 'ESFP', '돌고래', '/images/mbti/animal/14.돌고래.png'),
+(2, 'ESFP', '햄스터', '/images/mbti/animal/14.햄스터.png'),
 (2, 'ENFP', '원숭이', '/images/mbti/animal/15.원숭이.png'),
 (2, 'ENTP', '앵무새', '/images/mbti/animal/16.앵무새.png');
