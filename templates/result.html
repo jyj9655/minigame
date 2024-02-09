@@ -76,12 +76,14 @@
         if (resultData) {
             const data = JSON.parse(resultData);
 
-            const backgroundImageUrl = data.product_info.image; // 실제 경로는 데이터에 따라 다름
+            const backgroundImageUrl = data.product_info.image;
             const imageUrl = `/static/${backgroundImageUrl}`;
-            // .mbti-result에 배경 이미지 동적으로 설정
+
             const mbtiResultElement = document.querySelector('.mbti-result');
             mbtiResultElement.style.backgroundImage = `url('${imageUrl}')`;
-            mbtiResultElement.style.backgroundSize = 'cover'; // 이미지가 div를 꽉 채우도록 설정
+            mbtiResultElement.style.backgroundSize = 'cover'; // 이미지가 요소에 맞춰지도록 설정
+            mbtiResultElement.style.backgroundPosition = 'center center'; // 이미지를 중앙에 위치시킴
+            mbtiResultElement.style.backgroundRepeat = 'no-repeat';
             mbtiResultElement.style.position = 'relative'; // 가상 요소 포지셔닝을 위함
             mbtiResultElement.style.overflow = 'hidden'; // 둥근 모서리 처리를 위함
         }
