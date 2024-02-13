@@ -34,7 +34,51 @@
     background-color: rgba(255, 255, 255, 0.4);
     padding: 20px;
     border-radius: 4px;
-    font-family: 'Giants-Inline', sans-serif;
+    font-family: 'SDSamliphopangche_Outline', sans-serif;
+}
+
+#progress-container {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+#progress-bar {
+    display: none;
+    height: 20px;
+    background-color: #4CAF50;
+    width: 0%;
+    transition: width 0.4s ease-in-out;
+    text-align: center;
+    color: white;
+    line-height: 20px;
+}
+
+#progress-tooltip {
+    position: absolute;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    display: none;
+    transform: translateX(-50%) translateY(100%);
+    margin-top: 5px;
+    z-index: 1;
+}
+
+#progress-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: 40%; /* 말풍선 바닥보다 위로 설정 */
+    left: 61%;
+    margin-left: -5px; /* 뾰족한 부분의 중앙을 말풍선 중앙으로 조정 */
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #4CAF50 transparent; /* 아래쪽 색상으로 뾰족한 부분 생성 */
+    transform: translateX(-50%) translateY(-100%); /* 위치 조정 */
 }
 
 .mbti-board {
@@ -67,11 +111,17 @@ button:hover {
 
 #reset-button {
     display: none;
+    color: #fff;
     background-color: #444444;
 }
 
 #reset-button:hover {
     background-color: #555555;
+}
+
+.question h2 {
+    font-family: 'UhBeemysen', sans-serif;
+    font-weight: bold;
 }
 
 @media (max-width: 768px) {

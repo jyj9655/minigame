@@ -27,6 +27,7 @@ function startTest(questions) {
     document.getElementById('mbti-board').style.display = 'block';
     document.getElementById('start-button').style.display = 'none';
     document.getElementById('reset-button').style.display = 'inline';
+    document.getElementById('progress-bar').style.display = 'block';
     showQuestion(currentQuestionIndex);
 }
 
@@ -42,7 +43,7 @@ function showQuestion(index) {
     const mbtiBoard = document.getElementById('mbti-board');
     mbtiBoard.innerHTML = `
         <div class="question">
-            <p>${question.question}</p>
+            <h2>${index+1}. ${question.question}</h2>
             <button id="answer_a_${index}" class="answer" data-mbti-type="${question.mbti_code}">${question.answer_a_option}</button><br>
             <button id="answer_b_${index}" class="answer">${question.answer_b_option}</button>
         </div>
@@ -78,7 +79,17 @@ function updateScores(mbtiType) {
 }
 
 function updateProgress(current, total) {
-    console.log(`현재 진행 상태: ${current + 1} / ${total}`);
+    var progressPercentage = (current / total) * 100;
+    var progressBar = document.getElementById('progress-bar');
+    var progressTooltip = document.getElementById('progress-tooltip');
+
+    progressBar.style.width = progressPercentage + '%';
+    progressTooltip.innerText = `${current}/${total}`;
+    if (currentQuestionIndex > 0) {
+        progressTooltip.style.display = 'block';
+    }
+    
+    progressTooltip.style.left = `calc(${progressPercentage}%)`;
 }
 
 function resetTest() {
@@ -92,6 +103,7 @@ function resetTest() {
     document.getElementById('mbti-board').style.display = 'none';
     document.getElementById('start-button').style.display = 'inline';
     document.getElementById('reset-button').style.display = 'none';
+    document.getElementById('progress-bar').style.width = '0%';
 }
 
 function submitAnswers() {
