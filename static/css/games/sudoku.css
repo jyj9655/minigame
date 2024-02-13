@@ -62,8 +62,8 @@ select {
     padding: 10px;
     border-radius: 10px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3개의 컬럼으로 나눔 */
-    grid-gap: 10px; /* 격자 간격 */
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;

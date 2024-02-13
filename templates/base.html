@@ -104,11 +104,20 @@
             </div>  
         </div>
     </nav>
+
+    {% if '/mbti' in request.path %}
+    <div id="header">
+        <h2>{{ mbti_name }}</h2>
+        <span>{{ mbti_description }}</span>
+    </div>
+    {% else %}
     <div id="header">
         <h2>{{ game_name }}</h2>
         <span>{{ game_description }}</span>
         <div id="game-info" data-gametype="{{ game_id }}"></div>
     </div>
+    {% endif %}
+
     {% block content %}{% endblock %}
     {% if request.path not in excluded_paths %}
     <div id="countdown" class="countdown"></div>

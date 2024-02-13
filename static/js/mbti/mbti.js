@@ -4,12 +4,27 @@ let SN = 0;
 let TF = 0;
 let JP = 0;
 
+document.addEventListener('DOMContentLoaded', function() {
+    const headerElement = document.querySelector('#header');
+    headerElement.style.backgroundColor = mbtiColor;
+
+    const mbtiElement = document.querySelector('.mbti');
+    mbtiElement.style.backgroundImage = `url('${mbtiImage}')`;
+    mbtiElement.style.backgroundSize = 'cover';
+    mbtiElement.style.backgroundPosition = 'center center';
+    mbtiElement.style.backgroundRepeat = 'no-repeat';
+    mbtiElement.style.position = 'relative';
+    mbtiElement.style.overflow = 'hidden';
+});
+
 document.getElementById('start-button').addEventListener('click', function() {
     startTest(questions);
 });
 
 function startTest(questions) {
     currentQuestionIndex = 0;
+    document.querySelector('.mbti').style.display = 'none';
+    document.getElementById('mbti-board').style.display = 'block';
     document.getElementById('start-button').style.display = 'none';
     document.getElementById('reset-button').style.display = 'inline';
     showQuestion(currentQuestionIndex);
@@ -73,6 +88,8 @@ function resetTest() {
     TF = 0;
     JP = 0;
     document.getElementById('mbti-board').innerHTML = '';
+    document.querySelector('.mbti').style.display = 'flex';
+    document.getElementById('mbti-board').style.display = 'none';
     document.getElementById('start-button').style.display = 'inline';
     document.getElementById('reset-button').style.display = 'none';
 }

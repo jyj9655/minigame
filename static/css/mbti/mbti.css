@@ -1,69 +1,79 @@
-/* MBTI 섹션 스타일 */
 .mbti {
-    background-color: #ffffff;
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    margin: auto;
+    margin-top: 20px;
     margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 200px;
+    max-width: 500px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.mbti h2 {
-    font-size: 36px; /* 더 큰 사이즈 */
-    font-weight: bold; /* 굵은 글씨체 */
-    color: #2c3e50; /* 세련된 색상 */
-    background-color: #ecf0f1; /* 연한 배경 색상 */
-    padding: 20px; /* 여백 추가 */
-    border-radius: 4px; /* 모서리 둥글게 */
-    text-align: center; /* 중앙 정렬 */
-}
-
-.mbti img {
-    max-width: 80%; /* 이미지 크기 조정 */
-    margin: 0 auto; /* 중앙 정렬을 위한 마진 */
-    display: block; /* 블록 요소로 변경 */
-    border-radius: 4px; /* 모서리 둥글게 */
+.mbti::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 12px;
+    z-index: -1;
 }
 
 .mbti p {
-    font-size: 16px;
-    color: #666;
+    font-size: 18px;
+    color: #333333;
+    line-height: 1.6;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 4px;
+    font-family: 'Giants-Inline', sans-serif;
 }
 
-/* 질문 보드 스타일링 */
 .mbti-board {
+    display: none;
     background-color: #f9f9f9;
     padding: 20px;
+    margin-top: 20px;
     margin-bottom: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* 버튼 스타일 */
 button {
-    background-color: #3498db; /* 밝은 파란색 */
-    color: #ffffff;
+    background-color: #eeeeee;
+    color: #222222;
     border: none;
     padding: 15px 30px;
-    margin: 10px 0; /* 상하 마진 추가 */
-    border-radius: 4px;
+    margin: 20px 0;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 18px; /* 더 큰 글씨 */
-    transition: background-color 0.3s ease; /* 부드러운 색상 변경 효과 */
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 button:hover {
-    background-color: #2980b9; /* 호버 시 색상 변경 */
+    background-color: #cccccc;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3); 
 }
 
 #reset-button {
-    background-color: #d9534f; /* 빨간색 톤 */
+    display: none;
+    background-color: #444444;
 }
 
 #reset-button:hover {
-    background-color: #c9302c; /* 버튼 호버 시 색상 */
+    background-color: #555555;
 }
 
-/* 반응형 디자인 */
 @media (max-width: 768px) {
     .mbti h2 {
         font-size: 24px;

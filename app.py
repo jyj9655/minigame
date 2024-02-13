@@ -312,7 +312,7 @@ def mbti_list():
     db = get_db()
     mbtis = db.execute("SELECT id, name, image, url, color, description FROM mbti_info").fetchall()
     Phrase = 'EXHILARATE:'
-    return render_template('mbti/list.html', mbtis=mbtis, game_name=Phrase, game_description=' …의 기분을 들뜨게 하다, 기분을 좋게 하다')
+    return render_template('mbti/list.html', mbtis=mbtis, mbti_name=Phrase, mbti_description=' …의 기분을 들뜨게 하다, 기분을 좋게 하다')
 
 ####################################################################################################
 ## 3-1. [MBTI]
@@ -332,7 +332,7 @@ def mbti_page(url):
 
     questions = [dict(question) for question in questions_query]
 
-    return render_template('mbti/mbti.html', mbti_info=mbti_info, questions=questions)
+    return render_template('mbti/mbti.html', mbti_info=mbti_info, mbti_name=mbti_info['name'], questions=questions)
     
 @app.route('/result', methods=['GET', 'POST'])
 def mbti_result():

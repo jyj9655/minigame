@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="mbti">
-    <title>{{ mbti_info.name }}</title>
-    <h2>{{ mbti_info.name }}</h2>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mbti/mbti.css') }}">
-    <img src="{{ mbti_info.image }}" alt="{{ mbti_info.name }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mbti/mbti.css') }}">
+<title>{{ mbti_info.name }}</title>
+<div class="mbti">    
     <p>{{ mbti_info.description }}</p>
 </div>
 <div id="mbti-board" class="mbti-board"></div>
 <button id="reset-button" onclick="resetTest()">리셋</button>
 <button id="start-button">시작</button>
+
 <script type="text/javascript">
     var questions = {{ questions|tojson|safe }};
     var mbtiId = "{{ mbti_info.id }}";
     var mbtiUrl = "{{ mbti_info.url }}";
+    var mbtiColor = "{{ mbti_info.color }}";
+    var mbtiImage = "{{ url_for('static', filename=mbti_info.image) }}";
 </script>
+
 <script src="{{ url_for('static', filename='js/mbti/mbti.js') }}"></script>
 {% endblock %}
