@@ -414,16 +414,72 @@ td {
     background-color: #333;
 }
 
+#share-container {
+    display: none;
+    margin: 20px auto;
+    max-width: 200px;
+    width: 100%;
+    border: 2px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+#share-container::before {
+    content: "공유하기";
+    position: absolute;
+    top: -20%;
+    left: 20%;
+    transform: translateX(-50%) scale(1);
+    background-color: #ccc; /* 테두리 색상과 일치하는 배경색 */
+    color: #fff; /* 텍스트 색상을 흰색으로 설정 */
+    padding: 5px 10px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    animation: bounce 2s infinite;
+    font-size: medium;
+    font-family: 'SDSamliphopangche_Outline', sans-serif;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.1); /* Slightly scale the text for a 'bounce' effect */
+    }
+}
+
 #share-button {
-    background-color: #fdfa37;
-    color: white;
+    background-color: transparent;
     border: none;
-    padding: 10px 20px;
-    text-align: center;
-    display: inline-block;
-    margin: 4px 2px;
     cursor: pointer;
-    border-radius: 12px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#share-button img {
+    width: 48px; /* 기본 크기 */
+    height: auto;
+    transition: transform 0.3s ease-in-out; /* 부드러운 효과 */
+    display: inline-block; /* transform 적용을 위해 필요 */
+}
+
+#share-button:hover img {
+    animation: shake 0.5s; /* 0.5초 동안 shake 애니메이션 실행 */
+    animation-iteration-count: infinite; /* 애니메이션 무한 반복 */
+}
+
+@keyframes shake {
+    0% { transform: translate(0px, 0px) rotate(0); }
+    25% { transform: translate(-5px, 0px) rotate(-5deg); }
+    50% { transform: translate(5px, 0px) rotate(5deg); }
+    75% { transform: translate(-5px, 0px) rotate(-5deg); }
+    100% { transform: translate(0px, 0px) rotate(0); }
 }
 
 @media screen and (max-width: 768px) {
