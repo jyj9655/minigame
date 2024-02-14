@@ -70,6 +70,7 @@ function handleCorrectCellClick() {
         alert('제육을 찾았습니다.');
         document.getElementById('save-record').style.display = 'block';
         document.getElementById('nickname').style.display = 'block';
+        document.getElementById('share-container').style.display = 'block';
     }
 }
 

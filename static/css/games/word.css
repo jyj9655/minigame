@@ -1,0 +1,36 @@
+#header, th, button {
+    background-color: #ff6b90;
+}
+
+button:hover {
+    background-color: #e73c78;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 500px;
+}
+
+.game-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.game-cell:hover {
+    transform: scale(1.1);
+}

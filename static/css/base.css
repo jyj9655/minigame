@@ -414,6 +414,18 @@ td {
     background-color: #333;
 }
 
+#share-button {
+    background-color: #fdfa37;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
 @media screen and (max-width: 768px) {
     .nav-content {
         display: none;

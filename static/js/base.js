@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('share-button').addEventListener('click', captureGameBoard);
+
     const menuToggle = document.querySelector('.menu-toggle');
     const sidebarMenu = document.getElementById('sidebar-menu');
     const overlay = document.querySelector('.overlay');
@@ -57,11 +59,14 @@ document.getElementById('save-record').addEventListener('click', () => {
     .catch(error => console.error('Error:', error));
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const mainMenu = document.getElementById('main-menu');
-
-    menuToggle.addEventListener('click', () => {
-        mainMenu.classList.toggle('active');
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainMenu = document.getElementById('.main-menu');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            mainMenu.classList.toggle('active');
+        });
+    } else {
+        console.log('menuToggle 요소를 찾을 수 없습니다.');
+    }
 });

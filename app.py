@@ -277,6 +277,25 @@ def find():
 
     return render_template('find.html', records=ranked_records, game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
 
+####################################################################################################
+## 1-8. [GAME] WORD
+####################################################################################################
+@app.route('/word')
+def word():
+    db = get_db()
+    cur = db.cursor()
+
+    cur.execute("SELECT id, name, description FROM menu_info WHERE id = 9")
+    menu_info = cur.fetchone()
+
+    cur.execute("SELECT nickname, time, date FROM game_records WHERE gametype = 9 ORDER BY time ASC")
+    records = cur.fetchall()
+
+    # Calculate ranks in Python code
+    ranked_records = [(index + 1, record['nickname'], record['time'], record['date']) for index, record in enumerate(records)]
+
+    return render_template('word.html', records=ranked_records, game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
+
 
 ####################################################################################################
 ## 2-1. [COMMUNITY] FREE

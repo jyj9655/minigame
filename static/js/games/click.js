@@ -64,6 +64,8 @@ function handleCircleClick() {
             document.getElementById('save-record').style.display = 'block';
             // 게임 완료 시 닉네임 부분 나타나기
             document.getElementById('nickname').style.display = 'block';
+            // 게임 완료 시 공유 부분 나타나기
+            document.getElementById('share-container').style.display = 'block';
         }
     }
     
