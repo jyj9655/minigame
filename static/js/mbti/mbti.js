@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const headerElement = document.querySelector('#header');
     headerElement.style.backgroundColor = mbtiColor;
 
+    const progressBarElement = document.querySelector('#progress-bar');
+    progressBarElement.style.backgroundColor = mbtiColor;
+
     const mbtiElement = document.querySelector('.mbti');
     mbtiElement.style.backgroundImage = `url('${mbtiImage}')`;
     mbtiElement.style.backgroundSize = 'cover';
@@ -27,7 +30,7 @@ function startTest(questions) {
     document.getElementById('mbti-board').style.display = 'block';
     document.getElementById('start-button').style.display = 'none';
     document.getElementById('reset-button').style.display = 'inline';
-    document.getElementById('progress-bar').style.display = 'block';
+    document.getElementById('progress-bar').style.display = 'flex';
     showQuestion(currentQuestionIndex);
 }
 
@@ -79,17 +82,18 @@ function updateScores(mbtiType) {
 }
 
 function updateProgress(current, total) {
-    var progressPercentage = (current / total) * 100;
     var progressBar = document.getElementById('progress-bar');
-    var progressTooltip = document.getElementById('progress-tooltip');
+    var progressText = document.getElementById('progress-text');
+    var progressPercentage = (current / total) * 100;
 
     progressBar.style.width = progressPercentage + '%';
-    progressTooltip.innerText = `${current}/${total}`;
-    if (currentQuestionIndex > 0) {
-        progressTooltip.style.display = 'block';
+    progressText.innerText = `${current}/${total}`;
+
+    if (progressPercentage > 3) {
+        progressText.style.display = 'block';
+    } else {
+        progressText.style.display = 'none';
     }
-    
-    progressTooltip.style.left = `calc(${progressPercentage}%)`;
 }
 
 function resetTest() {
@@ -103,6 +107,7 @@ function resetTest() {
     document.getElementById('mbti-board').style.display = 'none';
     document.getElementById('start-button').style.display = 'inline';
     document.getElementById('reset-button').style.display = 'none';
+    document.getElementById('progress-bar').style.display = 'none';
     document.getElementById('progress-bar').style.width = '0%';
 }
 

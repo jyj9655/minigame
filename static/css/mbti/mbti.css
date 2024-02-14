@@ -46,39 +46,22 @@
 }
 
 #progress-bar {
-    display: none;
+    position: relative;
     height: 20px;
-    background-color: #4CAF50;
+    /* background-color: #4CAF50; */
     width: 0%;
     transition: width 0.4s ease-in-out;
-    text-align: center;
+    text-align: right;
+    padding-right: 5px;
+    box-sizing: border-box;
     color: white;
-    line-height: 20px;
-}
-
-#progress-tooltip {
-    position: absolute;
-    padding: 5px 10px;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 4px;
-    font-size: 12px;
     display: none;
-    transform: translateX(-50%) translateY(100%);
-    margin-top: 5px;
-    z-index: 1;
+    align-items: center;
+    justify-content: flex-end;
 }
 
-#progress-tooltip::after {
-    content: "";
-    position: absolute;
-    bottom: 40%; /* 말풍선 바닥보다 위로 설정 */
-    left: 61%;
-    margin-left: -5px; /* 뾰족한 부분의 중앙을 말풍선 중앙으로 조정 */
-    border-width: 8px;
-    border-style: solid;
-    border-color: transparent transparent #4CAF50 transparent; /* 아래쪽 색상으로 뾰족한 부분 생성 */
-    transform: translateX(-50%) translateY(-100%); /* 위치 조정 */
+#progress-text {
+    display: none;
 }
 
 .mbti-board {
