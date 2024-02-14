@@ -61,7 +61,7 @@ document.getElementById('save-record').addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
-    const mainMenu = document.getElementById('.main-menu');
+    const mainMenu = document.getElementById('main-menu');
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
             mainMenu.classList.toggle('active');
