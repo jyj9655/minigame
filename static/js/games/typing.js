@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('finish-message').innerHTML = '';
         document.getElementById('nickname').style.display = 'none';
         document.getElementById('save-record').style.display = 'none';
+        document.getElementById('share-container').style.display = 'none';
         userInput.disabled = false;
     }
 
@@ -116,5 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
         gameCompletedTime = timeElapsed.toFixed(1);
         document.getElementById('nickname').style.display = 'block';
         document.getElementById('save-record').style.display = 'block';
+        document.getElementById('share-container').style.display = 'block';
     }
 });

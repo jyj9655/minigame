@@ -84,6 +84,7 @@ function resetGame() {
     document.getElementById('timer').style.display = 'none';
     document.getElementById('save-record').style.display = 'none';
     document.getElementById('nickname').style.display = 'none';
+    document.getElementById('share-container').style.display = 'none';
 }
 
 function updateTimer() {

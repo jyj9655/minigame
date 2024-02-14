@@ -50,10 +50,14 @@ function resetGame() {
     if (ctx) {
         ctx.clearRect(0, 0, canv.width, canv.height);
     }
+    const board = document.getElementById('game-board');
+    board.innerHTML = '';
+    board.style.height = '200px';
     document.getElementById('timer').textContent = '0';
     document.getElementById('timer').style.display = 'none';
     document.getElementById('save-record').style.display = 'none';
     document.getElementById('nickname').style.display = 'none';
+    document.getElementById('share-container').style.display = 'none';
 }
 
 function initializeMaze() {
@@ -191,5 +195,6 @@ function checkGameOver() {
 
         document.getElementById('save-record').style.display = 'block';
         document.getElementById('nickname').style.display = 'block';
+        document.getElementById('share-container').style.display = 'block';
     }
 }

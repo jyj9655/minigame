@@ -66,6 +66,7 @@ function resetGame() {
   document.getElementById('timer').style.display = 'none';
   document.getElementById('save-record').style.display = 'none';
   document.getElementById('nickname').style.display = 'none';
+  document.getElementById('share-container').style.display = 'none';
 }
 
 function getRandomPastelColor() {
@@ -88,6 +89,7 @@ function handleCellClick(cell) {
       // 게임 완료 시 기록 저장 버튼 나타나기
       document.getElementById('nickname').style.display = 'block';
       document.getElementById('save-record').style.display = 'block';
+      document.getElementById('share-container').style.display = 'block';
     }
   }
 }

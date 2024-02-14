@@ -89,6 +89,7 @@ function resetGame() {
     document.getElementById('timer').style.display = 'none';
     document.getElementById('save-record').style.display = 'none';
     document.getElementById('nickname').style.display = 'none';
+    document.getElementById('share-container').style.display = 'none';
 }
 
 function generateSudokuBoard(blanks) {
@@ -272,6 +273,7 @@ function handleInput() {
             gameActive = false; // 게임 활성 상태 업데이트
             document.getElementById('save-record').style.display = 'block'; // 기록 저장 버튼 표시
             document.getElementById('nickname').style.display = 'block';
+            document.getElementById('share-container').style.display = 'block';
         } else {
             alert('오류가 있습니다. 다시 확인해주세요.');
             // 여기서는 interval을 초기화하지 않으므로 타이머는 계속 진행됩니다.

@@ -101,6 +101,7 @@ function checkForMatch() {
             gameCompletedTime = (endTime - startTime) / 1000;
             document.getElementById('save-record').style.display = 'block';
             document.getElementById('nickname').style.display = 'block';
+            document.getElementById('share-container').style.display = 'block';
         }
         
         selectedCards = [];
@@ -142,4 +143,5 @@ function resetGame() {
     document.getElementById('timer').style.display = 'none';
     document.getElementById('save-record').style.display = 'none';
     document.getElementById('nickname').style.display = 'none';
+    document.getElementById('share-container').style.display = 'none';
 }

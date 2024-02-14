@@ -88,6 +88,7 @@ function resetGame() {
     document.getElementById('timer').style.display = 'none'; // 타이머 숨기기
     document.getElementById('save-record').style.display = 'none'; // 기록 저장 버튼 숨기기
     document.getElementById('nickname').style.display = 'none'; // 닉네임 부분 숨기기
+    document.getElementById('share-container').style.display = 'none'; // 공유 부분 숨기기
 }
 
 function updateTimer() {
