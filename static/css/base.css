@@ -416,6 +416,7 @@ td {
 
 #share-container {
     display: none;
+    justify-content: space-between;
     margin: 20px auto;
     max-width: 200px;
     width: 100%;
@@ -452,7 +453,7 @@ td {
     }
 }
 
-#share-button {
+.share-button {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -460,18 +461,46 @@ td {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s ease-in-out;
 }
 
-#share-button img {
-    width: 48px; /* 기본 크기 */
+.share-button::after {
+    content: attr(data-tooltip);
+    display: none;
+    position: absolute;
+    padding: 10px 12px;
+    background: transparent;
+    color: #333333;
+    text-align: center;
+    border-radius: 8px;
+    font-family: 'SDSamliphopangche_Outline', sans-serif;
+    font-size: small;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.share-button:hover {
+    transform: scale(1.1);
+    background-color: transparent;
+}
+
+.share-button:hover::after {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px);
+}
+
+.share-button img {
+    width: 48px;
     height: auto;
-    transition: transform 0.3s ease-in-out; /* 부드러운 효과 */
-    display: inline-block; /* transform 적용을 위해 필요 */
-}
-
-#share-button:hover img {
-    animation: shake 0.5s; /* 0.5초 동안 shake 애니메이션 실행 */
-    animation-iteration-count: infinite; /* 애니메이션 무한 반복 */
+    display: inline-block;
+    animation: shake 2s ease-in-out infinite;
 }
 
 @keyframes shake {
