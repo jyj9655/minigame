@@ -299,3 +299,115 @@ INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES
 (2, 'ENTP', '새로운 아이디어와 접근법을 시도할 수 있는 공간'),
 (2, 'ENTP', '다양한 관점과 사상을 탐구하는 일'),
 (2, 'ENTP', '자유로운 사고와 실험을 장려하는 환경');
+
+-- ISTJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(3, 'ISTJ', '규칙적인 방문객을 위한 멤버십 혜택이 있는 카페'),
+(3, 'ISTJ', '실용적이고 편리한 시설을 갖춘 카페'),
+(3, 'ISTJ', '정돈되고 깔끔한 환경, 집중하기 좋은 조용한 카페'),
+(3, 'ISTJ', '전통적인 커피 문화를 존중하는 카페');
+
+-- ISFJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(3, 'ISFJ', '친근감과 안락함을 주는 전통적인 디자인의 카페'),
+(3, 'ISFJ', '장기적인 관계를 중시하는 단골 고객을 위한 카페'),
+(3, 'ISFJ', '편안하고 친근감 있는 서비스, 따뜻한 분위기의 카페'),
+(3, 'ISFJ', '세심한 서비스와 친절한 직원이 있는 카페');
+
+-- INFJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(3, 'INFJ', '깊은 사색과 명상을 할 수 있는 조용하고 평화로운 카페'),
+(3, 'INFJ', '따뜻하고 포근한 인테리어, 의미 있는 대화를 나눌 수 있는 카페'),
+(3, 'INFJ', '사회적 가치와 의미 있는 활동을 지원하는 카페'),
+(3, 'INFJ', '영감을 주는 아트워크와 음악이 있는 카페');
+
+-- INTJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(3, 'INTJ', '조용하고 고즈넉한 분위기에서 혼자 생각에 잠길 수 있는 카페'),
+(3, 'INTJ', '개인 작업실 같은 조용한 카페, 집중이 필요할 때 방문하기 좋음'),
+(3, 'INTJ', '고전적이고 역사적인 분위기를 가진 카페, 고요함 속에서 영감을 얻을 수 있음'),
+(3, 'INTJ', '효율적인 자기 관리와 계획을 세울 수 있는 조용하고 평화로운 카페');
+
+-- ISTP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(3, 'ISTP', '다양한 기계와 도구를 직접 다룰 수 있는 테마 카페'),
+(3, 'ISTP', '실용적인 취미와 관심사를 탐구할 수 있는 카페'),
+(3, 'ISTP', '심플하고 미니멀리스트 스타일, 취미 생활을 즐길 수 있는 카페'),
+(3, 'ISTP', '독립적이고 자유로운 분위기의 카페');
+
+-- ISFP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(3, 'ISFP', '예술적 영감을 받을 수 있는 갤러리 같은 카페'),
+(3, 'ISFP', '조용하고 개인적인 감정을 즐길 수 있는 아늑한 카페'),
+(3, 'ISFP', '자연 친화적이고 아늑한, 창작 활동을 할 수 있는 카페'),
+(3, 'ISFP', '자연과 가까운, 실외 좌석이 있는 카페');
+
+-- INFP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(3, 'INFP', '창작 활동과 개인 프로젝트를 위한 조용한 카페'),
+(3, 'INFP', '자연 친화적이고 지속 가능한 운영을 하는 카페'),
+(3, 'INFP', '예술적이고 개성 있는 디자인, 편안한 분위기의 카페'),
+(3, 'INFP', '소소한 행복과 따뜻한 분위기를 느낄 수 있는 소규모 카페');
+
+-- INTP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(3, 'INTP', '다양한 지식을 탐색할 수 있는 책과 자료가 가득한 카페'),
+(3, 'INTP', '논리적 사고와 창의력을 자극하는 디자인과 분위기의 카페'),
+(3, 'INTP', '다양한 책과 보드게임이 있는 창의적인 분위기의 카페'),
+(3, 'INTP', '혼자만의 시간을 즐길 수 있는 조용한 구석이 있는 카페');
+
+-- ESTJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(3, 'ESTJ', '질서 정연하고 체계적인 운영이 돋보이는 카페'),
+(3, 'ESTJ', '업무와 미팅에 적합한 조용한 분위기의 카페'),
+(3, 'ESTJ', '실용적이고 기능적인 디자인, 업무를 처리하기 좋은 카페'),
+(3, 'ESTJ', '효과적인 시간 관리와 업무 집중을 위한 카페');
+
+-- ESFJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(3, 'ESFJ', '가족 단위의 방문객을 위한 편안하고 넓은 공간의 카페'),
+(3, 'ESFJ', '커뮤니티 중심의 활동과 모임을 지원하는 카페'),
+(3, 'ESFJ', '가족이나 친구와 함께 시간을 보내기 좋은, 활발한 분위기의 카페'),
+(3, 'ESFJ', '소통과 교류를 촉진하는 따뜻한 분위기의 카페');
+
+-- ENFJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(3, 'ENFJ', '커뮤니티 모임과 워크숍을 개최할 수 있는 공간이 있는 카페'),
+(3, 'ENFJ', '긍정적이고 영감을 주는 메시지를 공유하는 카페'),
+(3, 'ENFJ', '친구나 동료와 모임을 갖기 좋은 넓은 테이블이 있는 카페'),
+(3, 'ENFJ', '다양한 문화와 예술을 경험할 수 있는 다목적 공간 카페');
+
+-- ENTJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(3, 'ENTJ', '리더십 미팅이나 비즈니스 미팅을 위한 프라이빗 룸이 있는 카페'),
+(3, 'ENTJ', '효율적인 작업과 미팅이 가능한 카페, 충분한 콘센트와 빠른 와이파이'),
+(3, 'ENTJ', '목표 달성과 성과를 위한 논의가 활발히 이루어지는 카페'),
+(3, 'ENTJ', '신속한 서비스와 효율적인 공간 활용이 돋보이는 카페');
+
+-- ESTP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(3, 'ESTP', '다양한 액티비티와 게임을 즐길 수 있는 역동적인 카페'),
+(3, 'ESTP', '실시간 스포츠 경기 중계를 보며 흥미를 공유할 수 있는 카페'),
+(3, 'ESTP', '활동적이고 역동적인 분위기, 다양한 이벤트가 있는 카페'),
+(3, 'ESTP', '모험과 새로운 경험을 추구하는 테마가 있는 카페');
+
+-- ESFP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(3, 'ESFP', '라이브 음악과 공연이 있는 엔터테인먼트 카페'),
+(3, 'ESFP', '트렌디하고 스타일리시한, 사진 찍기 좋은 인스타그램 핫플레이스 카페'),
+(3, 'ESFP', '색다른 메뉴와 트렌디한 디자인이 돋보이는 카페'),
+(3, 'ESFP', '친구들과 사진을 찍기 좋은 인스타그램에 어울리는 카페');
+
+-- ENFP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(3, 'ENFP', '새롭고 재미있는 이벤트가 자주 있는 카페'),
+(3, 'ENFP', '창의력과 상상력을 자극하는 유니크한 인테리어의 카페'),
+(3, 'ENFP', '밝고 캐주얼한 분위기에서 자유롭게 느낄 수 있는 카페'),
+(3, 'ENFP', '다양한 사람들과 만남과 대화를 즐길 수 있는 카페');
+
+-- ENTP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(3, 'ENTP', '새로운 사람들과 아이디어를 교환할 수 있는 네트워킹 공간이 있는 카페'),
+(3, 'ENTP', '사람들이 많고 활기찬, 새로운 아이디어를 얻을 수 있는 카페'),
+(3, 'ENTP', '실험적이고 혁신적인 메뉴를 제공하는 카페'),
+(3, 'ENTP', '자유롭고 개방적인 대화가 가능한 편안한 분위기의 카페');

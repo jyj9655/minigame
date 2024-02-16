@@ -8,9 +8,10 @@ CREATE TABLE mbti_product (
     FOREIGN KEY (mbti_info_id) REFERENCES mbti_info(id)
 );
 
+-- company
 INSERT INTO mbti_product (mbti_info_id, mbti_type, product, image) VALUES
 (1, 'ISTJ', '가위', '/images/mbti/company/1.가위.png'),
-(1, 'ISFJ', '볼펜', '/images/mbti/company/2.볼펜.png')
+(1, 'ISFJ', '볼펜', '/images/mbti/company/2.볼펜.png'),
 (1, 'INFJ', '복사기', '/images/mbti/company/3.복사기.png'),
 (1, 'INTJ', '다이어리', '/images/mbti/company/4.다이어리.png'),
 (1, 'ISTP', '계산기', '/images/mbti/company/5.계산기.png'),
@@ -26,6 +27,7 @@ INSERT INTO mbti_product (mbti_info_id, mbti_type, product, image) VALUES
 (1, 'ENFP', '바인더', '/images/mbti/company/15.바인더.png'),
 (1, 'ENTP', '클립', '/images/mbti/company/16.클립.png');
 
+-- animal
 INSERT INTO mbti_product (mbti_info_id, mbti_type, product, image) VALUES 
 (2, 'ISTJ', '거북이', '/images/mbti/animal/1.거북이.png'),
 (2, 'ISFJ', '고양이', '/images/mbti/animal/2.고양이.png'),
@@ -43,3 +45,22 @@ INSERT INTO mbti_product (mbti_info_id, mbti_type, product, image) VALUES
 (2, 'ESFP', '햄스터', '/images/mbti/animal/14.햄스터.png'),
 (2, 'ENFP', '원숭이', '/images/mbti/animal/15.원숭이.png'),
 (2, 'ENTP', '앵무새', '/images/mbti/animal/16.앵무새.png');
+
+-- cafe
+INSERT INTO mbti_product (mbti_info_id, mbti_type, product, image) VALUES
+(3, 'INTJ', '아메리카노', '/images/mbti/cafe/americano.webp'),
+(3, 'ENTJ', '에스프레소', '/images/mbti/cafe/espresso.webp'),
+(3, 'INTP', '카페라떼', '/images/mbti/cafe/cafe_latte.webp'),
+(3, 'ENTP', '카푸치노', '/images/mbti/cafe/cappuccino.webp'),
+(3, 'INFJ', '바닐라 라떼', '/images/mbti/cafe/vanilla_latte.webp'),
+(3, 'ENFJ', '카라멜 마키아토', '/images/mbti/cafe/caramel_macchiato.webp'),
+(3, 'INFP', '허브티', '/images/mbti/cafe/herb_tea.webp'),
+(3, 'ENFP', '과일 스무디', '/images/mbti/cafe/fruit_smoothie.webp'),
+(3, 'ISTJ', '초콜릿 라떼', '/images/mbti/cafe/chocolate_latte.webp'),
+(3, 'ESTJ', '카페모카', '/images/mbti/cafe/cafe_mocha.webp'),
+(3, 'ISFJ', '그린티 라떼', '/images/mbti/cafe/green_tea_latte.webp'),
+(3, 'ESFJ', '밀크티', '/images/mbti/cafe/milk_tea.webp'),
+(3, 'ISTP', '블랙티', '/images/mbti/cafe/black_tea.webp'),
+(3, 'ESTP', '레몬에이드', '/images/mbti/cafe/lemonade.webp'),
+(3, 'ISFP', '딸기 프라푸치노', '/images/mbti/cafe/strawberry_frappuccino.webp'),
+(3, 'ESFP', '아이스티', '/images/mbti/cafe/iced_tea.webp');
