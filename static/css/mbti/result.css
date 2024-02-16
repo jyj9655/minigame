@@ -8,43 +8,52 @@ nav {
 }
 
 .mbti-result {
-    max-width: 760px;
+    width: 60%;
+    height: auto;
+    max-width: 600px;
     margin: 20px auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
     color: #555;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
-.mbti-result * {
+.mbti-result *, .mbti-result *::before, .mbti-result *::after {
     box-sizing: border-box;
 }
 
-.mbti-result h1 {
+.mbti-result h1, .mbti-result h2, .mbti-result ul li {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.mbti-result h1, .mbti-result h2 {
     text-align: center;
     color: #fff;
-    font-size: 28px;
-    background: rgba(255, 255, 255, 0.2);
     display: inline-block;
     padding: 5px 10px;
     border-radius: 5px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 4px rgba(0, 0, 0);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.mbti-result h1 {
+    font-size: 28px;
 }
 
 .mbti-result h2 {
-    margin-bottom: 10px;
-    color: #fff;
     font-size: 22px;
-    background: rgba(255, 255, 255, 0.2);
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 5px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
 }
 
 .mbti-result ul {
@@ -53,22 +62,23 @@ nav {
 }
 
 .mbti-result ul li {
-    background: #f7f7f7;
     margin-bottom: 10px;
     padding: 15px;
-    border-left: 5px solid #3498db;
-    background: rgba(255, 255, 255, 0.2);
+    border-left: 5px solid #8AA8D4;
     font-size: 16px;
+    font-weight: bold;
     color: #fff;
     border-radius: 5px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    animation: fadeIn 1s ease-in-out;
 }
 
+/* 반응형 디자인 */
 @media (max-width: 768px) {
     .mbti-result {
         width: auto;
-        margin-top: 80px;
-        margin-bottom: 100px;
+        margin-top: 20px;
         padding: 20px;
         border-radius: 5px;
     }
