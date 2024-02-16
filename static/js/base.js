@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.moving-text').forEach(function(el) {
+        var content = el.getAttribute('data-content'); // data-content 속성 값 가져오기
+        el.style.setProperty('--content', JSON.stringify(content)); // CSS 변수로 설정
+    });
+    
     const shareButton = document.getElementById('share-button');
     if (shareButton) {
         shareButton.addEventListener('click', captureGameBoard);

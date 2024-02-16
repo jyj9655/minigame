@@ -124,7 +124,14 @@ def inject_menus():
     games = [item for item in all_menus if item['menu'] == 'game']
     communities = [item for item in all_menus if item['menu'] == 'community']
     mbtis = mbti_menus
-    return {'games': games, 'communities': communities, 'mbtis': mbtis}
+    path = request.path
+    if path.startswith('/games'):
+        message = '미니 게임은 하루 최대 5번 저장이 가능합니다. (24:00 초기화)'
+    elif path.startswith('/mbti'):
+        message = '여러가지 테마의 MBTI 테스트를 경험하세요!'
+    else:
+        message = 'EXHILARATE: …의 기분을 들뜨게 하다, 기분을 좋게 하다'
+    return {'games': games, 'communities': communities, 'mbtis': mbtis, 'custom_message': message}
 
 ####################################################################################################
 ## 1. [GAMES]
@@ -134,8 +141,8 @@ def inject_menus():
 def games():
     db = get_db()
     games = db.execute("SELECT id, name, image, url, menu, description FROM menu_info WHERE menu = 'game' ORDER BY id ASC").fetchall()
-    Phrase = 'EXHILARATE:'
-    return render_template('games.html', games=games, game_name=Phrase, game_description=' …의 기분을 들뜨게 하다, 기분을 좋게 하다')
+    Phrase = '미니게임 목록'
+    return render_template('games.html', games=games, game_name=Phrase)
 
 @app.route('/games/<game_name>')
 def game(game_name):
@@ -197,8 +204,8 @@ def notice():
 def mbti_list():
     db = get_db()
     mbtis = db.execute("SELECT id, name, image, url, color, description FROM mbti_info").fetchall()
-    Phrase = 'EXHILARATE:'
-    return render_template('mbti/list.html', mbtis=mbtis, mbti_name=Phrase, mbti_description=' …의 기분을 들뜨게 하다, 기분을 좋게 하다')
+    Phrase = 'MBTI 테스트 목록'
+    return render_template('mbti/list.html', mbtis=mbtis, mbti_name=Phrase)
 
 @app.route('/mbti/<url>', methods=['GET'])
 def mbti_page(url):

@@ -24,7 +24,7 @@
     <meta name="twitter:description" content="다양한 미니게임을 한 곳에서 즐기세요!">
     <meta name="twitter:image" content="https://exhilarate.kr/static/images/game-collection-thumbnail.png">
 </head>
-{% set excluded_paths = ['/', '/games', '/roulette', '/communities', '/mbti', '/mbti/company', '/mbti/animal', '/result' ] %}
+{% set excluded_paths = ['/', '/games', '/games/roulette', '/communities', '/mbti', '/mbti/company', '/mbti/animal', '/result' ] %}
 <body>
     <div class="overlay"></div>
     <nav>
@@ -106,7 +106,7 @@
             </div>  
         </div>
     </nav>
-
+    <div class="moving-text" data-content="{{ custom_message }}"></div>
     {% if '/mbti' in request.path %}
     <div id="header">
         <h2>{{ mbti_name }}</h2>
@@ -121,7 +121,6 @@
         <div id="game-info" data-gametype="{{ game_id }}"></div>
     </div>
     {% endif %}
-
     {% block content %}{% endblock %}
     {% if request.path not in excluded_paths %}
     <div id="countdown" class="countdown"></div>

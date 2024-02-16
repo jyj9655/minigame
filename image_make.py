@@ -2,13 +2,13 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 
 # 텍스트 설정
-text = "동물 MBTI"
+text = "단어찾기 게임"
 
 # 저장 파일 명 설정
-output_filename = "animal.png" 
+output_filename = "word.png" 
 
 # 외곽선, 그림자 색
-outline_color = shadow_color = "#DD9900"
+outline_color = shadow_color = "#ECD5E3"
 
 # 파이썬 파일의 디렉토리 경로를 가져오기
 script_dir = os.path.dirname(os.path.abspath(__file__))
