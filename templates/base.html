@@ -51,7 +51,7 @@
                     <a href="/games">미니게임</a>
                     <div class="sidebar-dropdown-content">
                         {% for game in games %}
-                            <a href="{{ url_for(game.url) }}">{{ game.name }}</a>
+                            <a href="/games/{{ game.url }}">{{ game.name }}</a>
                         {% endfor %}
                     </div>
                 </li>
@@ -79,7 +79,7 @@
                     <a href="/games">미니게임</a>
                     <div class="dropdown-content">
                         {% for game in games %}
-                            <a href="{{ url_for(game.url) }}">{{ game.name }}</a>
+                            <a href="/games/{{ game.url }}">{{ game.name }}</a>
                         {% endfor %}
                     </div>
                 </li>
