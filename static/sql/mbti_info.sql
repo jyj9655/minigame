@@ -37,6 +37,17 @@ VALUES (
     'cafe',
     '/images/mbti/cafe/cafe.png',
     '카페 MBTI',
-    '#CC9900',
+    '#EE9900',
     '나는 어떤 카페가 잘 맞을까?'
+);
+
+-- sports
+INSERT INTO mbti_info (id, url, image, name, color, description)
+VALUES (
+    '4',
+    'sports',
+    '/images/mbti/sports/sports.png',
+    '스포츠 MBTI',
+    '#FF9900',
+    '나는 어떤 운동이 잘 맞을까?'
 );

@@ -64,3 +64,22 @@ INSERT INTO mbti_product (mbti_info_id, mbti_type, product, image) VALUES
 (3, 'ESTP', '레몬에이드', '/images/mbti/cafe/lemonade.webp'),
 (3, 'ISFP', '딸기 프라푸치노', '/images/mbti/cafe/strawberry_frappuccino.webp'),
 (3, 'ESFP', '아이스티', '/images/mbti/cafe/iced_tea.webp');
+
+-- sports
+INSERT INTO mbti_product (mbti_info_id, mbti_type, product, image) VALUES
+(4, 'INTJ', '체스', '/images/mbti/sports/chess.webp'),
+(4, 'ENTJ', '농구', '/images/mbti/sports/basketball.webp'),
+(4, 'INTP', '테니스', '/images/mbti/sports/tennis.webp'),
+(4, 'ENTP', '축구', '/images/mbti/sports/soccer.webp'),
+(4, 'INFJ', '요가', '/images/mbti/sports/yoga.webp'),
+(4, 'ENFJ', '배구', '/images/mbti/sports/volleyball.webp'),
+(4, 'INFP', '등산', '/images/mbti/sports/hiking.webp'),
+(4, 'ENFP', '서핑', '/images/mbti/sports/surfing.webp'),
+(4, 'ISTJ', '골프', '/images/mbti/sports/golf.webp'),
+(4, 'ESTJ', '마라톤', '/images/mbti/sports/marathon.webp'),
+(4, 'ISFJ', '볼링', '/images/mbti/sports/bowling.webp'),
+(4, 'ESFJ', '에어로빅', '/images/mbti/sports/aerobics.webp'),
+(4, 'ISTP', '스키', '/images/mbti/sports/ski.webp'),
+(4, 'ESTP', '럭비', '/images/mbti/sports/rugby.webp'),
+(4, 'ISFP', '배드민턴', '/images/mbti/sports/badminton.webp'),
+(4, 'ESFP', '수영', '/images/mbti/sports/swimming.webp');

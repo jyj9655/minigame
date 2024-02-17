@@ -7,6 +7,9 @@ CREATE TABLE mbti_environment (
     FOREIGN KEY (mbti_info_id) REFERENCES mbti_info(id)
 );
 
+-------------------------------------------------------------------------------------------
+-- company
+-------------------------------------------------------------------------------------------
 -- ISTJ 환경
 INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
 (1, 'ISTJ', '혼자 일할 시간이 많고, 독립적으로 하는 일'),
@@ -172,6 +175,9 @@ INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES
 (1, 'ENTP', '논리적인 순서를 따라서 하는 일'),
 (1, 'ENTP', '사람들과 깊은 관계를 맺으면서 에너지가 넘치는 환경에서 할 수 있는 일');
 
+-------------------------------------------------------------------------------------------
+-- animal
+-------------------------------------------------------------------------------------------
 -- ISTJ 환경
 INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
 (2, 'ISTJ', '세부 사항에 주의를 기울이는 환경'),
@@ -300,6 +306,9 @@ INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES
 (2, 'ENTP', '다양한 관점과 사상을 탐구하는 일'),
 (2, 'ENTP', '자유로운 사고와 실험을 장려하는 환경');
 
+-------------------------------------------------------------------------------------------
+-- cafe
+-------------------------------------------------------------------------------------------
 -- ISTJ 환경
 INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
 (3, 'ISTJ', '규칙적인 방문객을 위한 멤버십 혜택이 있는 카페'),
@@ -411,3 +420,118 @@ INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES
 (3, 'ENTP', '사람들이 많고 활기찬, 새로운 아이디어를 얻을 수 있는 카페'),
 (3, 'ENTP', '실험적이고 혁신적인 메뉴를 제공하는 카페'),
 (3, 'ENTP', '자유롭고 개방적인 대화가 가능한 편안한 분위기의 카페');
+
+-------------------------------------------------------------------------------------------
+-- sports
+-------------------------------------------------------------------------------------------
+-- INTJ 환경 
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(4, 'INTJ', '자기 주도적 학습과 개선이 가능한 개별 스포츠 활동'),
+(4, 'INTJ', '논리적 사고와 전략 개발이 중요한 경기 환경'),
+(4, 'INTJ', '정보 수집과 분석을 통해 기술을 향상시킬 수 있는 스포츠'),
+(4, 'INTJ', '혼자 연습하며 실력을 쌓을 수 있는 정적인 스포츠 환경');
+
+-- ENTJ 환경 
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(4, 'ENTJ', '목표 설정과 달성을 위한 팀 기반 경쟁 환경'),
+(4, 'ENTJ', '효율적인 리더십과 조직 능력을 발휘할 수 있는 스포츠'),
+(4, 'ENTJ', '결과와 성과에 초점을 맞춘 고강도 트레이닝 환경'),
+(4, 'ENTJ', '전략적 계획과 실행이 요구되는 팀 스포츠 환경');
+
+-- INTP 환경 
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(4, 'INTP', '혁신적인 전략과 아이디어를 시험할 수 있는 스포츠'),
+(4, 'INTP', '개인의 기술과 전략이 중시되는 대결 스포츠'),
+(4, 'INTP', '심층 분석과 이해가 필요한 복잡한 규칙의 스포츠'),
+(4, 'INTP', '지적 호기심을 충족시키는 신체 활동');
+
+-- ENTP 환경 
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(4, 'ENTP', '사회적 상호작용과 전략 논의가 활발한 스포츠 환경'),
+(4, 'ENTP', '변화와 적응력을 시험하는 다양한 환경'),
+(4, 'ENTP', '창의적 사고와 혁신을 요구하는 경쟁 환경'),
+(4, 'ENTP', '빠른 사고와 반응 속도를 겨루는 팀 스포츠');
+
+-- INFJ 환경 
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(4, 'INFJ', '깊은 사색과 자기 성찰을 가능하게 하는 조용한 활동'),
+(4, 'INFJ', '가치 지향적이고 의미 있는 목표를 추구하는 스포츠 환경'),
+(4, 'INFJ', '내적 가치와 조화를 이루는 스포츠 활동'),
+(4, 'INFJ', '사회적 가치와 연결되는 커뮤니티 스포츠');
+
+-- ENFJ 환경 
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(4, 'ENFJ', '협력과 팀워크를 중시하는 스포츠 환경'),
+(4, 'ENFJ', '타인의 성장과 발전을 돕는 코칭 환경'),
+(4, 'ENFJ', '공동체 의식을 강화하는 그룹 활동'),
+(4, 'ENFJ', '영감을 주고 사람들을 하나로 묶는 팀 스포츠');
+
+-- INFP 환경 
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(4, 'INFP', '개인의 가치와 일치하는 환경에서 실시되는 스포츠'),
+(4, 'INFP', '창의력과 자기표현을 중시하는 예술적 활동'),
+(4, 'INFP', '자연과 깊은 연결을 느낄 수 있는 야외 활동'),
+(4, 'INFP', '내면의 평화를 추구하는 명상과 요가');
+
+-- ENFP 환경 
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(4, 'ENFP', '새로운 사람들과의 만남을 즐길 수 있는 사회적 스포츠'),
+(4, 'ENFP', '모험과 탐험을 격려하는 야외 활동'),
+(4, 'ENFP', '즉흥적이고 열정적인 참여가 가능한 이벤트'),
+(4, 'ENFP', '자유로운 분위기에서 즐길 수 있는 활동적 스포츠');
+
+-- ISTJ 환경 
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(4, 'ISTJ', '체계적인 훈련과 규칙을 따르는 스포츠 환경'),
+(4, 'ISTJ', '세부 사항에 주의를 기울이며 실력을 쌓는 활동'),
+(4, 'ISTJ', '안정성과 전통을 중시하는 스포츠'),
+(4, 'ISTJ', '목표 설정과 꾸준한 진전을 중시하는 인내심 있는 스포츠');
+
+-- ESTJ 환경 
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(4, 'ESTJ', '조직적이고 체계적인 관리가 가능한 스포츠 환경'),
+(4, 'ESTJ', '목표 달성과 성과 측정에 초점을 맞춘 활동'),
+(4, 'ESTJ', '리더십과 책임감을 발휘할 수 있는 팀 스포츠'),
+(4, 'ESTJ', '규칙을 엄격히 준수하는 경기 환경');
+
+-- ISFJ 환경 
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(4, 'ISFJ', '안전하고 지지적인 환경에서 진행되는 스포츠'),
+(4, 'ISFJ', '꾸준히 실력을 쌓아가며 성취감을 느낄 수 있는 활동'),
+(4, 'ISFJ', '사회적 교류와 함께하는 편안한 그룹 활동'),
+(4, 'ISFJ', '안정감과 예측 가능성을 제공하는 스포츠');
+
+-- ESFJ 환경 
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(4, 'ESFJ', '친구들과의 사회적 교류를 중시하는 그룹 스포츠'),
+(4, 'ESFJ', '팀의 화합과 협력을 강조하는 스포츠 활동'),
+(4, 'ESFJ', '공동의 목표를 향해 노력하는 친목 도모 활동'),
+(4, 'ESFJ', '사회적 인정과 감사를 받을 수 있는 커뮤니티 이벤트');
+
+-- ISTP 환경 
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(4, 'ISTP', '순발력과 기술을 시험할 수 있는 익스트림 스포츠'),
+(4, 'ISTP', '독립적으로 기술을 연마할 수 있는 개인 스포츠'),
+(4, 'ISTP', '기계 작동과 같은 기술적 지식을 활용할 수 있는 스포츠'),
+(4, 'ISTP', '현장 적응력과 순발력이 중요한 야외 활동');
+
+-- ESTP 환경 
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(4, 'ESTP', '즉흥적인 결정과 신체 능력을 시험하는 스포츠'),
+(4, 'ESTP', '스릴과 모험을 추구하는 액티비티'),
+(4, 'ESTP', '동적인 환경과 신체적 도전이 있는 스포츠'),
+(4, 'ESTP', '사회적 상호작용과 경쟁을 즐길 수 있는 환경');
+
+-- ISFP 환경 
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(4, 'ISFP', '창의성과 개인적 표현을 중시하는 예술적 스포츠'),
+(4, 'ISFP', '감성적인 경험과 자연스러운 흐름을 따르는 활동'),
+(4, 'ISFP', '개인의 스타일과 취향을 반영할 수 있는 스포츠'),
+(4, 'ISFP', '영감을 주는 환경과 아름다움을 추구하는 야외 활동');
+
+-- ESFP 환경 
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(4, 'ESFP', '에너지 넘치고 엔터테인먼트가 가득한 스포츠 이벤트'),
+(4, 'ESFP', '즐거움과 사회적 교류를 중시하는 파티 분위기의 활동'),
+(4, 'ESFP', '즉흥적이고 활동적인 참여가 가능한 스포츠'),
+(4, 'ESFP', '사람들과 함께 즐길 수 있는 친근한 스포츠 환경');
