@@ -83,3 +83,22 @@ INSERT INTO mbti_product (mbti_info_id, mbti_type, product, image) VALUES
 (4, 'ESTP', '럭비', '/images/mbti/sports/rugby.webp'),
 (4, 'ISFP', '배드민턴', '/images/mbti/sports/badminton.webp'),
 (4, 'ESFP', '수영', '/images/mbti/sports/swimming.webp');
+
+-- music
+INSERT INTO mbti_product (mbti_info_id, mbti_type, product, image) VALUES
+(5, 'INTJ', '클래식', '/images/mbti/music/classical.webp'),
+(5, 'ENTJ', '록', '/images/mbti/music/rock.webp'),
+(5, 'INTP', '재즈', '/images/mbti/music/jazz.webp'),
+(5, 'ENTP', '일렉트로닉', '/images/mbti/music/electronic.webp'),
+(5, 'INFJ', '포크', '/images/mbti/music/folk.webp'),
+(5, 'ENFJ', '소울', '/images/mbti/music/soul.webp'),
+(5, 'INFP', '인디', '/images/mbti/music/indie.webp'),
+(5, 'ENFP', '팝', '/images/mbti/music/pop.webp'),
+(5, 'ISTJ', '컨트리', '/images/mbti/music/country.webp'),
+(5, 'ESTJ', '메탈', '/images/mbti/music/metal.webp'),
+(5, 'ISFJ', '뉴에이지', '/images/mbti/music/newage.webp'),
+(5, 'ESFJ', 'R&B', '/images/mbti/music/rnb.webp'),
+(5, 'ISTP', '블루스', '/images/mbti/music/blues.webp'),
+(5, 'ESTP', '힙합', '/images/mbti/music/hiphop.webp'),
+(5, 'ISFP', '레게', '/images/mbti/music/reggae.webp'),
+(5, 'ESFP', '댄스', '/images/mbti/music/dance.webp');

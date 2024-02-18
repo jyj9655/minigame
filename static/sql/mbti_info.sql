@@ -51,3 +51,25 @@ VALUES (
     '#FF9900',
     '나는 어떤 운동이 잘 맞을까?'
 );
+
+-- sports
+INSERT INTO mbti_info (id, url, image, name, color, description)
+VALUES (
+    '4',
+    'sports',
+    '/images/mbti/sports/sports.webp',
+    '스포츠 MBTI',
+    '#FF9900',
+    '나는 어떤 운동이 잘 맞을까?'
+);
+
+-- music
+INSERT INTO mbti_info (id, url, image, name, color, description)
+VALUES (
+    '5',
+    'music',
+    '/images/mbti/music/music.webp',
+    '음악 장르 MBTI',
+    '#FF9900',
+    '나는 어떤 음악이 잘 맞을까?'
+); 

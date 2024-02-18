@@ -535,3 +535,118 @@ INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES
 (4, 'ESFP', '즐거움과 사회적 교류를 중시하는 파티 분위기의 활동'),
 (4, 'ESFP', '즉흥적이고 활동적인 참여가 가능한 스포츠'),
 (4, 'ESFP', '사람들과 함께 즐길 수 있는 친근한 스포츠 환경');
+
+-------------------------------------------------------------------------------------------
+-- music
+-------------------------------------------------------------------------------------------
+-- INTJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(5, 'INTJ', '조용하고 집중할 수 있는 개인적인 공간에서의 클래식 음악 감상'),
+(5, 'INTJ', '논리적 사고와 분석을 자극하는 복잡한 구성의 재즈 또는 프로그레시브 록'),
+(5, 'INTJ', '깊이 있는 가사와 철학적 메시지를 담은 음악 감상'),
+(5, 'INTJ', '혼자만의 시간을 즐기며 선호하는 장르 탐색');
+
+-- ENTJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(5, 'ENTJ', '목표 지향적이고 동기 부여가 되는 강렬한 록 또는 메탈 음악'),
+(5, 'ENTJ', '리더십과 성취를 주제로 한 가사가 있는 힙합 또는 팝'),
+(5, 'ENTJ', '팀 빌딩이나 네트워킹 이벤트에서의 밝고 활기찬 음악'),
+(5, 'ENTJ', '성공과 진취적인 메시지를 담은 음악 감상');
+
+-- INTP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(5, 'INTP', '지적 호기심을 자극하는 복잡한 멜로디와 이론적인 재즈'),
+(5, 'INTP', '실험적이고 혁신적인 일렉트로닉 뮤직 감상'),
+(5, 'INTP', '개인적인 공간에서 깊이 있는 분석과 해석을 요구하는 인디 음악'),
+(5, 'INTP', '논리적 구성과 패턴을 탐구할 수 있는 클래식 음악');
+
+-- ENTP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(5, 'ENTP', '사회적 상호작용이 활발한 환경에서의 다양한 음악 장르 탐색'),
+(5, 'ENTP', '새로운 경험과 발견을 제공하는 음악 페스티벌'),
+(5, 'ENTP', '창의적이고 비틀린 가사와 멜로디가 특징인 대안적 음악'),
+(5, 'ENTP', '다양한 문화와 아이디어가 혼합된 월드뮤직 감상');
+
+-- INFJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(5, 'INFJ', '가사와 멜로디 모두에 깊은 의미가 담긴 음악을 조용한 공간에서 감상'),
+(5, 'INFJ', '인간 관계와 내면의 감정을 탐색할 수 있는 포크 또는 어쿠스틱 음악'),
+(5, 'INFJ', '사회적 메시지를 담은 음악을 통한 감성적 공감과 이해'),
+(5, 'INFJ', '영감을 주는 가사와 멜로디가 있는 인디 뮤직 감상');
+
+-- ENFJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(5, 'ENFJ', '타인과의 연결감을 느낄 수 있는 음악을 친구들과 함께 듣기'),
+(5, 'ENFJ', '긍정적인 에너지와 사회적 가치를 공유할 수 있는 소울 또는 R&B'),
+(5, 'ENFJ', '집단 내 소속감을 강화하는 그룹 활동이나 모임에서의 음악 감상'),
+(5, 'ENFJ', '공동체 의식을 증진시킬 수 있는 공연이나 라이브 이벤트 참여');
+
+-- INFP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(5, 'INFP', '개인적인 감정과 깊은 사색을 자극하는 인디 음악 감상'),
+(5, 'INFP', '창의력과 상상력을 자극하는 독특한 장르의 음악 탐색'),
+(5, 'INFP', '자연과 어우러지며 내면을 탐색할 수 있는 포크 음악 감상'),
+(5, 'INFP', '예술적 가치가 높고 메시지가 강한 음악을 혼자서 깊이 있게 듣기');
+
+-- ENFP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(5, 'ENFP', '다양한 사람들과 새로운 경험을 공유하며 팝이나 댄스 음악 감상'),
+(5, 'ENFP', '페스티벌이나 라이브 공연에서의 역동적이고 활기찬 음악 경험'),
+(5, 'ENFP', '모험적이고 새로운 음악 스타일을 탐험하는 여행 중 음악 감상'),
+(5, 'ENFP', '즐거움과 긍정적 에너지를 나눌 수 있는 친구들과의 음악 파티');
+
+-- ISTJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(5, 'ISTJ', '전통적이고 클래식한 가치를 존중하는 음악 감상'),
+(5, 'ISTJ', '집중력과 몰입을 요구하는 고전 음악 또는 재즈'),
+(5, 'ISTJ', '세부 사항과 정교함을 즐길 수 있는 복잡한 멜로디의 클래식'),
+(5, 'ISTJ', '규칙적이고 체계적인 생활 패턴에 어울리는 음악 감상 환경');
+
+-- ESTJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(5, 'ESTJ', '성취와 성공을 주제로 한 강렬한 록 또는 메탈 음악'),
+(5, 'ESTJ', '목표 달성과 동기 부여에 초점을 맞춘 음악 감상'),
+(5, 'ESTJ', '직설적이고 명확한 메시지가 있는 컨트리 또는 포크'),
+(5, 'ESTJ', '조직 생활이나 리더십에 적합한 가사와 주제를 담은 음악');
+
+-- ISFJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(5, 'ISFJ', '안정감과 편안함을 주는 소프트 록이나 어쿠스틱 음악'),
+(5, 'ISFJ', '가족과 함께 할 때 듣기 좋은 따뜻한 분위기의 뉴에이지 또는 클래식'),
+(5, 'ISFJ', '사랑과 관계를 다루는 가사가 있는 R&B나 소울'),
+(5, 'ISFJ', '집에서 편안하게 감상할 수 있는 가요나 발라드');
+
+-- ESFJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(5, 'ESFJ', '사회적 모임이나 파티에서 사람들과 함께 즐길 수 있는 팝 음악'),
+(5, 'ESFJ', '친구들과의 추억을 공유할 수 있는 댄스 뮤직'),
+(5, 'ESFJ', '공감과 소통을 중시하는 가사가 특징인 포크 뮤직'),
+(5, 'ESFJ', '사랑과 우정을 주제로 한 가요나 소울 음악 감상');
+
+-- ISTP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(5, 'ISTP', '기술적 능숙함과 순발력을 감상할 수 있는 복합 장르의 음악'),
+(5, 'ISTP', '독립적으로 취미나 기술을 탐구하며 듣는 블루스나 재즈'),
+(5, 'ISTP', '개인적인 시간을 즐기며 듣는 개성적인 인디 또는 얼터너티브'),
+(5, 'ISTP', '모험과 탐험을 주제로 한 음악 감상');
+
+-- ESTP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(5, 'ESTP', '활동적이고 역동적인 환경에서 즐기는 힙합 또는 EDM'),
+(5, 'ESTP', '스포츠나 여행 중 듣기 좋은 열정적인 록 뮤직'),
+(5, 'ESTP', '즉흥적인 춤과 움직임에 어울리는 라틴 또는 댄스'),
+(5, 'ESTP', '모험과 스릴을 추구하는 음악 감상, 예를 들어 익스트림 스포츠 중 듣는 음악');
+
+-- ISFP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(5, 'ISFP', '감성과 창의성을 표현할 수 있는 어쿠스틱 또는 인디 포크'),
+(5, 'ISFP', '예술적 영감을 받을 수 있는 클래식 또는 재즈'),
+(5, 'ISFP', '자연과 어우러지며 듣는 편안한 뉴에이지 뮤직'),
+(5, 'ISFP', '개인적인 감정과 경험을 반영하는 창작 활동 중 듣는 음악');
+
+-- ESFP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(5, 'ESFP', '파티와 사교 활동에서 중심이 되는 신나는 팝과 댄스 음악'),
+(5, 'ESFP', '친구들과의 모임이나 여행 중 즐기는 밝고 활기찬 레게 또는 소울'),
+(5, 'ESFP', '즉흥적으로 춤출 수 있는 라이브 공연이나 음악 페스티벌 참여'),
+(5, 'ESFP', '엔터테인먼트와 즐거움을 제공하는 모든 종류의 음악 감상');
