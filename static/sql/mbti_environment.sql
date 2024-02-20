@@ -650,3 +650,118 @@ INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES
 (5, 'ESFP', '친구들과의 모임이나 여행 중 즐기는 밝고 활기찬 레게 또는 소울'),
 (5, 'ESFP', '즉흥적으로 춤출 수 있는 라이브 공연이나 음악 페스티벌 참여'),
 (5, 'ESFP', '엔터테인먼트와 즐거움을 제공하는 모든 종류의 음악 감상');
+
+-------------------------------------------------------------------------------------------
+-- icecream
+-------------------------------------------------------------------------------------------
+-- INTJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(6, 'INTJ', '조용한 환경에서 심도 깊은 대화나 독서와 함께하는 아이스크림 감상'),
+(6, 'INTJ', '논리적 사고나 프로젝트 작업 중 집중력 향상을 위한 아이스크림 휴식'),
+(6, 'INTJ', '최적의 맛과 질감을 찾기 위한 아이스크림 맛 비교 연구'),
+(6, 'INTJ', '혼자만의 시간을 즐기며 선호하는 아이스크림 맛 깊이 탐색');
+
+-- ENTJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(6, 'ENTJ', '목표 달성 후 보상으로 즐기는 프리미엄 아이스크림'),
+(6, 'ENTJ', '팀 리딩이나 모임 주최 시 공유할 수 있는 다양한 아이스크림 선택'),
+(6, 'ENTJ', '효율성과 성과를 높이는 짧은 휴식으로 즐기는 에너지 넘치는 아이스크림'),
+(6, 'ENTJ', '비즈니스 미팅이나 네트워킹 이벤트에서의 아이스크림 소셜 활동');
+
+-- INTP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(6, 'INTP', '창의적 아이디어 발상 시 독특한 맛의 아이스크림으로 새로운 영감 얻기'),
+(6, 'INTP', '프로그래밍이나 디자인 작업 중 집중력을 높이기 위한 아이스크림'),
+(6, 'INTP', '최신 과학 연구나 기술 논문을 읽으며 즐기는 실험적 아이스크림 맛 탐험'),
+(6, 'INTP', '혼자서 여유롭게 생각을 정리하며 즐기는 아이스크림');
+
+-- ENTP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(6, 'ENTP', '친구들과의 사교적 모임에서 새롭고 특이한 아이스크림 맛 시도'),
+(6, 'ENTP', '다양한 활동을 하며 도전적인 아이스크림 맛 경험'),
+(6, 'ENTP', '여행 중 발견한 지역 특색을 담은 아이스크림 탐험'),
+(6, 'ENTP', '새로운 아이디어나 프로젝트 구상 시 즐기는 창의적 아이스크림');
+
+-- INFJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(6, 'INFJ', '인간 관계와 자아 성찰에 대해 깊이 생각하며 즐기는 아이스크림'),
+(6, 'INFJ', '자연 속에서 평화롭게 감상할 수 있는 아이스크림'),
+(6, 'INFJ', '예술 작품이나 문학 작품과 함께하는 감성적 아이스크림 감상'),
+(6, 'INFJ', '사회적 가치나 목적을 공유할 수 있는 아이스크림 모임');
+
+-- ENFJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(6, 'ENFJ', '모두가 함께 즐길 수 있는 아이스크림 파티나 모임 주최'),
+(6, 'ENFJ', '공동체의 화합을 위한 아이스크림 소셜 이벤트'),
+(6, 'ENFJ', '타인을 돕고 위로할 수 있는 아이스크림 기부 활동'),
+(6, 'ENFJ', '가족이나 친구와의 따뜻한 대화를 돕는 아이스크림 감상 시간');
+
+-- INFP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(6, 'INFP', '창의적인 생각을 자극하는 아트 갤러리나 조용한 공원에서 즐기는 아이스크림'),
+(6, 'INFP', '감성적인 음악을 들으며 자신만의 시간을 가지는 아이스크림 감상'),
+(6, 'INFP', '책을 읽거나 글을 쓰며 영감을 받는 아이스크림 타임'),
+(6, 'INFP', '개인적인 감정과 추억을 공유할 수 있는 소규모 친구 모임에서의 아이스크림');
+
+-- ENFP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(6, 'ENFP', '모험과 새로운 경험을 추구하며 다양한 아이스크림 맛 탐험'),
+(6, 'ENFP', '친구들과의 활발한 대화와 웃음이 넘치는 아이스크림 파티'),
+(6, 'ENFP', '여행 중 발견한 이색적인 아이스크림 가게 방문'),
+(6, 'ENFP', '자유로운 분위기에서 새로운 사람들과 아이스크림을 공유하는 시간');
+
+-- ISTJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(6, 'ISTJ', '정돈된 환경에서 세심하게 선택한 아이스크림 맛 즐기기'),
+(6, 'ISTJ', '일상의 작은 보상으로 즐기는 집에서의 아이스크림'),
+(6, 'ISTJ', '계획에 따라 방문한 평가가 높은 아이스크림 가게'),
+(6, 'ISTJ', '품질과 전통을 중시하는 클래식한 아이스크림 맛 선호');
+
+-- ESTJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(6, 'ESTJ', '목표 달성을 축하하는 의미 있는 아이스크림 시간'),
+(6, 'ESTJ', '가족이나 팀원들과 성과를 공유하며 즐기는 아이스크림'),
+(6, 'ESTJ', '효율적이고 조직적인 모임에서 선택한 아이스크림 맛'),
+(6, 'ESTJ', '리더십과 책임감을 발휘할 수 있는 활동 후의 아이스크림');
+
+-- ISFJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(6, 'ISFJ', '가까운 사람들과 함께하는 따뜻하고 친근한 아이스크림 시간'),
+(6, 'ISFJ', '안락하고 편안한 집에서 가족들과 즐기는 아이스크림'),
+(6, 'ISFJ', '기억에 남는 특별한 날에 방문하는 좋아하는 아이스크림 가게'),
+(6, 'ISFJ', '친구나 가족에게 추천받은 아이스크림 맛 시도');
+
+-- ESFJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(6, 'ESFJ', '사회적인 모임이나 이벤트에서 사람들과 함께하는 아이스크림'),
+(6, 'ESFJ', '주변 사람들과의 관계를 돈독히 하는 아이스크림 감상'),
+(6, 'ESFJ', '친구들과의 달콤한 대화와 함께하는 아이스크림'),
+(6, 'ESFJ', '감사의 마음을 전하며 함께 나누는 아이스크림');
+
+-- ISTP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(6, 'ISTP', '새로운 아이스크림 맛을 실험적으로 탐험하는 시간'),
+(6, 'ISTP', '활동적인 취미나 스포츠 후의 시원한 아이스크림'),
+(6, 'ISTP', '혼자서 여유롭게 즐기는 아이스크림'),
+(6, 'ISTP', '기계나 장치를 만지며 즐기는 휴식 시간의 아이스크림');
+
+-- ESTP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(6, 'ESTP', '모험과 스릴을 즐기는 야외 활동 중의 아이스크림'),
+(6, 'ESTP', '친구들과의 외출이나 파티에서 즐기는 다양한 아이스크림'),
+(6, 'ESTP', '스포츠 경기나 이벤트를 관람하며 먹는 아이스크림'),
+(6, 'ESTP', '즉흥적인 여행이나 탐험 중 발견한 아이스크림 가게 방문');
+
+-- ISFP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(6, 'ISFP', '예술적 영감을 받을 수 있는 환경에서 즐기는 아이스크림'),
+(6, 'ISFP', '자연 속에서 평화롭게 감상하는 아이스크림'),
+(6, 'ISFP', '창의력을 발휘할 수 있는 취미 활동 중의 아이스크림'),
+(6, 'ISFP', '감성적인 음악이나 예술 작품과 함께하는 아이스크림');
+
+-- ESFP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(6, 'ESFP', '즐거운 분위기의 파티나 모임에서 즐기는 아이스크림'),
+(6, 'ESFP', '사람들과 함께하는 활동적인 이벤트에서의 아이스크림'),
+(6, 'ESFP', '음악이나 춤과 함께하는 즐거운 아이스크림 타임'),
+(6, 'ESFP', '시각적으로 아름다운 아이스크림을 소셜 미디어에 공유');

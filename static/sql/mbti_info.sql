@@ -15,7 +15,7 @@ VALUES (
     'company',
     '/images/mbti/company/company.png',
     '사무용품 MBTI',
-    '#CC9900',
+    '#AA9900',
     '나와 잘 맞는 사무용품은?'
 );
 
@@ -26,7 +26,7 @@ VALUES (
     'animal',
     '/images/mbti/animal/animal.png',
     '동물 MBTI',
-    '#DD9900',
+    '#BB9900',
     '나는 어떤 동물일까?'
 );
 
@@ -37,7 +37,7 @@ VALUES (
     'cafe',
     '/images/mbti/cafe/cafe.png',
     '카페 MBTI',
-    '#EE9900',
+    '#CC9900',
     '나는 어떤 카페가 잘 맞을까?'
 );
 
@@ -48,7 +48,7 @@ VALUES (
     'sports',
     '/images/mbti/sports/sports.png',
     '스포츠 MBTI',
-    '#FF9900',
+    '#DD9900',
     '나는 어떤 운동이 잘 맞을까?'
 );
 
@@ -59,7 +59,7 @@ VALUES (
     'sports',
     '/images/mbti/sports/sports.webp',
     '스포츠 MBTI',
-    '#FF9900',
+    '#EE9900',
     '나는 어떤 운동이 잘 맞을까?'
 );
 
@@ -72,4 +72,15 @@ VALUES (
     '음악 장르 MBTI',
     '#FF9900',
     '나는 어떤 음악이 잘 맞을까?'
+); 
+
+-- icecream
+INSERT INTO mbti_info (id, url, image, name, color, description)
+VALUES (
+    '6',
+    'icecream',
+    '/images/mbti/icecream/icecream.webp',
+    '아이스크림 MBTI',
+    '#C0A9BD',
+    '나를 아이스크림 맛으로 표현한다면?'
 ); 

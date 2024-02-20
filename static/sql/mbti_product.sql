@@ -102,3 +102,22 @@ INSERT INTO mbti_product (mbti_info_id, mbti_type, product, image) VALUES
 (5, 'ESTP', '힙합', '/images/mbti/music/hiphop.webp'),
 (5, 'ISFP', '레게', '/images/mbti/music/reggae.webp'),
 (5, 'ESFP', '댄스', '/images/mbti/music/dance.webp');
+
+-- icecream
+INSERT INTO mbti_product (mbti_info_id, mbti_type, product, image) VALUES
+(6, 'INTJ', '다크 초코 아이스크림', '/images/mbti/icecream/dark_chocolate.webp'),
+(6, 'ENTJ', '요거트 아이스크림', '/images/mbti/icecream/yogurt.webp'),
+(6, 'INTP', '그린티 아이스크림', '/images/mbti/icecream/green_tea.webp'),
+(6, 'ENTP', '멜론 아이스크림', '/images/mbti/icecream/melon.webp'),
+(6, 'INFJ', '바닐라 아이스크림', '/images/mbti/icecream/vanilla.webp'),
+(6, 'ENFJ', '딸기 아이스크림', '/images/mbti/icecream/strawberry.webp'),
+(6, 'INFP', '민트 초코 아이스크림', '/images/mbti/icecream/mint_chocolate.webp'),
+(6, 'ENFP', '쿠키 앤 크림 아이스크림', '/images/mbti/icecream/cookies_n_cream.webp'),
+(6, 'ISTJ', '우유 아이스크림', '/images/mbti/icecream/milk.webp'),
+(6, 'ESTJ', '초코 아이스크림', '/images/mbti/icecream/chocolate.webp'),
+(6, 'ISFJ', '블루베리 아이스크림', '/images/mbti/icecream/blueberry.webp'),
+(6, 'ESFJ', '체리 아이스크림', '/images/mbti/icecream/cherry.webp'),
+(6, 'ISTP', '커피 아이스크림', '/images/mbti/icecream/coffee.webp'),
+(6, 'ESTP', '망고 아이스크림', '/images/mbti/icecream/mango.webp'),
+(6, 'ISFP', '라즈베리 아이스크림', '/images/mbti/icecream/raspberry.webp'),
+(6, 'ESFP', '치즈 아이스크림', '/images/mbti/icecream/cheese.webp');
