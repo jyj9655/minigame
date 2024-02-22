@@ -121,3 +121,22 @@ INSERT INTO mbti_product (mbti_info_id, mbti_type, product, image) VALUES
 (6, 'ESTP', '망고 아이스크림', '/images/mbti/icecream/mango.webp'),
 (6, 'ISFP', '라즈베리 아이스크림', '/images/mbti/icecream/raspberry.webp'),
 (6, 'ESFP', '치즈 아이스크림', '/images/mbti/icecream/cheese.webp');
+
+--cheese
+INSERT INTO mbti_product (mbti_info_id, mbti_type, product, image) VALUES
+(7, 'INTJ', '고르곤졸라 치즈', '/images/mbti/cheese/gorgonzola.webp'),
+(7, 'ENTJ', '에멘탈 치즈', '/images/mbti/cheese/emmental.webp'),
+(7, 'INTP', '블루 치즈', '/images/mbti/cheese/blue.webp'),
+(7, 'ENTP', '할루미 치즈', '/images/mbti/cheese/halloumi.webp'),
+(7, 'INFJ', '브리 치즈', '/images/mbti/cheese/brie.webp'),
+(7, 'ENFJ', '그라나 파다노 치즈', '/images/mbti/cheese/grana_padano.webp'),
+(7, 'INFP', '리코타 치즈', '/images/mbti/cheese/ricotta.webp'),
+(7, 'ENFP', '구다 치즈', '/images/mbti/cheese/gouda.webp'),
+(7, 'ISTJ', '체다 치즈', '/images/mbti/cheese/cheddar.webp'),
+(7, 'ESTJ', '파르미지아노 레지아노 치즈', '/images/mbti/cheese/parmigiano_reggiano.webp'),
+(7, 'ISFJ', '모짜렐라 치즈', '/images/mbti/cheese/mozzarella.webp'),
+(7, 'ESFJ', '콜비 치즈', '/images/mbti/cheese/colby.webp'),
+(7, 'ISTP', '프로볼로네 치즈', '/images/mbti/cheese/provolone.webp'),
+(7, 'ESTP', '페퍼 잭 치즈', '/images/mbti/cheese/pepper_jack.webp'),
+(7, 'ISFP', '카망베르 치즈', '/images/mbti/cheese/camembert.webp'),
+(7, 'ESFP', '마스카포네 치즈', '/images/mbti/cheese/mascarpone.webp');

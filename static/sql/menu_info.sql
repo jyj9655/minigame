@@ -121,10 +121,10 @@ INSERT INTO menu_info (id, menu, image, name, url, description, state)
 VALUES (
     '10',
     'community',
-    '/images/communities/free.png',
-    '자유 게시판',
-    'free',
-    '자유롭게 소통하고, 생각을 공유하는 공간입니다.',
+    '/images/communities/notice.png',
+    '공지사항',
+    'notice',
+    '중요한 소식과 업데이트를 확인하는 공간입니다.',
     1
 );
 
@@ -132,9 +132,9 @@ INSERT INTO menu_info (id, menu, image, name, url, description, state)
 VALUES (
     '11',
     'community',
-    '/images/communities/notice.png',
-    '공지사항',
-    'notice',
-    '중요한 소식과 업데이트를 확인하는 공간입니다.',
+    '/images/communities/free.png',
+    '자유 게시판',
+    'free',
+    '자유롭게 소통하고, 생각을 공유하는 공간입니다.',
     1
 );

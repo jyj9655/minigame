@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const boxViewButton = document.getElementById('box-view');
     const listViewButton = document.getElementById('list-view');
-    const gamesContainer = document.querySelector('.games');
+    const gamesContainer = document.querySelector('.mbtis');
   
     // 박스형식 버튼 클릭 이벤트 리스너
     boxViewButton.addEventListener('click', () => {

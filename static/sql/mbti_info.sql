@@ -83,4 +83,15 @@ VALUES (
     '아이스크림 MBTI',
     '#C0A9BD',
     '나를 아이스크림 맛으로 표현한다면?'
-); 
+);
+
+-- cheese
+INSERT INTO mbti_info (id, url, image, name, color, description)
+VALUES (
+    '7',
+    'cheese',
+    '/images/mbti/cheese/cheese.webp',
+    '치즈 MBTI',
+    '#F1AF14',
+    '나를 치즈로 표현한다면?'
+);

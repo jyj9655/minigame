@@ -765,3 +765,118 @@ INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES
 (6, 'ESFP', '사람들과 함께하는 활동적인 이벤트에서의 아이스크림'),
 (6, 'ESFP', '음악이나 춤과 함께하는 즐거운 아이스크림 타임'),
 (6, 'ESFP', '시각적으로 아름다운 아이스크림을 소셜 미디어에 공유');
+
+-------------------------------------------------------------------------------------------
+-- cheese
+-------------------------------------------------------------------------------------------
+-- INTJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(7, 'INTJ', '전략적 사고를 자극하는 조용한 환경에서의 치즈 탐구'),
+(7, 'INTJ', '독창적인 아이디어를 고민하는 시간에 맞는 강렬한 치즈 선택'),
+(7, 'INTJ', '개인의 선호와 분석을 바탕으로 한 치즈 취향 연구'),
+(7, 'INTJ', '지적 호기심을 만족시킬 수 있는 다양한 치즈의 시식');
+
+-- ENTJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(7, 'ENTJ', '리더십을 발휘하는 모임에서 고급 치즈 제공'),
+(7, 'ENTJ', '목표 달성을 축하하는 행사에서 선별된 치즈 셀렉션'),
+(7, 'ENTJ', '비즈니스 미팅이나 프로젝트 토론 중 간식으로 치즈 플레이트'),
+(7, 'ENTJ', '효율성과 성공을 상징하는 치즈를 활용한 네트워킹 이벤트');
+
+-- INTP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(7, 'INTP', '복잡한 문제를 해결하는 데 집중하는 조용한 공간에서 치즈 즐기기'),
+(7, 'INTP', '지적 토론이나 창의적 작업을 수행하며 독특한 치즈 탐험'),
+(7, 'INTP', '혼자서 또는 소수와 함께 심오한 대화 중 새로운 치즈 시도'),
+(7, 'INTP', '다양한 치즈에 대한 지식 확장을 위한 시식회나 워크숍 참여');
+
+-- ENTP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(7, 'ENTP', '새로운 아이디어를 모색하는 브레인스토밍 세션에서 매콤한 치즈 제공'),
+(7, 'ENTP', '친구들과의 사교 모임에서 흥미로운 치즈 경험 공유'),
+(7, 'ENTP', '다양한 문화의 치즈를 탐험하며 글로벌 음식 트렌드 연구'),
+(7, 'ENTP', '모험적인 여행 중 현지의 특색 있는 치즈 시도');
+
+-- INFJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(7, 'INFJ', '깊은 대화나 명상을 동반한 영감을 주는 치즈의 선별적 감상'),
+(7, 'INFJ', '감성을 자극하는 예술 작품 감상회나 음악회에서 고급 치즈 맛보기'),
+(7, 'INFJ', '사회적 책임과 가치를 공유하는 모임에서 윤리적으로 생산된 치즈 선택'),
+(7, 'INFJ', '인간 관계의 깊이를 탐구하며 친밀한 대화를 나누는 소규모 치즈 파티');
+
+-- ENFJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(7, 'ENFJ', '팀 빌딩이나 가족 모임에서 화합을 도모하는 치즈 보드 준비'),
+(7, 'ENFJ', '공동체의 가치와 연대감을 강화하는 이벤트에서 다양한 치즈 제공'),
+(7, 'ENFJ', '영감을 주는 스토리텔링이나 강연회에서 참석자와 공유하는 치즈 선정'),
+(7, 'ENFJ', '다른 사람의 발전과 성장을 지원하는 워크숍에서 에너지를 더해줄 치즈 선택');
+
+-- INFP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(7, 'INFP', '창의적인 활동을 하거나 꿈을 꾸는 시간에 부드러운 치즈 즐기기'),
+(7, 'INFP', '감성적인 음악이나 예술 작품과 함께하는 감미로운 치즈 타임'),
+(7, 'INFP', '자연 속에서 평화를 느끼며 리코타와 같은 부드러운 치즈 감상'),
+(7, 'INFP', '개인적인 일기나 편지 쓰기와 같은 내면적 활동 중 치즈 맛보기');
+
+-- ENFP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(7, 'ENFP', '새로운 경험을 추구하는 모험 중 다양한 치즈 시도'),
+(7, 'ENFP', '친구들과의 캠핑이나 야외 활동에서 즐거운 치즈 파티'),
+(7, 'ENFP', '사회적 모임이나 파티에서 분위기를 띄우는 구다 치즈'),
+(7, 'ENFP', '열린 마음으로 새로운 사람들과 치즈를 공유하며 교류하는 시간');
+
+-- ISTJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(7, 'ISTJ', '정돈된 환경에서 전통적인 치즈를 체계적으로 탐구 및 감상'),
+(7, 'ISTJ', '계획된 식사 메뉴에 맞는 치즈 선택으로 가족 만찬 준비'),
+(7, 'ISTJ', '업무 성취 후 자신을 위한 보상으로 즐기는 체다 치즈'),
+(7, 'ISTJ', '품질과 전통을 중시하는 치즈의 선별적 구매 및 보관');
+
+-- ESTJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(7, 'ESTJ', '팀 프로젝트나 회의 성공 후 동료들과 공유하는 파르미지아노 레지아노'),
+(7, 'ESTJ', '목표 달성을 축하하는 행사나 모임에서 질 좋은 치즈 제공'),
+(7, 'ESTJ', '리더십을 발휘하는 모임에서 참가자들을 위한 고급 치즈 준비'),
+(7, 'ESTJ', '성과와 성취를 기념하는 저녁 식사에서 중요한 치즈 선택');
+
+-- ISFJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(7, 'ISFJ', '가족과의 따뜻한 저녁 식사에 부드러운 모차렐라 치즈 제공'),
+(7, 'ISFJ', '친밀한 친구들과 소소한 모임에서 즐기는 치즈 보드'),
+(7, 'ISFJ', '가까운 이들과의 집들이나 생일 파티에서 사랑받는 치즈 선택'),
+(7, 'ISFJ', '편안하고 안정적인 분위기에서 가족들과 함께하는 치즈 시식');
+
+-- ESFJ 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(7, 'ESFJ', '커뮤니티 센터나 교회 모임에서 온화한 맛의 치즈로 환영'),
+(7, 'ESFJ', '친구나 이웃을 위한 집들이 파티에서 다양한 치즈 제공'),
+(7, 'ESFJ', '조화롭고 지원적인 분위기에서 가족 모임용 치즈 준비'),
+(7, 'ESFJ', '사람들을 이어주는 사교 이벤트에서 친근감을 더하는 콜비 치즈');
+
+-- ISTP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(7, 'ISTP', '개인 취미 활동이나 프로젝트 중 실용적인 프로볼로네 치즈 감상'),
+(7, 'ISTP', '야외 활동이나 모험 중 간편하게 즐길 수 있는 치즈 선택'),
+(7, 'ISTP', '혼자서 여행하며 현지의 독특한 치즈 시도'),
+(7, 'ISTP', '기술적인 취미나 작업을 하며 즐기는 간단하고 맛있는 치즈');
+
+-- ESTP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(7, 'ESTP', '활동적인 파티나 모임에서 에너지를 주는 페퍼 잭 치즈'),
+(7, 'ESTP', '스포츠 경기나 야외 모험 후 친구들과 공유하는 매콤한 치즈'),
+(7, 'ESTP', '즉흥적으로 계획한 여행이나 이벤트에서 새로운 치즈 탐험'),
+(7, 'ESTP', '모험과 탐험을 즐기는 활동 중에 발견한 이색 치즈 시식');
+
+-- ISFP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(7, 'ISFP', '예술적인 영감을 받을 수 있는 환경에서 부드러운 카망베르 치즈 감상'),
+(7, 'ISFP', '자연 속에서 평화롭게 즐기는 감성적인 치즈 시식'),
+(7, 'ISFP', '창작 활동이나 음악 감상 중 감성을 자극하는 치즈 선택'),
+(7, 'ISFP', '친구들과의 아늑한 모임에서 개성 있는 치즈 공유');
+
+-- ESFP 환경
+INSERT INTO mbti_environment (mbti_info_id, mbti_type, environment) VALUES 
+(7, 'ESFP', '사교적인 모임이나 파티에서 분위기를 띄우는 마스카포네 치즈'),
+(7, 'ESFP', '즐겁고 엔터테인먼트가 가득한 이벤트에서 다채로운 치즈 제공'),
+(7, 'ESFP', '친구들과 함께하는 캐주얼한 저녁 식사에서 사랑받는 치즈 선택'),
+(7, 'ESFP', '무대 위나 중심에서 모두의 관심을 받으며 즐기는 치즈 타임');

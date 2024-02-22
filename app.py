@@ -172,33 +172,7 @@ def game(game_name):
         return redirect(url_for('games'))
 
 ####################################################################################################
-## 2-1. [COMMUNITY] FREE
-####################################################################################################
-@app.route('/free')
-def free():
-    db = get_db()
-    cur = db.cursor()
-
-    cur.execute("SELECT id, name, description FROM menu_info WHERE url = 'free'")
-    menu_info = cur.fetchone()
-    
-    return render_template('free.html', game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
-
-####################################################################################################
-## 2-2. [COMMUNITY] NOTICE
-####################################################################################################
-@app.route('/notice')
-def notice():
-    db = get_db()
-    cur = db.cursor()
-
-    cur.execute("SELECT id, name, description FROM menu_info WHERE url = 'notice'")
-    menu_info = cur.fetchone()
-    
-    return render_template('notice.html', game_id=menu_info['id'], game_name=menu_info['name'], game_description=menu_info['description'])
-
-####################################################################################################
-## 3-0. [MBTI]
+## 2-0. [MBTI]
 ####################################################################################################
 @app.route('/mbti')
 def mbti_list():
@@ -260,7 +234,32 @@ def mbti_result():
         })
     else:
         return render_template('result.html')
+
+####################################################################################################
+## 3-1. [COMMUNITY]
+####################################################################################################
+@app.route('/community', methods=['GET'])
+def community_default():
+    return redirect(url_for('community', url='notice'))
+
+@app.route('/community/<url>', methods=['GET'])
+def community(url):
+    db = get_db()
     
+    menu_info = db.execute("SELECT * FROM menu_info WHERE menu = 'community' AND state = 1 ORDER BY id ASC").fetchall()
+
+    if not menu_info:
+        return "메뉴 정보를 가져올 수 없습니다.", 500
+
+    page_info = db.execute("SELECT * FROM menu_info WHERE url = ? AND menu = 'community' AND state = 1", (url,)).fetchone()
+
+    if page_info is None:
+        return "페이지를 찾을 수 없습니다.", 404
+
+    items = db.execute("SELECT * FROM board WHERE type = ? ORDER BY created_at DESC", (url,)).fetchall()
+
+    return render_template('community/community.html', items=items, page_info=page_info, menu_info=menu_info)
+
 ####################################################################################################
 ## 4-1. [BLOG]
 ####################################################################################################

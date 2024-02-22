@@ -24,10 +24,10 @@
     <meta name="twitter:description" content="다양한 미니게임을 한 곳에서 즐기세요!">
     <meta name="twitter:image" content="https://exhilarate.kr/static/images/game-collection-thumbnail.png">
 </head>
-{% set excluded_paths = ['/', '/games', '/games/roulette', '/communities', '/mbti', '/mbti/company', '/mbti/animal', '/result' ] %}
+{% set excluded_paths = ['/', '/games', '/games/roulette', '/communities', '/mbti', '/mbti/company', '/mbti/animal', '/result', '/community/free', '/community/notice' ] %}
 <body>
     <div class="overlay"></div>
-    <nav>
+    <nav class="main-nav">
         <div class="logo">
             <a href="/">
                 <img class="header-image" src="{{ url_for('static', filename='images/logo.png') }}" alt="로고">
@@ -67,7 +67,7 @@
                     <a href="/community">커뮤니티</a>
                     <div class="sidebar-dropdown-content">
                         {% for community in communities %}
-                            <a href="{{ url_for(community.url) }}">{{ community.name }}</a>
+                            <a href="{{ url_for('community', url=community.url) }}">{{ community.name }}</a>
                         {% endfor %}
                     </div>
                 </li>
@@ -95,12 +95,12 @@
                     <a href="/community">커뮤니티</a>
                     <div class="dropdown-content">
                         {% for community in communities %}
-                            <a href="{{ url_for(community.url) }}">{{ community.name }}</a>
+                            <a href="{{ url_for('community', url=community.url) }}">{{ community.name }}</a>
                         {% endfor %}
                     </div>
                 </li>
             </ul>
-            <div class="auth-buttons">
+            <div class="auth-buttons" style="display: none;">
                 <a href="#" class="login-btn">로그인</a>
                 <a href="#" class="register-btn">회원가입</a>
             </div>  
@@ -113,7 +113,7 @@
         <div id="mbti-name" style="display: none;">{{ mbti_name }}</div>
         <span>{{ mbti_description }}</span>
     </div>
-    {% else %}
+    {% elif '/games' in request.path %}
     <div id="header">
         <h2>{{ game_name }}</h2>
         <span>{{ game_description }}</span>
