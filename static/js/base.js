@@ -4,10 +4,15 @@ document.addEventListener('DOMContentLoaded', function () {
         el.style.setProperty('--content', JSON.stringify(content)); // CSS 변수로 설정
     });
     
-    const shareButton = document.getElementById('share-button');
-    if (shareButton) {
-        shareButton.addEventListener('click', captureGameBoard);
-    }
+    document.querySelectorAll('.share-button').forEach(function(button) {
+        if (button.getAttribute('data-tooltip') === '카카오톡') {
+            button.addEventListener('click', function() {
+                console.log("카카오톡 공유 버튼 클릭했다");
+                // 공유 관련 함수 호출 여부를 확인하기 위한 로그
+                shareGameWithMetaImage();
+            });
+        }
+    });
 
     const menuToggle = document.querySelector('.menu-toggle');
     const sidebarMenu = document.getElementById('sidebar-menu');
