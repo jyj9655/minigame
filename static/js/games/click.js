@@ -59,7 +59,8 @@ function handleCircleClick() {
             const endTime = Date.now();
             gameCompletedTime = (endTime - startTime) / 1000;
             document.getElementById('timer').textContent = `${gameCompletedTime.toFixed(3)}초`;
-
+            alert('축하합니다! 게임 완료!');
+            clickCount = 0;
             // 게임 완료 시 기록 저장 버튼 나타나기
             document.getElementById('save-record').style.display = 'block';
             // 게임 완료 시 닉네임 부분 나타나기
