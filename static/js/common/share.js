@@ -40,6 +40,7 @@ function shareGameWithMetaImage() {
     var gameIdentifier = pathArray[pathArray.length - 1];
 
     var imageUrl = `https://exhilarate.kr/static/images/share/${gameIdentifier}.png`;
+    // var imageUrl = `http://127.0.0.1:5000/static/images/share/${gameIdentifier}.png`;
     var webUrl = window.location.href;
 
     shareOnKakao(title, description, imageUrl, webUrl);
