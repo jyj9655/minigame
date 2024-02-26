@@ -3,6 +3,7 @@
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mbti/result.css') }}">
 <div class="mbti-result">
+    <img src="" id="background-image" alt="MBTI 결과 배경" style="position: absolute; z-index: -1; width: 100%; height: 100%; top: 0; left: 0;">
     <h1>MBTI 결과</h1>
     <ul id="product">
         <li id="product-name"></li>
@@ -21,73 +22,61 @@
     <ul id="environment-list">
     </ul>
 </div>
+<div class="buttons-container">
+    <button id="reset" class="learn-more">다시 하기</button>
+    <button id="another" class="learn-more">다른 MBTI 하러 가기</button>
+</div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const resultData = localStorage.getItem('mbtiResult');
-        if (resultData) {
-            const data = JSON.parse(resultData);
-            document.getElementById('product-name').textContent = data.product_info.product;
-            document.getElementById('product-description').textContent = data.product_info.description;
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('share-container').style.display = 'block';
 
-            const compatibilityGoodList = document.getElementById('compatibility-good-list');
-            const compatibilityBadList = document.getElementById('compatibility-bad-list');
-            compatibilityGoodList.innerHTML = '';
-            compatibilityBadList.innerHTML = '';
-
-            // compatibility
-            data.compatibility_info.forEach(info => {
-                const listItem = document.createElement('li');
-                listItem.textContent = info.product;
-                if (info.compatibility === 'good') {
-                    compatibilityGoodList.appendChild(listItem);
-                } else if (info.compatibility === 'bad') {
-                    compatibilityBadList.appendChild(listItem);
-                }
-            });
-
-            // Good
-            if (compatibilityGoodList.children.length === 0) {
-                const emptyItem = document.createElement('li');
-                emptyItem.textContent = '없음';
-                compatibilityGoodList.appendChild(emptyItem);
-            }
-
-            // Bad
-            if (compatibilityBadList.children.length === 0) {
-                const emptyItem = document.createElement('li');
-                emptyItem.textContent = '없음';
-                compatibilityBadList.appendChild(emptyItem);
-            }
-
-            // environment
-            const environmentList = document.getElementById('environment-list');
-            environmentList.innerHTML = '';
-            data.environment_info.forEach(info => {
-                const listItem = document.createElement('li');
-                listItem.textContent = info.environment;
-                environmentList.appendChild(listItem);
-            });
-        }
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
     const resultData = localStorage.getItem('mbtiResult');
-        if (resultData) {
-            const data = JSON.parse(resultData);
+    if (resultData) {
+        const data = JSON.parse(resultData);
+        document.getElementById('product-name').textContent = data.product_info.product;
+        document.getElementById('product-description').textContent = data.product_info.description;
 
-            const backgroundImageUrl = data.product_info.image;
-            const imageUrl = `/static/${backgroundImageUrl}`;
+        setupList('compatibility-good-list', data.compatibility_info.filter(info => info.compatibility === 'good'), 'product');
+        setupList('compatibility-bad-list', data.compatibility_info.filter(info => info.compatibility === 'bad'), 'product');
+        setupList('environment-list', data.environment_info, 'environment');
 
-            const mbtiResultElement = document.querySelector('.mbti-result');
-            mbtiResultElement.style.backgroundImage = `url('${imageUrl}')`;
-            mbtiResultElement.style.backgroundSize = 'cover'; // 이미지가 요소에 맞춰지도록 설정
-            mbtiResultElement.style.backgroundPosition = 'center center'; // 이미지를 중앙에 위치시킴
-            mbtiResultElement.style.backgroundRepeat = 'no-repeat';
-            mbtiResultElement.style.position = 'relative'; // 가상 요소 포지셔닝을 위함
-            mbtiResultElement.style.overflow = 'hidden'; // 둥근 모서리 처리를 위함
-        }
+        const backgroundImageUrl = data.product_info.image;
+        const imageUrl = `/static/${backgroundImageUrl}`;
+        document.getElementById('background-image').src = imageUrl;
+    }
+
+    setupButtonEventListeners();
+});
+
+function setupList(listId, items, key) {
+    const listElement = document.getElementById(listId);
+    listElement.innerHTML = '';
+
+    items.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = item[key] || '없음';
+        listElement.appendChild(listItem);
     });
+
+    if (items.length === 0) {
+        const emptyItem = document.createElement('li');
+        emptyItem.textContent = '없음';
+        listElement.appendChild(emptyItem);
+    }
+}
+
+function setupButtonEventListeners() {
+    document.getElementById('reset').addEventListener('click', function() {
+        localStorage.removeItem('mbtiResult');
+        window.history.back();
+    });
+
+    document.getElementById('another').addEventListener('click', function() {
+        localStorage.removeItem('mbtiResult');
+        window.location.href = '/mbti';
+    });
+}
 </script>
 </body>
 {% endblock %}
