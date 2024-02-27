@@ -207,7 +207,11 @@ def mbti_result():
         mbti_info_id = data.get('mbti_id')
 
         product_info = db.execute(
-            "SELECT * FROM mbti_product WHERE mbti_type = ? and mbti_info_id = ?",
+            "SELECT mp.*, mi.name"
+            " FROM mbti_product AS mp"
+            " JOIN mbti_info AS mi"
+            " ON mp.mbti_info_id = mi.id"
+            " WHERE mp.mbti_type = ? AND mp.mbti_info_id = ?",
             (mbti_type, mbti_info_id)
         ).fetchone()
 
