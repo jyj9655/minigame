@@ -33,14 +33,14 @@ function shareGameWithMetaImage() {
     const resultData = localStorage.getItem('mbtiResult');
     if (resultData) {
         const data = JSON.parse(resultData);
-        title = `나의 ${data.product_info.name}의 결과는 ${data.product_info.product} 예요`;
-        buttonTitle = 'MBTI테스트 하기';
+        title = `나의 ${data.product_info.name}의 결과는 ${data.product_info.product} !!`;
+        buttonTitle = '테스트하러 하기';
         imageUrl = data.product_info.image ? `https://exhilarate.kr/static${data.product_info.image}` : `https://exhilarate.kr/static/images/share/default.png`;
     } else {
         var gameNameElement = document.getElementById("game-name");
         if (gameNameElement) {
             title = gameNameElement.textContent;
-            description = `제가 이 게임을 ${gameCompletedTime.toFixed(3)}초 만에 완료했습니다! 도전해보세요!`;
+            description = `제가 이 게임을 ${gameCompletedTime.toFixed(3)}초 만에 완료했습니다!! 도전해보세요!!`;
             buttonTitle = '게임하러 가기';
         }
         var pathArray = window.location.pathname.split('/');
