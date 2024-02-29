@@ -1,4 +1,4 @@
-from flask import Flask, flash, request, jsonify, render_template, g, redirect, url_for
+from flask import Flask, flash, request, jsonify, render_template, g, redirect, send_from_directory, url_for
 import sqlite3
 import datetime
 import os
@@ -101,6 +101,10 @@ def save_to_database(ip, nickname, time, gametype):
                 (ip, nickname, time, today, gametype))
     db.commit()
     return {"message": "기록 저장 완료"}
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(app.root_path, 'sitemap.xml', mimetype='application/xml')
 
 @app.route('/clean', methods=['GET'])
 def clear_records():
